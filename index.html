@@ -1,1 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Jlm Tecidos LTDA - Atacado de Tecidos | Brusque - SC</title>
+    <!-- Bootstrap 5 + Ícones + CSS Personalizado -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Cores personalizadas baseadas no tema têxtil/atacado */
+        :root {
+            --tecido-primary: #2c3e50;      /* azul escuro sofisticado */
+            --tecido-secondary: #8e44ad;    /* toque de roxo elegante */
+            --tecido-accent: #d4af37;       /* dourado para detalhes */
+            --tecido-light-bg: #f8f9fa;
+            --tecido-card-hover: #ffffff;
+            --tecido-border: #e0e0e0;
+        }
 
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2a36;
+            background-color: #fefefe;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar personalizada */
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 1.6rem;
+        }
+        .navbar-brand i {
+            color: var(--tecido-accent);
+            margin-right: 8px;
+        }
+        .bg-tecido-nav {
+            background-color: var(--tecido-primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .nav-link {
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .nav-link:hover {
+            color: var(--tecido-accent) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #1e2f3a 0%, #2c3e50 100%);
+            color: white;
+            padding: 4rem 0 4rem 0;
+            border-bottom: 4px solid var(--tecido-accent);
+        }
+        .hero h1 {
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        .hero .btn-outline-light {
+            border-width: 2px;
+        }
+        .hero i {
+            color: var(--tecido-accent);
+        }
+
+        /* cards de diferenciais */
+        .card-feature {
+            border: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 6px 6px rgba(0,0,0,0.03);
+        }
+        .card-feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+            border-bottom: 3px solid var(--tecido-accent);
+        }
+        .icon-circle {
+            background-color: #f0eef7;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem auto;
+            color: var(--tecido-secondary);
+            font-size: 2.4rem;
+            transition: 0.2s;
+        }
+        .card-feature:hover .icon-circle {
+            background-color: var(--tecido-secondary);
+            color: white;
+        }
+
+        /* seção produtos/tecido amostra */
+        .section-title {
+            position: relative;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.3px;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--tecido-accent);
+            margin: 0.7rem auto 0 auto;
+            border-radius: 3px;
+        }
+        .produto-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.25s;
+            border: 1px solid #eee;
+        }
+        .produto-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: scale(1.02);
+        }
+        .produto-img {
+            background: #f1f2f6;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 3.2rem;
+            color: var(--tecido-primary);
+        }
+        .badge-atacado {
+            background-color: var(--tecido-accent);
+            color: #2c3e50;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+        }
+
+        /* Informações da empresa */
+        .info-card {
+            background-color: #fef7e8;
+            border-left: 6px solid var(--tecido-accent);
+            border-radius: 20px;
+        }
+        .footer {
+            background-color: #0f212e;
+            color: #cddde9;
+        }
+        .footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            border: none;
+            font-weight: 600;
+        }
+        .btn-whatsapp:hover {
+            background-color: #20b859;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg bg-tecido-nav navbar-dark py-3 fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-tshirt"></i> Jlm Tecidos <span style="font-size: 0.9rem; font-weight: 400;">| Atacado</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                    <li class="nav-item"><a class="nav-link active text-white" href="#inicio"><i class="fas fa-home me-1"></i>Início</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#diferenciais"><i class="fas fa-star me-1"></i>Diferenciais</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#produtos"><i class="fas fa-cut me-1"></i>Tecidos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contato"><i class="fas fa-map-pin me-1"></i>Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Espaço para navbar fixa -->
+    <div style="height: 76px;"></div>
+
+    <!-- HERO / INÍCIO -->
+    <section id="inicio" class="hero">
+        <div class="container py-4">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <span class="badge bg-warning text-dark mb-3 py-2 px-3 rounded-pill"><i class="fas fa-tags me-1"></i> Atacado há mais de 18 anos</span>
+                    <h1 class="display-4 fw-bold">Tecidos de qualidade <br> para o seu negócio</h1>
+                    <p class="lead mt-3">Referência em Brusque e região. Vendas por atacado com preços competitivos, variedade imensa e entrega ágil. Seja um parceiro Jlm Tecidos.</p>
+                    <div class="mt-4">
+                        <a href="#contato" class="btn btn-light btn-lg me-3 shadow-sm"><i class="fas fa-phone-alt me-2"></i>Fale com vendas</a>
+                        <a href="#produtos" class="btn btn-outline-light btn-lg"><i class="fas fa-eye me-2"></i>Conhecer tecidos</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <i class="fas fa-roll-toilet" style="font-size: 7rem; opacity: 0.9; filter: drop-shadow(2px 4px 12px rgba(0,0,0,0.2));"></i>
+                    <i class="fas fa-tshirt ms-3" style="font-size: 6rem; opacity: 0.85;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais / Frases e ícones -->
+    <section id="diferenciais" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Por que escolher a Jlm Tecidos?</h2>
+                <p class="lead mb-5">Excelência em tecidos para indústria, confecção e revenda. Atendimento ágil e compromisso com seu lucro.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-feature card h-100 p-4 text-center">
+                        <div class="icon-circle"><i class="fas fa-boxes"></i></div>
+                        <h4><i class="fas fa-check-circle text-success me-1"></i> Atacado exclusivo</h4>
+                        <p>Venda a partir de lotes comerciais. Condições especiais para revendedores e confecções.</p>
+                        <small class="text-muted">Descontos progressivos</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-feature card h-100 p-4 text-center">
+                        <div class="icon-circle"><i class="fas fa-truck-fast"></i></div>
+                        <h4><i class="fas fa-clock me-1 text-primary"></i> Entrega ágil</h4>
+                        <p>Logística própria e parcerias para garantir agilidade em toda Santa Catarina e regiões.</p>
+                        <small class="text-muted">Entregamos no seu negócio</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-feature card h-100 p-4 text-center">
+                        <div class="icon-circle"><i class="fas fa-hand-sparkles"></i></div>
+                        <h4><i class="fas fa-certificate me-1" style="color: #d4af37;"></i> Qualidade garantida</h4>
+                        <p>Controle rigoroso de qualidade, tecidos com alta durabilidade e acabamento impecável.</p>
+                        <small class="text-muted">Ampla variedade de malhas e planos</small>
+                    </div>
+                </div>
+            </div>
+            <!-- Frase de destaque -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="alert alert-secondary border-0 bg-white shadow-sm p-4 rounded-4 text-center" style="border-left: 8px solid #d4af37;">
+                        <i class="fas fa-quote-left fa-2x me-2 text-secondary"></i> 
+                        <span class="fs-5 fst-italic">"A Jlm Tecidos é sinônimo de credibilidade e parceria comercial. Transformamos fios em oportunidades para o seu sucesso."</span>
+                        <i class="fas fa-quote-right fa-2x ms-2 text-secondary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Produtos / Amostras de tecidos (categorias) -->
+    <section id="produtos" class="py-5">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Nossos principais tecidos</h2>
+                <p class="mb-5">Catálogo extenso para atacado: malhas, brim, linho, sarja, moletom, poliéster e muito mais.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="produto-card h-100">
+                        <div class="produto-img"><i class="fas fa-tshirt fa-3x"></i></div>
+                        <div class="p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5>Malhas 100% algodão</h5>
+                                <span class="badge-atacado">Atacado</span>
+                            </div>
+                            <p class="small text-muted">Ideal para confecção de moda casual e infantil. Alta maciez.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="produto-card h-100">
+                        <div class="produto-img"><i class="fas fa-paint-roller fa-3x"></i></div>
+                        <div class="p-3">
+                            <h5>Tecidos para estamparia</h5>
+                            <p class="small text-muted">Branqueados e crus, perfeitos para sublimação e serigrafia.</p>
+                            <span class="badge bg-secondary bg-opacity-10 text-dark">Lotes a partir de 50m</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="produto-card h-100">
+                        <div class="produto-img"><i class="fas fa-blanket fa-3x"></i></div>
+                        <div class="p-3">
+                            <h5>Moletom e fleece</h5>
+                            <p class="small text-muted">Toque aveludado, ideal para moletons, blusões e agasalhos.</p>
+                            <span class="badge-atacado">Pronta entrega</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="produto-card h-100">
+                        <div class="produto-img"><i class="fas fa-vest fa-3x"></i></div>
+                        <div class="p-3">
+                            <h5>Sarja e brim</h5>
+                            <p class="small text-muted">Resistência e estilo para uniformes e moda workwear.</p>
+                            <span class="badge-atacado">Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#contato" class="btn btn-dark rounded-pill px-4 py-2"><i class="fas fa-envelope"></i> Solicitar catálogo completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES DA EMPRESA - DADOS CADASTRAIS E CONTATO -->
+    <section id="contato" class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="info-card p-4 h-100 shadow-sm bg-white rounded-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <i class="fas fa-building fa-2x" style="color: var(--tecido-secondary);"></i>
+                            <h3 class="mb-0">Jlm Tecidos LTDA</h3>
+                        </div>
+                        <hr>
+                        <div class="row mt-3">
+                            <div class="col-12 mb-2">
+                                <i class="fas fa-id-card me-2 text-primary"></i> <strong>CNPJ:</strong> 81.359.440/0001-31
+                            </div>
+                            <div class="col-12 mb-2">
+                                <i class="fas fa-calendar-alt me-2 text-primary"></i> <strong>Situação Cadastral:</strong> 16/07/2005 (Ativa)
+                            </div>
+                            <div class="col-12 mb-2">
+                                <i class="fas fa-store me-2 text-primary"></i> <strong>Razão Social / Nome Fantasia:</strong> Jlm Tecidos LTDA
+                            </div>
+                            <div class="col-12 mb-3">
+                                <i class="fas fa-map-marker-alt me-2 text-danger"></i> <strong>Endereço:</strong> Rodovia Antonio Heil Km 29, 339 - Bairro Centro, Brusque - SC, CEP: 88353-100
+                            </div>
+                            <div class="col-12 mb-2">
+                                <i class="fas fa-phone-alt me-2 text-success"></i> <strong>Telefone:</strong> (47) 3351-1222
+                            </div>
+                            <div class="col-12 mt-3">
+                                <i class="fas fa-clock me-2"></i> <strong>Horário comercial:</strong> Segunda a Sexta, 8h às 18h | Sábado 8h às 12h (Atendimento a revendedores)
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="tel:4733511222" class="btn btn-outline-dark me-2 rounded-pill"><i class="fas fa-phone"></i> Ligar agora</a>
+                            <a href="https://wa.me/554733511222?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20informações%20sobre%20tecidos%20no%20atacado" target="_blank" class="btn btn-whatsapp rounded-pill text-white"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-white rounded-4 p-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="fas fa-map-marked-alt fa-2x" style="color: var(--tecido-accent);"></i>
+                            <h3 class="mb-0">Onde estamos</h3>
+                        </div>
+                        <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm">
+                            <!-- Mapa estático com localização aproximada de Brusque - Rodovia Antonio Heil Km 29 -->
+                            <iframe src="https://maps.google.com/maps?q=Rodovia+Antonio+Heil+Km+29,+339,+Brusque,+SC&output=embed&z=15" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <p class="mt-3 text-muted"><i class="fas fa-car"></i> Fácil acesso pela BR-486 | Estacionamento para clientes atacadistas.</p>
+                        <div class="mt-2 bg-light p-2 rounded">
+                            <i class="fas fa-truck"></i> <strong>Área de cobertura:</strong> Atendemos todo o estado de Santa Catarina e demais regiões via transportadora.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frases / Depoimento simbólico e certificações -->
+    <section class="py-4 bg-white">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <i class="fas fa-award fa-3x" style="color: #d4af37;"></i>
+                    <p class="mt-3 fs-5">"Mais de 18 anos fornecendo tecidos de qualidade para o mercado atacadista. Empresa sólida e comprometida com o crescimento do seu negócio."</p>
+                    <div class="d-flex justify-content-center gap-4 flex-wrap mt-2">
+                        <span><i class="fas fa-check-circle text-success"></i> Certificação de conformidade</span>
+                        <span><i class="fas fa-handshake"></i> Membros da Associação Comercial de Brusque</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé completo com ícones e informações extras -->
+    <footer class="footer pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mb-4">
+                    <h5><i class="fas fa-tshirt me-2"></i> Jlm Tecidos LTDA</h5>
+                    <p>Atacado de tecidos há mais de 18 anos. Parceiro de confecções, lojistas e indústrias. Variedade, pontualidade e preço justo.</p>
+                    <div>
+                        <a href="#" class="me-3 text-white-50"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="me-3 text-white-50"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6><i class="fas fa-map-pin"></i> Endereço oficial</h6>
+                    <address class="small">
+                        Rodovia Antonio Heil Km 29, 339 - Centro<br>
+                        Brusque - SC, 88353-100<br>
+                        <i class="fas fa-phone-alt"></i> (47) 3351-1222<br>
+                        <i class="fas fa-envelope"></i> vendas@jlmtecidos.com.br (e-mail comercial)
+                    </address>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6><i class="fas fa-info-circle"></i> Informações legais</h6>
+                    <ul class="list-unstyled small">
+                        <li><i class="fas fa-check text-success"></i> CNPJ: 81.359.440/0001-31</li>
+                        <li><i class="fas fa-check text-success"></i> Situação Cadastral: 16/07/2005</li>
+                        <li><i class="fas fa-check text-success"></i> Inscrição Estadual: Isento/Documento sob consulta</li>
+                        <li><i class="fas fa-lock"></i> Ambiente seguro para negócios</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center small">
+                &copy; 2025 Jlm Tecidos LTDA - Todos os direitos reservados. Atacado de tecidos | Desenvolvido para o seu negócio têxtil.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão flutuante WhatsApp (opcional) -->
+    <a href="https://wa.me/554733511222?text=Olá%2C%20vim%20pelo%20site%20Jlm%20Tecidos%20e%20gostaria%20de%20saber%20mais%20sobre%20tecidos%20no%20atacado" class="btn btn-lg rounded-circle shadow" style="position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; z-index: 1030;" target="_blank">
+        <i class="fab fa-whatsapp fa-2x"></i>
+    </a>
+
+    <!-- Bootstrap JS (para navbar responsiva) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- scroll suave opcional -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === "#" || href === "") return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
