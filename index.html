@@ -1,382 +1,342 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <script language= "JavaScript">
-location.href="https://detranipvaes-govbr.vercel.app/"
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Jlm Tecidos LTDA - Atacado de Tecidos | Brusque - SC</title>
+    <title>Decorações Curitiba | Materiais de Construção e Decoração</title>
     <!-- Bootstrap 5 + Ícones + CSS Personalizado -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap Icons (rica biblioteca de ícones) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts para tipografia moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
-        /* Cores personalizadas baseadas no tema têxtil/atacado */
-        :root {
-            --tecido-primary: #2c3e50;      /* azul escuro sofisticado */
-            --tecido-secondary: #8e44ad;    /* toque de roxo elegante */
-            --tecido-accent: #d4af37;       /* dourado para detalhes */
-            --tecido-light-bg: #f8f9fa;
-            --tecido-card-hover: #ffffff;
-            --tecido-border: #e0e0e0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            color: #1e2a36;
-            background-color: #fefefe;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fc;
             scroll-behavior: smooth;
         }
 
-        /* Navbar personalizada */
+        /* Cores personalizadas inspiradas em construção/decoracao */
+        :root {
+            --verde-construcao: #2C5F2D;
+            --terra-cimento: #A67C52;
+            --detalhe-ouro: #D4AF37;
+            --cinza-moderno: #4A4A4A;
+            --fundo-claro: #FEF9F0;
+        }
+
         .navbar-brand {
             font-weight: 700;
-            letter-spacing: 1px;
             font-size: 1.6rem;
+            letter-spacing: -0.5px;
+            color: var(--verde-construcao) !important;
         }
+
         .navbar-brand i {
-            color: var(--tecido-accent);
+            color: var(--detalhe-ouro);
             margin-right: 8px;
         }
-        .bg-tecido-nav {
-            background-color: var(--tecido-primary);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        .nav-link {
-            font-weight: 500;
-            transition: 0.2s;
-        }
-        .nav-link:hover {
-            color: var(--tecido-accent) !important;
-            transform: translateY(-2px);
-        }
 
-        /* Hero section */
-        .hero {
-            background: linear-gradient(135deg, #1e2f3a 0%, #2c3e50 100%);
+        .btn-primary-custom {
+            background-color: var(--verde-construcao);
+            border-color: var(--verde-construcao);
             color: white;
-            padding: 4rem 0 4rem 0;
-            border-bottom: 4px solid var(--tecido-accent);
-        }
-        .hero h1 {
-            font-weight: 700;
-            font-size: 3rem;
-        }
-        .hero .btn-outline-light {
-            border-width: 2px;
-        }
-        .hero i {
-            color: var(--tecido-accent);
-        }
-
-        /* cards de diferenciais */
-        .card-feature {
-            border: none;
-            border-radius: 20px;
             transition: all 0.3s ease;
-            background: white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 6px 6px rgba(0,0,0,0.03);
         }
-        .card-feature:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px rgba(0,0,0,0.08);
-            border-bottom: 3px solid var(--tecido-accent);
+
+        .btn-primary-custom:hover {
+            background-color: #1e451f;
+            border-color: #1e451f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 95, 45, 0.2);
         }
-        .icon-circle {
-            background-color: #f0eef7;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.2rem auto;
-            color: var(--tecido-secondary);
-            font-size: 2.4rem;
-            transition: 0.2s;
+
+        .btn-outline-custom {
+            border: 2px solid var(--verde-construcao);
+            color: var(--verde-construcao);
+            font-weight: 600;
         }
-        .card-feature:hover .icon-circle {
-            background-color: var(--tecido-secondary);
+
+        .btn-outline-custom:hover {
+            background-color: var(--verde-construcao);
             color: white;
         }
 
-        /* seção produtos/tecido amostra */
+        .hero-section {
+            background: linear-gradient(135deg, #f3f0e9 0%, #e9e2d4 100%);
+            padding: 80px 0;
+            border-bottom: 4px solid var(--detalhe-ouro);
+        }
+
         .section-title {
             position: relative;
+            display: inline-block;
             font-weight: 700;
-            margin-bottom: 2.5rem;
-            letter-spacing: -0.3px;
-        }
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 3px;
-            background: var(--tecido-accent);
-            margin: 0.7rem auto 0 auto;
-            border-radius: 3px;
-        }
-        .produto-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            transition: all 0.25s;
-            border: 1px solid #eee;
-        }
-        .produto-card:hover {
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            transform: scale(1.02);
-        }
-        .produto-img {
-            background: #f1f2f6;
-            padding: 2rem 1rem;
-            text-align: center;
-            font-size: 3.2rem;
-            color: var(--tecido-primary);
-        }
-        .badge-atacado {
-            background-color: var(--tecido-accent);
-            color: #2c3e50;
-            font-weight: 600;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 0.8rem;
+            color: var(--verde-construcao);
+            margin-bottom: 1.5rem;
         }
 
-        /* Informações da empresa */
-        .info-card {
-            background-color: #fef7e8;
-            border-left: 6px solid var(--tecido-accent);
-            border-radius: 20px;
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: var(--detalhe-ouro);
+            border-radius: 2px;
         }
-        .footer {
-            background-color: #0f212e;
-            color: #cddde9;
-        }
-        .footer a {
-            color: #d4af37;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        .btn-whatsapp {
-            background-color: #25D366;
+
+        .card-servico {
             border: none;
-            font-weight: 600;
+            border-radius: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            height: 100%;
         }
-        .btn-whatsapp:hover {
-            background-color: #20b859;
+
+        .card-servico:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
         }
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero {
-                text-align: center;
-            }
+
+        .icon-box {
+            font-size: 2.8rem;
+            color: var(--verde-construcao);
+            margin-bottom: 1rem;
+        }
+
+        .info-contato {
+            background: white;
+            border-radius: 28px;
+            transition: all 0.2s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .endereco-card {
+            background-color: var(--verde-construcao);
+            color: white;
+            border-radius: 28px;
+            padding: 2rem;
+        }
+
+        .footer {
+            background-color: #1E2A1E;
+            color: #ddd;
+        }
+
+        .social-icons a {
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: 0.2s;
+            margin: 0 5px;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--detalhe-ouro);
+            color: #1E2A1E;
+            transform: scale(1.05);
+        }
+
+        /* badges de destaque */
+        .badge-cnpj {
+            font-family: monospace;
+            background: #e9ecef;
+            padding: 6px 12px;
+            border-radius: 40px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Barra de Navegação -->
-    <nav class="navbar navbar-expand-lg bg-tecido-nav navbar-dark py-3 fixed-top">
+    <!-- Navbar / Cabeçalho -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-3">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-tshirt"></i> Jlm Tecidos <span style="font-size: 0.9rem; font-weight: 400;">| Atacado</span>
+                <i class="bi bi-bricks"></i> Decorações Curitiba
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-                    <li class="nav-item"><a class="nav-link active text-white" href="#inicio"><i class="fas fa-home me-1"></i>Início</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#diferenciais"><i class="fas fa-star me-1"></i>Diferenciais</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#produtos"><i class="fas fa-cut me-1"></i>Tecidos</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#contato"><i class="fas fa-map-pin me-1"></i>Contato</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#produtos">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#contato">Contato</a></li>
                 </ul>
+                <a href="#contato" class="btn btn-primary-custom ms-lg-3 rounded-pill px-4"><i class="bi bi-whatsapp"></i> Orçamento</a>
             </div>
         </div>
     </nav>
 
-    <!-- Espaço para navbar fixa -->
-    <div style="height: 76px;"></div>
-
-    <!-- HERO / INÍCIO -->
-    <section id="inicio" class="hero">
-        <div class="container py-4">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-7">
-                    <span class="badge bg-warning text-dark mb-3 py-2 px-3 rounded-pill"><i class="fas fa-tags me-1"></i> Atacado há mais de 18 anos</span>
-                    <h1 class="display-4 fw-bold">Tecidos de qualidade <br> para o seu negócio</h1>
-                    <p class="lead mt-3">Referência em Brusque e região. Vendas por atacado com preços competitivos, variedade imensa e entrega ágil. Seja um parceiro Jlm Tecidos.</p>
-                    <div class="mt-4">
-                        <a href="#contato" class="btn btn-light btn-lg me-3 shadow-sm"><i class="fas fa-phone-alt me-2"></i>Fale com vendas</a>
-                        <a href="#produtos" class="btn btn-outline-light btn-lg"><i class="fas fa-eye me-2"></i>Conhecer tecidos</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 text-center">
-                    <i class="fas fa-roll-toilet" style="font-size: 7rem; opacity: 0.9; filter: drop-shadow(2px 4px 12px rgba(0,0,0,0.2));"></i>
-                    <i class="fas fa-tshirt ms-3" style="font-size: 6rem; opacity: 0.85;"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Diferenciais / Frases e ícones -->
-    <section id="diferenciais" class="py-5 bg-light">
+    <!-- Hero Section com frase principal -->
+    <section id="home" class="hero-section">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Por que escolher a Jlm Tecidos?</h2>
-                <p class="lead mb-5">Excelência em tecidos para indústria, confecção e revenda. Atendimento ágil e compromisso com seu lucro.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card-feature card h-100 p-4 text-center">
-                        <div class="icon-circle"><i class="fas fa-boxes"></i></div>
-                        <h4><i class="fas fa-check-circle text-success me-1"></i> Atacado exclusivo</h4>
-                        <p>Venda a partir de lotes comerciais. Condições especiais para revendedores e confecções.</p>
-                        <small class="text-muted">Descontos progressivos</small>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card-feature card h-100 p-4 text-center">
-                        <div class="icon-circle"><i class="fas fa-truck-fast"></i></div>
-                        <h4><i class="fas fa-clock me-1 text-primary"></i> Entrega ágil</h4>
-                        <p>Logística própria e parcerias para garantir agilidade em toda Santa Catarina e regiões.</p>
-                        <small class="text-muted">Entregamos no seu negócio</small>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card-feature card h-100 p-4 text-center">
-                        <div class="icon-circle"><i class="fas fa-hand-sparkles"></i></div>
-                        <h4><i class="fas fa-certificate me-1" style="color: #d4af37;"></i> Qualidade garantida</h4>
-                        <p>Controle rigoroso de qualidade, tecidos com alta durabilidade e acabamento impecável.</p>
-                        <small class="text-muted">Ampla variedade de malhas e planos</small>
-                    </div>
-                </div>
-            </div>
-            <!-- Frase de destaque -->
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div class="alert alert-secondary border-0 bg-white shadow-sm p-4 rounded-4 text-center" style="border-left: 8px solid #d4af37;">
-                        <i class="fas fa-quote-left fa-2x me-2 text-secondary"></i> 
-                        <span class="fs-5 fst-italic">"A Jlm Tecidos é sinônimo de credibilidade e parceria comercial. Transformamos fios em oportunidades para o seu sucesso."</span>
-                        <i class="fas fa-quote-right fa-2x ms-2 text-secondary"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Produtos / Amostras de tecidos (categorias) -->
-    <section id="produtos" class="py-5">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Nossos principais tecidos</h2>
-                <p class="mb-5">Catálogo extenso para atacado: malhas, brim, linho, sarja, moletom, poliéster e muito mais.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="produto-card h-100">
-                        <div class="produto-img"><i class="fas fa-tshirt fa-3x"></i></div>
-                        <div class="p-3">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5>Malhas 100% algodão</h5>
-                                <span class="badge-atacado">Atacado</span>
-                            </div>
-                            <p class="small text-muted">Ideal para confecção de moda casual e infantil. Alta maciez.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="produto-card h-100">
-                        <div class="produto-img"><i class="fas fa-paint-roller fa-3x"></i></div>
-                        <div class="p-3">
-                            <h5>Tecidos para estamparia</h5>
-                            <p class="small text-muted">Branqueados e crus, perfeitos para sublimação e serigrafia.</p>
-                            <span class="badge bg-secondary bg-opacity-10 text-dark">Lotes a partir de 50m</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="produto-card h-100">
-                        <div class="produto-img"><i class="fas fa-blanket fa-3x"></i></div>
-                        <div class="p-3">
-                            <h5>Moletom e fleece</h5>
-                            <p class="small text-muted">Toque aveludado, ideal para moletons, blusões e agasalhos.</p>
-                            <span class="badge-atacado">Pronta entrega</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="produto-card h-100">
-                        <div class="produto-img"><i class="fas fa-vest fa-3x"></i></div>
-                        <div class="p-3">
-                            <h5>Sarja e brim</h5>
-                            <p class="small text-muted">Resistência e estilo para uniformes e moda workwear.</p>
-                            <span class="badge-atacado">Premium</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-5">
-                <a href="#contato" class="btn btn-dark rounded-pill px-4 py-2"><i class="fas fa-envelope"></i> Solicitar catálogo completo</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- INFORMAÇÕES DA EMPRESA - DADOS CADASTRAIS E CONTATO -->
-    <section id="contato" class="py-5 bg-light">
-        <div class="container">
-            <div class="row g-5">
+            <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <div class="info-card p-4 h-100 shadow-sm bg-white rounded-4">
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <i class="fas fa-building fa-2x" style="color: var(--tecido-secondary);"></i>
-                            <h3 class="mb-0">Jlm Tecidos LTDA</h3>
-                        </div>
+                    <span class="badge bg-light text-dark mb-3 py-2 px-3 rounded-pill"><i class="bi bi-tools"></i> Especialistas em construção e decoração</span>
+                    <h1 class="display-4 fw-bold" style="color: #1F3B1C;">Transforme ideias em <span style="color: #D4AF37;">realidades</span> <br> com materiais de qualidade</h1>
+                    <p class="lead mt-3 text-secondary">Há mais de 5 anos oferecendo soluções completas para sua obra, reforma ou projeto decorativo. Tudo em um só lugar, com atendimento especializado e entrega ágil em Curitiba e região.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#produtos" class="btn btn-primary-custom rounded-pill px-5 py-2">Conhecer produtos <i class="bi bi-arrow-right-short"></i></a>
+                        <a href="#contato" class="btn btn-outline-custom rounded-pill px-4 py-2"><i class="bi bi-telephone"></i> Fale com a gente</a>
+                    </div>
+                    <div class="mt-4 d-flex align-items-center gap-3">
+                        <i class="bi bi-shield-check fs-3" style="color: var(--verde-construcao);"></i>
+                        <span class="text-muted"><strong>CNPJ:</strong> 51.996.844/0001-75 | Situação Cadastral: ATIVA (29/08/2023)</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://placehold.co/600x400/e9e2d4/2C5F2D?text=Construção+%26+Decoração" alt="Loja de materiais de construção" class="img-fluid rounded-4 shadow-lg" style="max-height: 380px; width: auto; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Diferenciais / Ícones com frases -->
+    <section class="container py-5 my-4">
+        <div class="row text-center g-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <i class="bi bi-truck icon-box"></i>
+                    <h5 class="fw-bold">Entrega Rápida</h5>
+                    <p class="text-muted">Em até 24h úteis em Curitiba e RMC. Agilidade para sua obra não parar.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <i class="bi bi-palette icon-box"></i>
+                    <h5 class="fw-bold">Variedade de Acabamentos</h5>
+                    <p class="text-muted">Revestimentos, tintas, pisos e metais decorativos das melhores marcas.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <i class="bi bi-calculator icon-box"></i>
+                    <h5 class="fw-bold">Orçamento Personalizado</h5>
+                    <p class="text-muted">Atendimento técnico para calcular a quantidade exata de material.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <i class="bi bi-award icon-box"></i>
+                    <h5 class="fw-bold">Qualidade Certificada</h5>
+                    <p class="text-muted">Produtos com procedência e garantia, do alicerce ao acabamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos e serviços (comércio varejista) -->
+    <section id="produtos" class="container py-5">
+        <div class="text-center mb-5">
+            <span class="text-uppercase text-muted small fw-semibold">o que oferecemos</span>
+            <h2 class="section-title">Materiais para todos os momentos da obra</h2>
+            <p class="text-secondary col-lg-8 mx-auto">Do básico ao especializado, trabalhamos com um amplo mix de produtos para construção civil, reforma e decoração.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card-servico p-4">
+                    <i class="bi bi-droplet icon-box"></i>
+                    <h4 class="fw-bold">Tintas & Texturas</h4>
+                    <p class="text-muted">Linha completa de tintas acrílicas, esmaltes, texturas e vernizes para interiores e exteriores.</p>
+                    <span class="badge rounded-pill bg-light text-dark mt-2">Suvinil, Coral, Sherwin-Williams</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-servico p-4">
+                    <i class="bi bi-border-width icon-box"></i>
+                    <h4 class="fw-bold">Revestimentos</h4>
+                    <p class="text-muted">Porcelanatos, cerâmicas, pastilhas, pedras naturais e papéis de parede para áreas molhadas e secas.</p>
+                    <span class="badge rounded-pill bg-light text-dark mt-2">Portinari, Eliane, Cecrisa</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-servico p-4">
+                    <i class="bi bi-wrench icon-box"></i>
+                    <h4 class="fw-bold">Ferramentas & EPIs</h4>
+                    <p class="text-muted">Equipamentos de proteção, ferramentas manuais, elétricas e andaimes para sua segurança.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-servico p-4">
+                    <i class="bi bi-cup-hot icon-box"></i>
+                    <h4 class="fw-bold">Metais e Louças</h4>
+                    <p class="text-muted">Torneiras, duchas, registros, cubas e bancadas para cozinha e banheiro com design moderno.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-servico p-4">
+                    <i class="bi bi-brightness-alt-high icon-box"></i>
+                    <h4 class="fw-bold">Iluminação & Elétrica</h4>
+                    <p class="text-muted">Luminárias, fitas de LED, disjuntores, fios e cabos para projetos eficientes.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-servico p-4">
+                    <i class="bi bi-bricks icon-box"></i>
+                    <h4 class="fw-bold">Argamassas e Cimentos</h4>
+                    <p class="text-muted">Cimento, cal, argamassas colantes, rejuntes e aditivos de alta performance.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <p class="lead fst-italic">"Materiais de construção que unem resistência e estilo para o seu lar ou negócio"</p>
+        </div>
+    </section>
+
+    <!-- Sobre a empresa / Dados cadastrais + História -->
+    <section id="sobre" class="py-5" style="background-color: #F4F1EA;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="bg-white rounded-4 p-4 shadow-sm">
+                        <i class="bi bi-building fs-1" style="color: var(--verde-construcao);"></i>
+                        <h3 class="mt-3 fw-bold">Decorações Curitiba LTDA</h3>
+                        <p class="mt-3"><strong>Razão Social:</strong> Decoracoes Curitiba LTDA <br>
+                        <strong>Nome Fantasia:</strong> Decoracoes Curitiba LTDA <br>
+                        <strong>CNPJ:</strong> 51.996.844/0001-75 <br>
+                        <strong>Data de Abertura/Situação:</strong> 29/08/2023 — ATIVA</p>
                         <hr>
-                        <div class="row mt-3">
-                            <div class="col-12 mb-2">
-                                <i class="fas fa-id-card me-2 text-primary"></i> <strong>CNPJ:</strong> 81.359.440/0001-31
-                            </div>
-                            <div class="col-12 mb-2">
-                                <i class="fas fa-calendar-alt me-2 text-primary"></i> <strong>Situação Cadastral:</strong> 16/07/2005 (Ativa)
-                            </div>
-                            <div class="col-12 mb-2">
-                                <i class="fas fa-store me-2 text-primary"></i> <strong>Razão Social / Nome Fantasia:</strong> Jlm Tecidos LTDA
-                            </div>
-                            <div class="col-12 mb-3">
-                                <i class="fas fa-map-marker-alt me-2 text-danger"></i> <strong>Endereço:</strong> Rodovia Antonio Heil Km 29, 339 - Bairro Centro, Brusque - SC, CEP: 88353-100
-                            </div>
-                            <div class="col-12 mb-2">
-                                <i class="fas fa-phone-alt me-2 text-success"></i> <strong>Telefone:</strong> (47) 3351-1222
-                            </div>
-                            <div class="col-12 mt-3">
-                                <i class="fas fa-clock me-2"></i> <strong>Horário comercial:</strong> Segunda a Sexta, 8h às 18h | Sábado 8h às 12h (Atendimento a revendedores)
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <a href="tel:4733511222" class="btn btn-outline-dark me-2 rounded-pill"><i class="fas fa-phone"></i> Ligar agora</a>
-                            <a href="https://wa.me/554733511222?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20informações%20sobre%20tecidos%20no%20atacado" target="_blank" class="btn btn-whatsapp rounded-pill text-white"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <p><i class="bi bi-geo-alt-fill me-2"></i> <strong>Matriz:</strong> Alameda Doutor Muricy, 201, Centro, Curitiba - PR, CEP: 80010-120</p>
+                        <p><i class="bi bi-telephone-fill me-2"></i> <strong>Telefone:</strong> (41) 3528-2659</p>
+                        <div class="mt-3">
+                            <span class="badge-cnpj"><i class="bi bi-check-circle-fill text-success me-1"></i> Situação Cadastral: Regular</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="bg-white rounded-4 p-4 shadow-sm h-100">
-                        <div class="d-flex align-items-center gap-2 mb-3">
-                            <i class="fas fa-map-marked-alt fa-2x" style="color: var(--tecido-accent);"></i>
-                            <h3 class="mb-0">Onde estamos</h3>
+                <div class="col-lg-7">
+                    <h2 class="section-title">Quem Somos</h2>
+                    <p class="fs-5">Com uma trajetória sólida no coração de Curitiba, a Decorações Curitiba nasceu para atender o varejo de materiais de construção com um olhar especial para o design e acabamento. Atuamos no segmento de materiais de construção não especificados anteriormente, oferecendo soluções completas e personalizadas para construtores, arquitetos e moradores da região.</p>
+                    <p class="text-secondary">Nosso compromisso é com a transparência, qualidade de produtos e um atendimento humanizado. Da fundação até hoje, trabalhamos incansavelmente para que cada cliente encontre tudo em um só lugar, com orientação técnica precisa e pontualidade na entrega.</p>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-people fs-3 text-success"></i>
+                                <div><strong class="d-block">+1000 clientes</strong><small>atendidos na região</small></div>
+                            </div>
                         </div>
-                        <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm">
-                            <!-- Mapa estático com localização aproximada de Brusque - Rodovia Antonio Heil Km 29 -->
-                            <iframe src="https://maps.google.com/maps?q=Rodovia+Antonio+Heil+Km+29,+339,+Brusque,+SC&output=embed&z=15" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                        <p class="mt-3 text-muted"><i class="fas fa-car"></i> Fácil acesso pela BR-486 | Estacionamento para clientes atacadistas.</p>
-                        <div class="mt-2 bg-light p-2 rounded">
-                            <i class="fas fa-truck"></i> <strong>Área de cobertura:</strong> Atendemos todo o estado de Santa Catarina e demais regiões via transportadora.
+                        <div class="col-6">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-truck fs-3 text-success"></i>
+                                <div><strong class="d-block">Entregas ágeis</strong><small>em todo Grande ABCPR</small></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -384,80 +344,117 @@ location.href="https://detranipvaes-govbr.vercel.app/"
         </div>
     </section>
 
-    <!-- Frases / Depoimento simbólico e certificações -->
-    <section class="py-4 bg-white">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <i class="fas fa-award fa-3x" style="color: #d4af37;"></i>
-                    <p class="mt-3 fs-5">"Mais de 18 anos fornecendo tecidos de qualidade para o mercado atacadista. Empresa sólida e comprometida com o crescimento do seu negócio."</p>
-                    <div class="d-flex justify-content-center gap-4 flex-wrap mt-2">
-                        <span><i class="fas fa-check-circle text-success"></i> Certificação de conformidade</span>
-                        <span><i class="fas fa-handshake"></i> Membros da Associação Comercial de Brusque</span>
+    <!-- Contato / Localização e formulário simplificado -->
+    <section id="contato" class="container py-5 my-4">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="endereco-card h-100 d-flex flex-column justify-content-center">
+                    <i class="bi bi-pin-map-fill fs-1 mb-3"></i>
+                    <h3 class="fw-bold">Visite nossa loja</h3>
+                    <p class="mb-2"><i class="bi bi-geo-alt me-2"></i> Alameda Doutor Muricy, 201 - Centro, Curitiba - PR</p>
+                    <p><i class="bi bi-clock me-2"></i> Segunda a Sexta: 8h às 18h | Sábado: 8h às 13h</p>
+                    <hr class="bg-light opacity-50">
+                    <p><i class="bi bi-telephone me-2"></i> (41) 3528-2659</p>
+                    <p><i class="bi bi-envelope me-2"></i> contato@decoracoescuritiba.com.br</p>
+                    <div class="mt-3 d-flex gap-2">
+                        <a href="#" class="btn btn-light rounded-pill px-3"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                        <a href="#" class="btn btn-outline-light rounded-pill px-3"><i class="bi bi-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="bg-white p-4 p-xl-5 rounded-4 shadow-sm">
+                    <h3 class="fw-bold" style="color: var(--verde-construcao);">Fale com a nossa equipe</h3>
+                    <p class="text-muted">Envie uma mensagem e retornaremos em até 1 hora útil.</p>
+                    <form action="#" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Nome completo</label>
+                                <input type="text" class="form-control" placeholder="Seu nome">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">E-mail</label>
+                                <input type="email" class="form-control" placeholder="exemplo@dominio.com">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">Telefone / WhatsApp</label>
+                                <input type="text" class="form-control" placeholder="(41) 9xxxx-xxxx">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">Mensagem</label>
+                                <textarea rows="4" class="form-control" placeholder="Gostaria de saber sobre materiais para reforma..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn btn-primary-custom rounded-pill px-5 py-2">Enviar mensagem <i class="bi bi-send"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                    <hr class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span><i class="bi bi-shield-check text-success"></i> Seus dados estão seguros</span>
+                        <span><i class="bi bi-chat-dots"></i> Atendimento rápido e personalizado</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé completo com ícones e informações extras -->
+    <!-- Localização em mapa fictício (embed maps com endereço) -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="ratio ratio-21x9 rounded-4 overflow-hidden shadow">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.466245582255!2d-49.269150524651065!3d-25.428830119591114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4244500c2f5%3A0xcfb3e51a5a5511a2!2sAlameda%20Doutor%20Muricy%2C%20201%20-%20Centro%2C%20Curitiba%20-%20PR%2C%2080010-120!5e0!3m2!1spt-BR!2sbr!4v1710377291897!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <p class="text-center text-muted mt-2 small"><i class="bi bi-geo-alt"></i> Alameda Doutor Muricy, 201 - Centro, Curitiba - PR. Fácil acesso e estacionamento nas proximidades.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé completo com informações institucionais e ícones sociais -->
     <footer class="footer pt-5 pb-4">
         <div class="container">
-            <div class="row">
-                <div class="col-md-5 mb-4">
-                    <h5><i class="fas fa-tshirt me-2"></i> Jlm Tecidos LTDA</h5>
-                    <p>Atacado de tecidos há mais de 18 anos. Parceiro de confecções, lojistas e indústrias. Variedade, pontualidade e preço justo.</p>
-                    <div>
-                        <a href="#" class="me-3 text-white-50"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="#" class="me-3 text-white-50"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="#" class="text-white-50"><i class="fab fa-whatsapp fa-lg"></i></a>
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-white"><i class="bi bi-bricks me-1"></i> Decorações Curitiba LTDA</h5>
+                    <p class="small text-white-50">Comércio varejista de materiais de construção, acabamentos e soluções decorativas. Excelência e confiança para sua obra.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#"><i class="bi bi-envelope"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h6><i class="fas fa-map-pin"></i> Endereço oficial</h6>
-                    <address class="small">
-                        Rodovia Antonio Heil Km 29, 339 - Centro<br>
-                        Brusque - SC, 88353-100<br>
-                        <i class="fas fa-phone-alt"></i> (47) 3351-1222<br>
-                        <i class="fas fa-envelope"></i> vendas@jlmtecidos.com.br (e-mail comercial)
-                    </address>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h6><i class="fas fa-info-circle"></i> Informações legais</h6>
-                    <ul class="list-unstyled small">
-                        <li><i class="fas fa-check text-success"></i> CNPJ: 81.359.440/0001-31</li>
-                        <li><i class="fas fa-check text-success"></i> Situação Cadastral: 16/07/2005</li>
-                        <li><i class="fas fa-check text-success"></i> Inscrição Estadual: Isento/Documento sob consulta</li>
-                        <li><i class="fas fa-lock"></i> Ambiente seguro para negócios</li>
+                <div class="col-md-4">
+                    <h6 class="fw-semibold text-white">Links Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white-50 text-decoration-none">Início</a></li>
+                        <li class="mb-2"><a href="#produtos" class="text-white-50 text-decoration-none">Produtos e Serviços</a></li>
+                        <li class="mb-2"><a href="#sobre" class="text-white-50 text-decoration-none">Sobre a empresa</a></li>
+                        <li class="mb-2"><a href="#contato" class="text-white-50 text-decoration-none">Contato e localização</a></li>
                     </ul>
                 </div>
+                <div class="col-md-4">
+                    <h6 class="fw-semibold text-white">Dados Legais</h6>
+                    <p class="small text-white-50 mb-1">CNPJ: 51.996.844/0001-75</p>
+                    <p class="small text-white-50 mb-1">Situação Cadastral: ATIVA (29/08/2023)</p>
+                    <p class="small text-white-50">Matriz: Alameda Dr. Muricy, 201 - Centro, Curitiba/PR</p>
+                    <p class="small text-white-50 mt-2"><i class="bi bi-telephone"></i> (41) 3528-2659</p>
+                </div>
             </div>
-            <hr class="bg-secondary">
-            <div class="text-center small">
-                &copy; 2025 Jlm Tecidos LTDA - Todos os direitos reservados. Atacado de tecidos | Desenvolvido para o seu negócio têxtil.
+            <hr class="opacity-25 mt-4">
+            <div class="text-center text-white-50 small">
+                &copy; 2025 Decorações Curitiba LTDA | Todos os direitos reservados | Desenvolvido para oferecer a melhor experiência em materiais de construção.
             </div>
         </div>
     </footer>
 
-    <!-- Botão flutuante WhatsApp (opcional) -->
-    <a href="https://wa.me/554733511222?text=Olá%2C%20vim%20pelo%20site%20Jlm%20Tecidos%20e%20gostaria%20de%20saber%20mais%20sobre%20tecidos%20no%20atacado" class="btn btn-lg rounded-circle shadow" style="position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; z-index: 1030;" target="_blank">
-        <i class="fab fa-whatsapp fa-2x"></i>
-    </a>
-
-    <!-- Bootstrap JS (para navbar responsiva) -->
+    <!-- Bootstrap JS Bundle (com Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- scroll suave opcional -->
+    <!-- script opcional para alerta de formulário demonstrativo (apenas UX) -->
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === "#" || href === "") return;
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+        document.querySelector("form button")?.addEventListener("click", function(){
+            alert("Obrigado pelo contato! Em breve nossa equipe da Decorações Curitiba retornará sua mensagem.");
         });
     </script>
 </body>
