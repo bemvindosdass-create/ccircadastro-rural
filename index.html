@@ -1,238 +1,900 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cemig - 2ª Via de Fatura de Energia | Emita pelo WhatsApp</title>
-<meta name="description" content="Solicite a 2ª via da sua fatura Cemig de forma rápida e segura pelo WhatsApp. Atendimento ágil para clientes residenciais e comerciais." />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-<style>
-  :root {
-    --cemig-green: #00A859;
-    --cemig-blue: #004A8F;
-    --whatsapp: #25D366;
-    --whatsapp-hover: #1ebe5a;
-    --accent: #E6F7EE;
-    --accent-fg: #1F6B4A;
-  }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1f2937; }
-  .text-cemig-blue { color: var(--cemig-blue) !important; }
-  .text-cemig-green { color: var(--cemig-green) !important; }
-  .bg-cemig-blue { background-color: var(--cemig-blue) !important; }
-  .bg-cemig-green { background-color: var(--cemig-green) !important; }
-  .bg-gradient-hero { background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue)); }
-  .logo-mark {
-    width: 40px; height: 40px; border-radius: 10px;
-    background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue));
-    display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 1.25rem;
-  }
-  .btn-whatsapp {
-    background-color: var(--whatsapp); color: #fff; border: none; border-radius: 999px;
-    font-weight: 600; padding: .65rem 1.5rem; box-shadow: 0 8px 20px rgba(37,211,102,.35);
-    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
-    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  }
-  .btn-whatsapp:hover { background-color: var(--whatsapp-hover); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(37,211,102,.45); }
-  .btn-whatsapp-lg { padding: .9rem 2rem; font-size: 1.1rem; }
-  .btn-outline-light-soft { border: 2px solid rgba(255,255,255,.4); background: rgba(255,255,255,.1); color: #fff; border-radius: 999px; font-weight: 600; padding: .65rem 1.5rem; backdrop-filter: blur(6px); }
-  .btn-outline-light-soft:hover { background: rgba(255,255,255,.2); color: #fff; }
-  .btn-white-pill { background: #fff; color: var(--cemig-green); border-radius: 999px; font-weight: 700; padding: .9rem 2rem; }
-  .btn-white-pill:hover { background: rgba(255,255,255,.92); color: var(--cemig-green); }
-  .top-bar { background: var(--cemig-blue); color: #fff; font-size: .875rem; }
-  .header-sticky { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom: 1px solid #e5e7eb; }
-  .badge-soft { background: var(--accent); color: var(--accent-fg); border-radius: 999px; padding: .25rem .65rem; font-weight: 600; font-size: .75rem; display: inline-flex; align-items: center; gap: .35rem; }
-  .badge-soft .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cemig-green); display: inline-block; }
-  .invoice-card { border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,.25); }
-  .highlight-box { border: 2px dashed rgba(0,168,89,.4); background: rgba(230,247,238,.5); border-radius: .9rem; }
-  .service-card { border-radius: 1rem; border: 1px solid #e5e7eb; transition: transform .25s ease, box-shadow .25s ease; }
-  .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -15px rgba(0,74,143,.25); }
-  .service-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--accent); color: var(--accent-fg); display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: background .25s ease, color .25s ease; }
-  .service-card:hover .service-icon { background: var(--cemig-green); color: #fff; }
-  .step-circle { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue)); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700; }
-  .chip { background: rgba(255,255,255,.15); color: #fff; border-radius: 999px; padding: .3rem 1rem; font-size: .875rem; font-weight: 500; backdrop-filter: blur(6px); display: inline-block; }
-  .trust-row { color: rgba(255,255,255,.92); font-size: .9rem; }
-  .trust-row span { display: inline-flex; align-items: center; gap: .35rem; }
-</style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18059704882"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18059704882');
+  </script>
+
+  <script>
+    function registrarConversao() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18059704882/5JZfCI6S358cELL0xKND',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
+    }
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Serviços Online</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --neo-green-dark: #083b2f;
+      --neo-green-main: #00A356;
+      --neo-green-light: #F0F9F3;
+      --text-dark: #333333;
+      --text-white: #FFFFFF;
+      --bg-beige: #F8F8F6;
+      --bg-white: #FFFFFF;
+      --border-light: #E0E0E0;
+      --shadow: 0 4px 10px rgba(0,0,0,0.1);
+      --tarifa-bg: #f3ece5;
+      --tarifa-border: #ddd4cb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .top-thin-bar {
+      background-color: var(--bg-beige);
+      padding: 6px 5%;
+      font-size: 11px;
+      color: #666;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .top-thin-bar .stock-info {
+      display: flex;
+      gap: 15px;
+    }
+
+    .top-thin-bar .top-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .header-main {
+      background-color: var(--bg-white);
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      min-height: 78px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      padding: 14px 0;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      align-items: center;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: stretch;
+      margin-left: 18px;
+    }
+
+    .area-cliente-btn {
+      background: var(--neo-green-dark);
+      color: #fff;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      min-height: 100%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .sub-header-green {
+      background-color: var(--neo-green-dark);
+      color: var(--text-white);
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .region-selector {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: bold;
+    }
+
+    .region-nav {
+      display: flex;
+      gap: 25px;
+      font-weight: 600;
+    }
+
+    .region-nav a.active {
+      border-bottom: 2px solid var(--neo-green-main);
+      padding-bottom: 3px;
+    }
+
+    .btn-servicos-online {
+      background-color: var(--neo-green-main);
+      color: var(--text-white);
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.3s;
+    }
+
+    .btn-servicos-online:hover {
+      background-color: #008f4c;
+    }
+
+    .hero-section {
+      background-image: linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.10)), url('/static/bg-pordosol.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 450px;
+      position: relative;
+    }
+
+    .services-container {
+      max-width: 1200px;
+      margin: -60px auto 34px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+    }
+
+    .service-card {
+      background-color: var(--bg-white);
+      padding: 25px 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transition: transform 0.2s, box-shadow 0.2s;
+      min-height: 160px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .service-card .icon-container {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-card .icon-container img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .service-card.todos,
+    .service-card.parcelamento {
+      background-color: var(--neo-green-light);
+    }
+
+    .service-card h3 {
+      font-size: 13px;
+      color: var(--text-dark);
+      font-weight: 700;
+      margin-bottom: 5px;
+      line-height: 1.25;
+    }
+
+    .highlight-banner-wrapper {
+      max-width: 1200px;
+      margin: 0 auto 22px;
+      padding: 0 20px;
+    }
+
+    .highlight-banner {
+      position: relative;
+      min-height: 420px;
+      border-radius: 28px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background-image: url('/static/card-segunda-via.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .highlight-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(25, 25, 25, 0.80) 0%,
+        rgba(25, 25, 25, 0.58) 28%,
+        rgba(25, 25, 25, 0.18) 56%,
+        rgba(25, 25, 25, 0.04) 100%
+      );
+      z-index: 1;
+    }
+
+    .highlight-content {
+      position: relative;
+      z-index: 2;
+      max-width: 590px;
+      padding: 55px;
+      color: #fff;
+    }
+
+    .highlight-content h2 {
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .highlight-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: 600;
+      margin-bottom: 42px;
+    }
+
+    .highlight-btn {
+      display: inline-block;
+      padding: 13px 26px;
+      border: 2px solid #fff;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .highlight-btn:hover {
+      background: #fff;
+      color: #222;
+    }
+
+    .highlight-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .highlight-dots span {
+      width: 24px;
+      height: 4px;
+      border-radius: 999px;
+      background: #d6d6d6;
+      display: inline-block;
+    }
+
+    .highlight-dots span.active {
+      background: #4b5c47;
+    }
+
+    .tarifa-wrapper {
+      max-width: 1200px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+
+    .tarifa-card {
+      background: var(--tarifa-bg);
+      border-radius: 28px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      min-height: 118px;
+    }
+
+    .tarifa-left {
+      width: 230px;
+      padding: 24px 30px;
+      border-right: 1px solid var(--tarifa-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .tarifa-mes {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--neo-green-main);
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .tarifa-left h3 {
+      font-size: 16px;
+      font-weight: 400;
+      color: #2f2f2f;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .tarifa-left a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--neo-green-main);
+    }
+
+    .tarifa-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 24px 48px;
+      color: var(--neo-green-main);
+    }
+
+    .tarifa-status {
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .tarifa-flag {
+      width: 24px;
+      height: 24px;
+      color: var(--neo-green-main);
+      flex-shrink: 0;
+    }
+
+    .negocio-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .negocio-header {
+      margin-bottom: 22px;
+    }
+
+    .negocio-header h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #022b2a;
+    }
+
+    .negocio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .negocio-card {
+      position: relative;
+      min-height: 260px;
+      border-radius: 28px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      text-decoration: none;
+      transition: transform 0.25s ease;
+    }
+
+    .negocio-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .negocio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.05) 0%,
+        rgba(0,0,0,0.18) 45%,
+        rgba(0,0,0,0.58) 100%
+      );
+      z-index: 1;
+    }
+
+    .negocio-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 22px 24px 26px;
+      color: #fff;
+    }
+
+    .negocio-content h3 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .negocio-arrow {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    .site-footer {
+      background: var(--neo-green-dark);
+      padding: 28px 20px;
+      margin-top: 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-company h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .footer-company p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 220px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      opacity: 0.8;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 99;
+    }
+
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .header-nav {
+        display: none;
+      }
+
+      .highlight-content h2 {
+        font-size: 42px;
+      }
+
+      .highlight-content p {
+        font-size: 17px;
+      }
+
+      .negocio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .negocio-card {
+        min-height: 240px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-thin-bar {
+        display: none;
+      }
+
+      .header-main {
+        min-height: auto;
+        padding: 10px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .header-actions {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .area-cliente-btn {
+        width: 100%;
+        min-height: 48px;
+        border-radius: 8px;
+      }
+
+      .hero-section {
+        height: 300px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sub-header-green {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .region-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .highlight-banner {
+        min-height: 340px;
+        border-radius: 18px;
+      }
+
+      .highlight-content {
+        padding: 30px 24px;
+        max-width: 100%;
+      }
+
+      .highlight-content h2 {
+        font-size: 34px;
+        margin-bottom: 18px;
+      }
+
+      .highlight-content p {
+        font-size: 15px;
+        margin-bottom: 26px;
+      }
+
+      .highlight-btn {
+        font-size: 15px;
+        padding: 11px 20px;
+      }
+
+      .tarifa-card {
+        flex-direction: column;
+        min-height: auto;
+        border-radius: 18px;
+      }
+
+      .tarifa-left {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--tarifa-border);
+        padding: 20px 22px;
+      }
+
+      .tarifa-right {
+        padding: 20px 22px;
+      }
+
+      .tarifa-status {
+        font-size: 32px;
+      }
+
+      .tarifa-flag {
+        width: 20px;
+        height: 20px;
+      }
+
+      .negocio-header h2 {
+        font-size: 20px;
+      }
+
+      .negocio-content h3 {
+        font-size: 24px;
+      }
+
+      .negocio-card {
+        min-height: 220px;
+        border-radius: 20px;
+      }
+
+      .site-footer {
+        padding: 24px 20px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .footer-company h3 {
+        font-size: 14px;
+      }
+
+      .footer-company p,
+      .footer-links a {
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<!-- Top bar -->
-<div class="top-bar">
-  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2 py-2">
-    <span><i class="bi bi-telephone-fill me-1"></i> Atendimento 24h</span>
-    <span class="d-none d-sm-inline">Agência Virtual • Cliente Cemig</span>
-  </div>
-</div>
-
-<!-- Header -->
-<header class="header-sticky">
-  <div class="container d-flex justify-content-between align-items-center py-3">
-    <div class="d-flex align-items-center gap-2">
-      <span class="logo-mark"><i class="bi bi-lightning-charge-fill"></i></span>
-      <div>
-        <div class="fw-bold text-cemig-blue lh-1" style="font-size:1.25rem;">CEMIG</div>
-        <div class="text-muted" style="font-size:.7rem;">Energia de Minas</div>
-      </div>
+  <div class="top-thin-bar">
+    <div class="stock-info">
+      <span>IBOV <b>|</b></span>
+      <span>R$ <span style="color: var(--neo-green-main)">▲</span> <b>|</b></span>
     </div>
-    <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp d-none d-md-inline-flex" style="padding:.5rem 1rem; font-size:.9rem;">
-      <i class="bi bi-whatsapp"></i> Falar no WhatsApp
+
+    <div class="top-links">
+      <a href="#">Acionistas e investidores <span style="font-size:8px">↗</span></a>
+    </div>
+  </div>
+
+  <header class="header-main">
+    <div class="logo-container">
+      <img src="/static/logo-neoenergia.png" alt="Logo" style="max-height: 45px;">
+    </div>
+
+    <nav class="header-nav">
+      <a href="#">Quem somos <span style="font-size:8px">▼</span></a>
+      <a href="#">Produtos e Soluções</a>
+      <a href="#">Sustentabilidade <span style="font-size:8px">▼</span></a>
+      <a href="#">Compromisso Social <span style="font-size:8px">▼</span></a>
+      <a href="#">Inovação <span style="font-size:8px">▼</span></a>
+      <a href="#">Talentos</a>
+      <a href="#">Sala de Comunicação <span style="font-size:8px">▼</span></a>
+      <a href="#">Fale Conosco <span style="font-size:8px">▼</span></a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#" class="area-cliente-btn">Área do cliente</a>
+    </div>
+  </header>
+
+  <div class="sub-header-green">
+    <div class="region-selector">
+      <span>SP / MS</span>
+      <span style="font-size:8px">▼</span>
+    </div>
+
+    <nav class="region-nav">
+      <a href="#" class="active">Início</a>
+      <a href="#">Sua Casa <span style="font-size:8px">▼</span></a>
+      <a href="#">Seu Negócio <span style="font-size:8px">▼</span></a>
+      <a href="#">Poder Público <span style="font-size:8px">▼</span></a>
+    </nav>
+
+    <a href="https://wa.me/5519997572388?text=Olá,%20quero%20atendimento." target="_blank" class="btn-servicos-online" onclick="registrarConversao()">
+      <span>→</span> Serviços on-line
     </a>
   </div>
-</header>
 
-<!-- Hero -->
-<section class="bg-gradient-hero text-white overflow-hidden">
-  <div class="container py-5 py-md-6">
-    <div class="row g-5 align-items-center py-4">
-      <div class="col-md-6">
-        <span class="chip">Atendimento oficial via WhatsApp</span>
-        <h1 class="fw-bold mt-3 display-5 lh-1">2ª Via de Fatura<br><span class="text-white-50">Cemig Energia</span></h1>
-        <p class="mt-3 fs-5 text-white-50">
-          Solicite a segunda via da sua conta de luz de forma rápida, prática e segura.
-          Receba em segundos diretamente no seu WhatsApp.
+  <div class="hero-section"></div>
+
+  <div class="services-container">
+    <div class="services-grid">
+
+      <a href="https://wa.me/5519997572388?text=Olá,%20quero%20solicitar%20segunda%20via%20e%20débito." target="_blank" class="service-card via" onclick="registrarConversao()">
+        <div class="icon-container">
+          <img src="/static/icone-boleto.png" alt="Ícone Segunda Via">
+        </div>
+        <h3>Segunda Via e Débito</h3>
+      </a>
+
+      <a href="https://wa.me/5519997572388?text=Olá,%20quero%20informar%20falta%20de%20energia." target="_blank" class="service-card falta" onclick="registrarConversao()">
+        <div class="icon-container">
+          <img src="/static/icone-lampada.png" alt="Ícone Falta de Energia">
+        </div>
+        <h3>Falta de Energia</h3>
+      </a>
+
+      <a href="https://wa.me/5519997572388?text=Olá,%20quero%20atendimento." target="_blank" class="service-card atendimento" onclick="registrarConversao()">
+        <div class="icon-container">
+          <img src="/static/icone-chat.png" alt="Ícone Atendimento">
+        </div>
+        <h3>Canais de Atendimento</h3>
+      </a>
+
+      <a href="https://wa.me/5519997572388?text=Olá,%20quero%20parcelar%20meus%20débitos." target="_blank" class="service-card parcelamento" onclick="registrarConversao()">
+        <div class="icon-container">
+          <img src="/static/icone-cartao.png" alt="Ícone Parcelamento">
+        </div>
+        <h3>Parcelamento de Débitos</h3>
+      </a>
+
+      <a href="https://wa.me/5519997572388?text=Olá,%20quero%20trocar%20o%20nome%20da%20conta." target="_blank" class="service-card troca" onclick="registrarConversao()">
+        <div class="icon-container">
+          <img src="/static/icone-usuario.png" alt="Ícone Troca de Nome">
+        </div>
+        <h3>Troca de Nome da Conta</h3>
+      </a>
+
+      <a href="https://wa.me/5519997572388?text=Olá,%20quero%20atendimento." target="_blank" class="service-card todos" onclick="registrarConversao()">
+        <div class="icon-container">
+          <img src="/static/icone-menu.png" alt="Ícone Todos os Serviços">
+        </div>
+        <h3>Todos os Serviços</h3>
+      </a>
+
+    </div>
+  </div>
+
+  <section class="highlight-banner-wrapper">
+    <div class="highlight-banner">
+      <div class="highlight-overlay"></div>
+
+      <div class="highlight-content">
+        <h2>Segunda Via</h2>
+        <p>
+          Acesse sua fatura pela Agência Virtual ou WhatsApp.
+          A fatura simplificada está temporariamente indisponível,
+          mas você pode consultar a Segunda Via normalmente.
         </p>
-        <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
-          <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp btn-whatsapp-lg">
-            <i class="bi bi-whatsapp"></i> Solicitar 2ª Via Agora
-          </a>
-          <a href="#como-funciona" class="btn-outline-light-soft text-decoration-none">Como funciona</a>
-        </div>
-        <div class="trust-row d-flex flex-wrap gap-4 mt-4">
-          <span><i class="bi bi-shield-check"></i> 100% Seguro</span>
-          <span><i class="bi bi-clock"></i> Resposta imediata</span>
-          <span><i class="bi bi-lightning-charge"></i> Sem cadastro</span>
-        </div>
-      </div>
 
-      <!-- Card -->
-      <div class="col-md-6">
-        <div class="invoice-card bg-white text-dark p-4 p-md-5">
-          <div class="d-flex justify-content-between align-items-center pb-3 border-bottom">
-            <div>
-              <div class="text-muted small">Conta de Energia Elétrica</div>
-              <div class="fw-bold text-cemig-blue fs-5">CEMIG D</div>
-            </div>
-            <i class="bi bi-file-earmark-text text-cemig-green" style="font-size:2.2rem;"></i>
-          </div>
-          <div class="mt-3 d-flex flex-column gap-2">
-            <div class="d-flex justify-content-between small"><span class="text-muted">Titular</span><span class="fw-semibold">Cliente Cemig</span></div>
-            <div class="d-flex justify-content-between small"><span class="text-muted">Instalação</span><span class="fw-semibold" style="letter-spacing:.15em;">•••• ••••</span></div>
-            <div class="d-flex justify-content-between small align-items-center"><span class="text-muted">Status</span><span class="badge-soft"><span class="dot"></span> Pronta para envio</span></div>
-            <div class="highlight-box p-3 mt-3 text-center">
-              <div class="text-cemig-blue fw-semibold text-uppercase" style="font-size:.7rem; letter-spacing:.06em; opacity:.85;">2ª Via Disponível</div>
-              <div class="text-cemig-blue fw-bold mt-1">Solicite agora pelo WhatsApp</div>
-              <div class="text-muted mt-1" style="font-size:.8rem;">Atendimento rápido e sem cadastro</div>
-            </div>
-          </div>
-          <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp w-100 mt-4">
-            <i class="bi bi-whatsapp"></i> Receber Minha Fatura
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Serviços -->
-<section class="container py-5 py-md-6">
-  <div class="text-center">
-    <h2 class="fw-bold text-cemig-blue display-6">Nossos Serviços</h2>
-    <p class="text-muted">Tudo o que você precisa, em um só lugar</p>
-  </div>
-  <div class="row g-4 mt-3">
-
-    <div class="col-md-4">
-      <div class="service-card bg-white p-4 h-100">
-        <span class="service-icon"><i class="bi bi-file-earmark-text"></i></span>
-        <h3 class="h5 fw-bold text-cemig-blue mt-3">2ª Via de Fatura</h3>
-        <p class="text-muted small">Receba sua conta atualizada com código de barras pronto para pagamento.</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
+        <a href="https://wa.me/5519997572388?text=Olá,%20quero%20acessar%20a%20segunda%20via." target="_blank" class="highlight-btn" onclick="registrarConversao()">
+          Acessar fatura
+        </a>
       </div>
     </div>
 
-    <div class="col-md-4">
-      <div class="service-card bg-white p-4 h-100">
-        <span class="service-icon"><i class="bi bi-download"></i></span>
-        <h3 class="h5 fw-bold text-cemig-blue mt-3">Histórico de Contas</h3>
-        <p class="text-muted small">Consulte faturas anteriores dos últimos 6 meses de forma fácil.</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
+    <div class="highlight-dots">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="active"></span>
+    </div>
+  </section>
+
+  <section class="tarifa-wrapper">
+    <div class="tarifa-card">
+      <div class="tarifa-left">
+        <span class="tarifa-mes">ABRIL</span>
+        <h3>Bandeira tarifária</h3>
+
+        <a href="https://wa.me/5519997572388?text=Olá,%20quero%20informações%20sobre%20bandeira%20tarifária." target="_blank" onclick="registrarConversao()">
+          Saiba mais
+        </a>
       </div>
+
+      <div class="tarifa-right">
+        <span class="tarifa-status">Verde</span>
+
+        <svg class="tarifa-flag" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M8 5H17L15 9L17 13H8V5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="negocio-section">
+    <div class="negocio-header">
+      <h2>Para seu Negócio</h2>
     </div>
 
-    <div class="col-md-4">
-      <div class="service-card bg-white p-4 h-100">
-        <span class="service-icon"><i class="bi bi-credit-card-2-front"></i></span>
-        <h3 class="h5 fw-bold text-cemig-blue mt-3">Negociação de Débitos</h3>
-        <p class="text-muted small">Parcele faturas em atraso e regularize sua situação rapidamente.</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
-      </div>
-    </div>
+    <div class="negocio-grid">
 
-  </div>
-</section>
-
-<!-- Como funciona -->
-<section id="como-funciona" class="py-5 py-md-6" style="background:#f1f5f9;">
-  <div class="container">
-    <div class="text-center">
-      <h2 class="fw-bold text-cemig-blue display-6">Como Funciona</h2>
-      <p class="text-muted">3 passos simples para receber sua 2ª via</p>
-    </div>
-    <div class="row g-4 mt-3">
-      <div class="col-md-4">
-        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
-          <span class="step-circle">1</span>
-          <h3 class="h5 fw-bold text-cemig-blue mt-3">Clique no WhatsApp</h3>
-          <p class="text-muted small mb-0">Acesse nosso atendimento oficial pelo botão abaixo.</p>
+      <a href="https://wa.me/5519997572388?text=Olá,%20quero%20informações%20sobre%20serviços%20para%20meu%20negócio." target="_blank" class="negocio-card" style="background-image: url('/static/negocio-servicos.jpg');" onclick="registrarConversao()">
+        <div class="negocio-overlay"></div>
+        <div class="negocio-content">
+          <h3>Nossos Serviços</h3>
+          <span class="negocio-arrow">→</span>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
-          <span class="step-circle">2</span>
-          <h3 class="h5 fw-bold text-cemig-blue mt-3">Informe seus dados</h3>
-          <p class="text-muted small mb-0">Envie o número da instalação ou CPF do titular.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
-          <span class="step-circle">3</span>
-          <h3 class="h5 fw-bold text-cemig-blue mt-3">Receba sua fatura</h3>
-          <p class="text-muted small mb-0">Sua segunda via chega em PDF, pronta para pagamento.</p>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-5">
-      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp btn-whatsapp-lg">
-        <i class="bi bi-whatsapp"></i> Iniciar Atendimento
       </a>
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="py-5 py-md-6">
-  <div class="container">
-    <div class="bg-gradient-hero text-white text-center p-4 p-md-5 rounded-4">
-      <i class="bi bi-whatsapp" style="font-size:2.75rem;"></i>
-      <h2 class="fw-bold mt-3 display-6">Precisa da sua 2ª via agora?</h2>
-      <p class="text-white-50 mb-4">Atendimento humanizado, rápido e disponível 24 horas por dia.</p>
-      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-white-pill text-decoration-none">
-        <i class="bi bi-whatsapp me-1"></i> Conversar no WhatsApp
+      <a href="https://wa.me/5519997572388?text=Olá,%20quero%20informações%20sobre%20projeto%20particular." target="_blank" class="negocio-card" style="background-image: url('/static/negocio-projeto.jpg');" onclick="registrarConversao()">
+        <div class="negocio-overlay"></div>
+        <div class="negocio-content">
+          <h3>Projeto Particular</h3>
+          <span class="negocio-arrow">→</span>
+        </div>
       </a>
+
+      <a href="https://wa.me/5519997572388?text=Olá,%20quero%20informações%20sobre%20meu%20contrato." target="_blank" class="negocio-card" style="background-image: url('/static/negocio-contrato.jpg');" onclick="registrarConversao()">
+        <div class="negocio-overlay"></div>
+        <div class="negocio-content">
+          <h3>Meu Contrato</h3>
+          <span class="negocio-arrow">→</span>
+        </div>
+      </a>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer class="border-top bg-white">
-  <div class="container py-4 text-center text-muted small">
-    <p class="mb-1">© <span id="year"></span> Atendimento Cemig — Segunda Via de Fatura</p>
-    <p class="mb-0">Este é um canal de atendimento. Para o site oficial acesse cemig.com.br</p>
-  </div>
-</footer>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-company">
+        <h3>Consulte Planos Corretora de Seguros LTDA</h3>
+        <p>Rua Carlos Coelho 161</p>
+        <p>Burgo Paulista</p>
+        <p>São Paulo SP</p>
+        <p>03682-020</p>
+        <p>CNPJ: 42.753.389/0001-96</p>
+        <p>Razão Social: Consulte Planos Corretora de Seguros LTDA</p>
+      </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+      <div class="footer-links">
+        <a href="politica-privacidade.html">Política de Privacidade</a>
+        <a href="termos-de-uso.html">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5519997572388?text=Olá,%20quero%20atendimento." target="_blank" class="floating-whatsapp" onclick="registrarConversao()">
+    ✆
+  </a>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1d060e3c0265438296a1b4fdab245e80","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
