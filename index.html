@@ -22,6 +22,11 @@
   .bg-cemig-blue { background-color: var(--cemig-blue) !important; }
   .bg-cemig-green { background-color: var(--cemig-green) !important; }
   .bg-gradient-hero { background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue)); }
+  .logo-mark {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue));
+    display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 1.25rem;
+  }
   .btn-whatsapp {
     background-color: var(--whatsapp); color: #fff; border: none; border-radius: 999px;
     font-weight: 600; padding: .65rem 1.5rem; box-shadow: 0 8px 20px rgba(37,211,102,.35);
@@ -63,7 +68,13 @@
 <!-- Header -->
 <header class="header-sticky">
   <div class="container d-flex justify-content-between align-items-center py-3">
-    <a href="#" class="d-inline-flex align-items-center"></a>
+    <div class="d-flex align-items-center gap-2">
+      <span class="logo-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+      <div>
+        <div class="fw-bold text-cemig-blue lh-1" style="font-size:1.25rem;">CEMIG</div>
+        <div class="text-muted" style="font-size:.7rem;">Energia de Minas</div>
+      </div>
+    </div>
     <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp d-none d-md-inline-flex" style="padding:.5rem 1rem; font-size:.9rem;">
       <i class="bi bi-whatsapp"></i> Falar no WhatsApp
     </a>
@@ -76,7 +87,7 @@
     <div class="row g-5 align-items-center py-4">
       <div class="col-md-6">
         <span class="chip">Atendimento oficial via WhatsApp</span>
-        <h1 class="fw-bold mt-3 display-5 lh-1">2ª Via de Fatura Cemig Energia</h1>
+        <h1 class="fw-bold mt-3 display-5 lh-1">2ª Via de Fatura<br><span class="text-white-50">Cemig Energia</span></h1>
         <p class="mt-3 fs-5 text-white-50">
           Solicite a segunda via da sua conta de luz de forma rápida, prática e segura.
           Receba em segundos diretamente no seu WhatsApp.
@@ -130,6 +141,7 @@
     <p class="text-muted">Tudo o que você precisa, em um só lugar</p>
   </div>
   <div class="row g-4 mt-3">
+
     <div class="col-md-4">
       <div class="service-card bg-white p-4 h-100">
         <span class="service-icon"><i class="bi bi-file-earmark-text"></i></span>
@@ -138,6 +150,7 @@
         <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
       </div>
     </div>
+
     <div class="col-md-4">
       <div class="service-card bg-white p-4 h-100">
         <span class="service-icon"><i class="bi bi-download"></i></span>
@@ -146,6 +159,7 @@
         <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
       </div>
     </div>
+
     <div class="col-md-4">
       <div class="service-card bg-white p-4 h-100">
         <span class="service-icon"><i class="bi bi-credit-card-2-front"></i></span>
@@ -154,6 +168,7 @@
         <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
       </div>
     </div>
+
   </div>
 </section>
 
