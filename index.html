@@ -1,350 +1,238 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>2ª Via de Fatura Cemig Energia</title>
-
-<meta name="description" content="Solicite a 2ª via da sua fatura Cemig Energia de forma rápida e segura pelo WhatsApp." />
-
+<title>Cemig - 2ª Via de Fatura de Energia | Emita pelo WhatsApp</title>
+<meta name="description" content="Solicite a 2ª via da sua fatura Cemig de forma rápida e segura pelo WhatsApp. Atendimento ágil para clientes residenciais e comerciais." />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
 <style>
-:root{
-  --cemig-green:#00A859;
-  --cemig-blue:#004A8F;
-  --whatsapp:#25D366;
-}
-
-body{
-  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  color:#1f2937;
-}
-
-.bg-gradient-hero{
-  background:linear-gradient(135deg,var(--cemig-green),var(--cemig-blue));
-}
-
-.btn-whatsapp{
-  background:var(--whatsapp);
-  color:#fff;
-  border:none;
-  border-radius:999px;
-  padding:.9rem 2rem;
-  font-weight:700;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap:.5rem;
-  transition:.2s;
-}
-
-.btn-whatsapp:hover{
-  background:#1ebe5a;
-  color:#fff;
-  transform:translateY(-2px);
-}
-
-.header-sticky{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:#fff;
-  border-bottom:1px solid #e5e7eb;
-}
-
-.invoice-card{
-  border-radius:1rem;
-  box-shadow:0 25px 50px -12px rgba(0,0,0,.25);
-}
-
-.service-card{
-  border-radius:1rem;
-  border:1px solid #e5e7eb;
-  transition:.25s;
-}
-
-.service-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 40px -15px rgba(0,74,143,.25);
-}
-
-.step-circle{
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--cemig-green),var(--cemig-blue));
-  color:#fff;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.4rem;
-  font-weight:700;
-}
+  :root {
+    --cemig-green: #00A859;
+    --cemig-blue: #004A8F;
+    --whatsapp: #25D366;
+    --whatsapp-hover: #1ebe5a;
+    --accent: #E6F7EE;
+    --accent-fg: #1F6B4A;
+  }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1f2937; }
+  .text-cemig-blue { color: var(--cemig-blue) !important; }
+  .text-cemig-green { color: var(--cemig-green) !important; }
+  .bg-cemig-blue { background-color: var(--cemig-blue) !important; }
+  .bg-cemig-green { background-color: var(--cemig-green) !important; }
+  .bg-gradient-hero { background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue)); }
+  .logo-mark {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue));
+    display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 1.25rem;
+  }
+  .btn-whatsapp {
+    background-color: var(--whatsapp); color: #fff; border: none; border-radius: 999px;
+    font-weight: 600; padding: .65rem 1.5rem; box-shadow: 0 8px 20px rgba(37,211,102,.35);
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  }
+  .btn-whatsapp:hover { background-color: var(--whatsapp-hover); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(37,211,102,.45); }
+  .btn-whatsapp-lg { padding: .9rem 2rem; font-size: 1.1rem; }
+  .btn-outline-light-soft { border: 2px solid rgba(255,255,255,.4); background: rgba(255,255,255,.1); color: #fff; border-radius: 999px; font-weight: 600; padding: .65rem 1.5rem; backdrop-filter: blur(6px); }
+  .btn-outline-light-soft:hover { background: rgba(255,255,255,.2); color: #fff; }
+  .btn-white-pill { background: #fff; color: var(--cemig-green); border-radius: 999px; font-weight: 700; padding: .9rem 2rem; }
+  .btn-white-pill:hover { background: rgba(255,255,255,.92); color: var(--cemig-green); }
+  .top-bar { background: var(--cemig-blue); color: #fff; font-size: .875rem; }
+  .header-sticky { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom: 1px solid #e5e7eb; }
+  .badge-soft { background: var(--accent); color: var(--accent-fg); border-radius: 999px; padding: .25rem .65rem; font-weight: 600; font-size: .75rem; display: inline-flex; align-items: center; gap: .35rem; }
+  .badge-soft .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cemig-green); display: inline-block; }
+  .invoice-card { border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,.25); }
+  .highlight-box { border: 2px dashed rgba(0,168,89,.4); background: rgba(230,247,238,.5); border-radius: .9rem; }
+  .service-card { border-radius: 1rem; border: 1px solid #e5e7eb; transition: transform .25s ease, box-shadow .25s ease; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -15px rgba(0,74,143,.25); }
+  .service-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--accent); color: var(--accent-fg); display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: background .25s ease, color .25s ease; }
+  .service-card:hover .service-icon { background: var(--cemig-green); color: #fff; }
+  .step-circle { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue)); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700; }
+  .chip { background: rgba(255,255,255,.15); color: #fff; border-radius: 999px; padding: .3rem 1rem; font-size: .875rem; font-weight: 500; backdrop-filter: blur(6px); display: inline-block; }
+  .trust-row { color: rgba(255,255,255,.92); font-size: .9rem; }
+  .trust-row span { display: inline-flex; align-items: center; gap: .35rem; }
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
+<!-- Top bar -->
+<div class="top-bar">
+  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2 py-2">
+    <span><i class="bi bi-telephone-fill me-1"></i> Atendimento 24h</span>
+    <span class="d-none d-sm-inline">Agência Virtual • Cliente Cemig</span>
+  </div>
+</div>
+
+<!-- Header -->
 <header class="header-sticky">
   <div class="container d-flex justify-content-between align-items-center py-3">
-
-    <!-- NOME SEM LOGO -->
-    <h1 class="fw-bold m-0" style="font-size:1.3rem;color:#004A8F;">
-      2ª Via de Fatura Cemig Energia
-    </h1>
-
-    <a href="https://wa.me/message/QAJOFGIO6ILKN1"
-       target="_blank"
-       class="btn-whatsapp">
-      <i class="bi bi-whatsapp"></i>
-      WhatsApp
+    <div class="d-flex align-items-center gap-2">
+      <span class="logo-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+      <div>
+        <div class="fw-bold text-cemig-blue lh-1" style="font-size:1.25rem;">CEMIG</div>
+        <div class="text-muted" style="font-size:.7rem;">Energia de Minas</div>
+      </div>
+    </div>
+    <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp d-none d-md-inline-flex" style="padding:.5rem 1rem; font-size:.9rem;">
+      <i class="bi bi-whatsapp"></i> Falar no WhatsApp
     </a>
-
   </div>
 </header>
 
-<!-- HERO -->
-<section class="bg-gradient-hero text-white">
-  <div class="container py-5">
-    <div class="row align-items-center g-5">
-
-      <div class="col-lg-6">
-
-        <h2 class="display-5 fw-bold">
-          2ª Via de Fatura<br>
-          Cemig Energia
-        </h2>
-
+<!-- Hero -->
+<section class="bg-gradient-hero text-white overflow-hidden">
+  <div class="container py-5 py-md-6">
+    <div class="row g-5 align-items-center py-4">
+      <div class="col-md-6">
+        <span class="chip">Atendimento oficial via WhatsApp</span>
+        <h1 class="fw-bold mt-3 display-5 lh-1">2ª Via de Fatura<br><span class="text-white-50">Cemig Energia</span></h1>
         <p class="mt-3 fs-5 text-white-50">
-          Solicite sua segunda via de forma rápida,
-          prática e segura diretamente pelo WhatsApp.
+          Solicite a segunda via da sua conta de luz de forma rápida, prática e segura.
+          Receba em segundos diretamente no seu WhatsApp.
         </p>
-
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1"
-           target="_blank"
-           class="btn-whatsapp mt-3">
-
-          <i class="bi bi-whatsapp"></i>
-          Solicitar Agora
-
-        </a>
-
-      </div>
-
-      <div class="col-lg-6">
-
-        <div class="invoice-card bg-white text-dark p-4">
-
-          <div class="d-flex justify-content-between align-items-center border-bottom pb-3">
-
-            <div>
-              <small class="text-muted">
-                Conta de Energia
-              </small>
-
-              <div class="fw-bold text-primary">
-                2ª Via Disponível
-              </div>
-            </div>
-
-            <i class="bi bi-file-earmark-text text-success"
-               style="font-size:2rem;"></i>
-
-          </div>
-
-          <div class="mt-4">
-
-            <div class="d-flex justify-content-between mb-2">
-              <span class="text-muted">Titular</span>
-              <strong>Cliente</strong>
-            </div>
-
-            <div class="d-flex justify-content-between mb-2">
-              <span class="text-muted">Instalação</span>
-              <strong>•••• ••••</strong>
-            </div>
-
-            <div class="d-flex justify-content-between">
-              <span class="text-muted">Status</span>
-              <strong class="text-success">Pronta</strong>
-            </div>
-
-          </div>
-
-          <a href="https://wa.me/message/QAJOFGIO6ILKN1"
-             target="_blank"
-             class="btn-whatsapp w-100 mt-4">
-
-            <i class="bi bi-whatsapp"></i>
-            Receber Fatura
-
+        <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+          <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp btn-whatsapp-lg">
+            <i class="bi bi-whatsapp"></i> Solicitar 2ª Via Agora
           </a>
-
+          <a href="#como-funciona" class="btn-outline-light-soft text-decoration-none">Como funciona</a>
         </div>
-
+        <div class="trust-row d-flex flex-wrap gap-4 mt-4">
+          <span><i class="bi bi-shield-check"></i> 100% Seguro</span>
+          <span><i class="bi bi-clock"></i> Resposta imediata</span>
+          <span><i class="bi bi-lightning-charge"></i> Sem cadastro</span>
+        </div>
       </div>
 
+      <!-- Card -->
+      <div class="col-md-6">
+        <div class="invoice-card bg-white text-dark p-4 p-md-5">
+          <div class="d-flex justify-content-between align-items-center pb-3 border-bottom">
+            <div>
+              <div class="text-muted small">Conta de Energia Elétrica</div>
+              <div class="fw-bold text-cemig-blue fs-5">CEMIG D</div>
+            </div>
+            <i class="bi bi-file-earmark-text text-cemig-green" style="font-size:2.2rem;"></i>
+          </div>
+          <div class="mt-3 d-flex flex-column gap-2">
+            <div class="d-flex justify-content-between small"><span class="text-muted">Titular</span><span class="fw-semibold">Cliente Cemig</span></div>
+            <div class="d-flex justify-content-between small"><span class="text-muted">Instalação</span><span class="fw-semibold" style="letter-spacing:.15em;">•••• ••••</span></div>
+            <div class="d-flex justify-content-between small align-items-center"><span class="text-muted">Status</span><span class="badge-soft"><span class="dot"></span> Pronta para envio</span></div>
+            <div class="highlight-box p-3 mt-3 text-center">
+              <div class="text-cemig-blue fw-semibold text-uppercase" style="font-size:.7rem; letter-spacing:.06em; opacity:.85;">2ª Via Disponível</div>
+              <div class="text-cemig-blue fw-bold mt-1">Solicite agora pelo WhatsApp</div>
+              <div class="text-muted mt-1" style="font-size:.8rem;">Atendimento rápido e sem cadastro</div>
+            </div>
+          </div>
+          <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp w-100 mt-4">
+            <i class="bi bi-whatsapp"></i> Receber Minha Fatura
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SERVIÇOS -->
-<section class="container py-5">
-
-  <div class="text-center mb-5">
-    <h2 class="fw-bold text-primary">
-      Nossos Serviços
-    </h2>
+<!-- Serviços -->
+<section class="container py-5 py-md-6">
+  <div class="text-center">
+    <h2 class="fw-bold text-cemig-blue display-6">Nossos Serviços</h2>
+    <p class="text-muted">Tudo o que você precisa, em um só lugar</p>
   </div>
-
-  <div class="row g-4">
+  <div class="row g-4 mt-3">
 
     <div class="col-md-4">
-      <div class="service-card p-4 h-100">
-
-        <h3 class="h5 fw-bold">
-          2ª Via de Fatura
-        </h3>
-
-        <p class="text-muted small">
-          Receba sua conta atualizada pronta para pagamento.
-        </p>
-
+      <div class="service-card bg-white p-4 h-100">
+        <span class="service-icon"><i class="bi bi-file-earmark-text"></i></span>
+        <h3 class="h5 fw-bold text-cemig-blue mt-3">2ª Via de Fatura</h3>
+        <p class="text-muted small">Receba sua conta atualizada com código de barras pronto para pagamento.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="service-card p-4 h-100">
-
-        <h3 class="h5 fw-bold">
-          Histórico de Contas
-        </h3>
-
-        <p class="text-muted small">
-          Consulte faturas anteriores facilmente.
-        </p>
-
+      <div class="service-card bg-white p-4 h-100">
+        <span class="service-icon"><i class="bi bi-download"></i></span>
+        <h3 class="h5 fw-bold text-cemig-blue mt-3">Histórico de Contas</h3>
+        <p class="text-muted small">Consulte faturas anteriores dos últimos 6 meses de forma fácil.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="service-card p-4 h-100">
-
-        <h3 class="h5 fw-bold">
-          Negociação de Débitos
-        </h3>
-
-        <p class="text-muted small">
-          Regularize contas em atraso rapidamente.
-        </p>
-
+      <div class="service-card bg-white p-4 h-100">
+        <span class="service-icon"><i class="bi bi-credit-card-2-front"></i></span>
+        <h3 class="h5 fw-bold text-cemig-blue mt-3">Negociação de Débitos</h3>
+        <p class="text-muted small">Parcele faturas em atraso e regularize sua situação rapidamente.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- COMO FUNCIONA -->
-<section class="bg-light py-5">
-
+<!-- Como funciona -->
+<section id="como-funciona" class="py-5 py-md-6" style="background:#f1f5f9;">
   <div class="container">
-
-    <div class="text-center mb-5">
-      <h2 class="fw-bold text-primary">
-        Como Funciona
-      </h2>
+    <div class="text-center">
+      <h2 class="fw-bold text-cemig-blue display-6">Como Funciona</h2>
+      <p class="text-muted">3 passos simples para receber sua 2ª via</p>
     </div>
-
-    <div class="row g-4">
-
+    <div class="row g-4 mt-3">
       <div class="col-md-4">
-        <div class="bg-white rounded-4 p-4 text-center h-100 shadow-sm">
-
+        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
           <span class="step-circle">1</span>
-
-          <h3 class="h5 fw-bold mt-3">
-            Clique no WhatsApp
-          </h3>
-
+          <h3 class="h5 fw-bold text-cemig-blue mt-3">Clique no WhatsApp</h3>
+          <p class="text-muted small mb-0">Acesse nosso atendimento oficial pelo botão abaixo.</p>
         </div>
       </div>
-
       <div class="col-md-4">
-        <div class="bg-white rounded-4 p-4 text-center h-100 shadow-sm">
-
+        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
           <span class="step-circle">2</span>
-
-          <h3 class="h5 fw-bold mt-3">
-            Informe seus dados
-          </h3>
-
+          <h3 class="h5 fw-bold text-cemig-blue mt-3">Informe seus dados</h3>
+          <p class="text-muted small mb-0">Envie o número da instalação ou CPF do titular.</p>
         </div>
       </div>
-
       <div class="col-md-4">
-        <div class="bg-white rounded-4 p-4 text-center h-100 shadow-sm">
-
+        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
           <span class="step-circle">3</span>
-
-          <h3 class="h5 fw-bold mt-3">
-            Receba sua fatura
-          </h3>
-
+          <h3 class="h5 fw-bold text-cemig-blue mt-3">Receba sua fatura</h3>
+          <p class="text-muted small mb-0">Sua segunda via chega em PDF, pronta para pagamento.</p>
         </div>
       </div>
-
     </div>
-
+    <div class="text-center mt-5">
+      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp btn-whatsapp-lg">
+        <i class="bi bi-whatsapp"></i> Iniciar Atendimento
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="py-5">
+<section class="py-5 py-md-6">
   <div class="container">
-
-    <div class="bg-gradient-hero text-white text-center rounded-4 p-5">
-
-      <h2 class="fw-bold">
-        Solicite sua 2ª Via Agora
-      </h2>
-
-      <p class="text-white-50">
-        Atendimento rápido pelo WhatsApp.
-      </p>
-
-      <a href="https://wa.me/message/QAJOFGIO6ILKN1"
-         target="_blank"
-         class="btn-whatsapp">
-
-        <i class="bi bi-whatsapp"></i>
-        Conversar no WhatsApp
-
+    <div class="bg-gradient-hero text-white text-center p-4 p-md-5 rounded-4">
+      <i class="bi bi-whatsapp" style="font-size:2.75rem;"></i>
+      <h2 class="fw-bold mt-3 display-6">Precisa da sua 2ª via agora?</h2>
+      <p class="text-white-50 mb-4">Atendimento humanizado, rápido e disponível 24 horas por dia.</p>
+      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-white-pill text-decoration-none">
+        <i class="bi bi-whatsapp me-1"></i> Conversar no WhatsApp
       </a>
-
     </div>
-
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="border-top py-4 text-center text-muted small">
-
-  © <span id="year"></span>
-  2ª Via de Fatura Cemig Energia
-
+<!-- Footer -->
+<footer class="border-top bg-white">
+  <div class="container py-4 text-center text-muted small">
+    <p class="mb-1">© <span id="year"></span> Atendimento Cemig — Segunda Via de Fatura</p>
+    <p class="mb-0">Este é um canal de atendimento. Para o site oficial acesse cemig.com.br</p>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-document.getElementById('year').textContent =
-new Date().getFullYear();
-</script>
-
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-```
