@@ -1,446 +1,237 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>GSM Bahia - Provedor de Internet</title>
-    
-    <!-- Favicon dinâmico (ícone Wi-Fi) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230066cc;stop-opacity:1'/><stop offset='100%25' style='stop-color:%2300cc99;stop-opacity:1'/></linearGradient></defs><circle cx='50' cy='50' r='45' fill='url(%23grad)' stroke='%23ffffff' stroke-width='4'/><path d='M35 58 A25 25 0 0 1 65 58' stroke='white' stroke-width='6' fill='none' stroke-linecap='round'/><path d='M40 65 A16 16 0 0 1 60 65' stroke='white' stroke-width='6' fill='none' stroke-linecap='round'/><circle cx='50' cy='72' r='4' fill='white'/></svg>">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    
-    <style>
-        :root {
-            --azul-principal: #0a4da4;
-            --azul-claro: #e6f0ff;
-            --verde-destaque: #00b359;
-            --cinza-escuro: #2c3e50;
-            --branco: #ffffff;
-            --sombra-suave: 0 8px 20px rgba(0,0,0,0.08);
-        }
-        
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            color: #333;
-            scroll-behavior: smooth;
-        }
-        
-        /* Navbar */
-        .navbar {
-            background: linear-gradient(135deg, #0a3d7a, #0a4da4);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            padding: 0.8rem 1rem;
-        }
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.6rem;
-            letter-spacing: 0.5px;
-            color: white !important;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .navbar-brand i {
-            font-size: 2rem;
-            color: #00e676;
-        }
-        .nav-link {
-            color: rgba(255,255,255,0.9) !important;
-            font-weight: 500;
-            margin: 0 5px;
-            transition: 0.2s;
-            border-radius: 20px;
-            padding: 8px 16px !important;
-        }
-        .nav-link:hover, .nav-link.active {
-            background: rgba(255,255,255,0.15);
-            color: white !important;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(120deg, #f0f7ff 0%, #e1efff 100%);
-            padding: 5rem 0 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero h1 {
-            font-weight: 800;
-            color: var(--azul-principal);
-            font-size: 3rem;
-            line-height: 1.2;
-        }
-        .hero .lead {
-            font-size: 1.3rem;
-            color: #2c3e50;
-            font-weight: 400;
-        }
-        .hero-icon {
-            font-size: 4rem;
-            color: var(--azul-principal);
-            background: white;
-            width: 90px;
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 30px;
-            box-shadow: 0 10px 25px rgba(10,77,164,0.25);
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Seções */
-        .section-title {
-            font-weight: 700;
-            color: var(--azul-principal);
-            margin-bottom: 1.2rem;
-            position: relative;
-            display: inline-block;
-        }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--verde-destaque);
-            border-radius: 4px;
-        }
-        
-        .info-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem 1.5rem;
-            box-shadow: var(--sombra-suave);
-            transition: transform 0.2s, box-shadow 0.2s;
-            height: 100%;
-            border: 1px solid #f0f4ff;
-            text-align: center;
-        }
-        .info-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-        }
-        .info-card i {
-            font-size: 2.8rem;
-            color: var(--azul-principal);
-            margin-bottom: 1.2rem;
-        }
-        .info-card h5 {
-            font-weight: 700;
-            color: var(--cinza-escuro);
-        }
-        
-        .dados-empresa {
-            background: white;
-            border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: var(--sombra-suave);
-            border-left: 6px solid var(--verde-destaque);
-        }
-        .dados-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 1.4rem;
-            font-size: 1.05rem;
-        }
-        .dados-item i {
-            font-size: 1.7rem;
-            color: var(--azul-principal);
-            width: 28px;
-            text-align: center;
-            margin-top: 2px;
-        }
-        .dados-item strong {
-            display: block;
-            color: #555;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .bg-light-grey {
-            background-color: #f8fbff;
-        }
-        
-        .btn-primary-custom {
-            background: linear-gradient(135deg, #0a4da4, #0e6bdb);
-            border: none;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 600;
-            color: white;
-            transition: 0.25s;
-            box-shadow: 0 6px 18px rgba(10,77,164,0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-primary-custom:hover {
-            background: linear-gradient(135deg, #083b7a, #0a4da4);
-            transform: scale(1.03);
-            color: white;
-            box-shadow: 0 10px 22px rgba(10,77,164,0.4);
-        }
-        
-        .btn-outline-custom {
-            border: 2px solid var(--azul-principal);
-            color: var(--azul-principal);
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 600;
-            transition: 0.25s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-outline-custom:hover {
-            background: var(--azul-principal);
-            color: white;
-        }
-        
-        footer {
-            background: #0a2e4a;
-            color: #ccc;
-            padding: 2.5rem 0 1.5rem;
-        }
-        footer h5 {
-            color: white;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        footer a {
-            color: #a0c4ff;
-            text-decoration: none;
-        }
-        footer a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        .badge-cnpj {
-            background: #e9f0ff;
-            color: #0a4da4;
-            font-weight: 600;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cemig - 2ª Via de Fatura de Energia | Emita pelo WhatsApp</title>
+<meta name="description" content="Solicite a 2ª via da sua fatura Cemig de forma rápida e segura pelo WhatsApp. Atendimento ágil para clientes residenciais e comerciais." />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+  :root {
+    --cemig-green: #005A2E;
+    --cemig-blue: #004A8F;
+    --whatsapp: #25D366;
+    --whatsapp-hover: #1ebe5a;
+    --accent: #E6F7EE;
+    --accent-fg: #1F6B4A;
+  }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1f2937; }
+  .text-cemig-blue { color: var(--cemig-blue) !important; }
+  .text-cemig-green { color: var(--cemig-green) !important; }
+  .bg-cemig-blue { background-color: var(--cemig-blue) !important; }
+  .bg-cemig-green { background-color: var(--cemig-green) !important; }
+  .bg-gradient-hero { background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue)); }
+  .btn-whatsapp {
+    background-color: var(--whatsapp); color: #fff; border: none; border-radius: 999px;
+    font-weight: 600; padding: .65rem 1.5rem; box-shadow: 0 8px 20px rgba(37,211,102,.35);
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  }
+  .btn-whatsapp:hover { background-color: var(--whatsapp-hover); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(37,211,102,.45); }
+  .btn-whatsapp-lg { padding: .9rem 2rem; font-size: 1.1rem; }
+  .btn-outline-light-soft { border: 2px solid rgba(255,255,255,.4); background: rgba(255,255,255,.1); color: #fff; border-radius: 999px; font-weight: 600; padding: .65rem 1.5rem; backdrop-filter: blur(6px); }
+  .btn-outline-light-soft:hover { background: rgba(255,255,255,.2); color: #fff; }
+  .btn-white-pill { background: #fff; color: var(--cemig-green); border-radius: 999px; font-weight: 700; padding: .9rem 2rem; }
+  .btn-white-pill:hover { background: rgba(255,255,255,.92); color: var(--cemig-green); }
+  .top-bar { background: var(--cemig-blue); color: #fff; font-size: .875rem; }
+  .header-sticky { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom: 1px solid #e5e7eb; }
+  .badge-soft { background: var(--accent); color: var(--accent-fg); border-radius: 999px; padding: .25rem .65rem; font-weight: 600; font-size: .75rem; display: inline-flex; align-items: center; gap: .35rem; }
+  .badge-soft .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cemig-green); display: inline-block; }
+  .invoice-card { border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,.25); }
+  .highlight-box { border: 2px dashed rgba(0,168,89,.4); background: rgba(230,247,238,.5); border-radius: .9rem; }
+  .service-card { border-radius: 1rem; border: 1px solid #e5e7eb; transition: transform .25s ease, box-shadow .25s ease; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -15px rgba(0,74,143,.25); }
+  .service-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--accent); color: var(--accent-fg); display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: background .25s ease, color .25s ease; }
+  .service-card:hover .service-icon { background: var(--cemig-green); color: #fff; }
+  .step-circle { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue)); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700; }
+  .chip { background: rgba(255,255,255,.15); color: #fff; border-radius: 999px; padding: .3rem 1rem; font-size: .875rem; font-weight: 500; backdrop-filter: blur(6px); display: inline-block; }
+  .trust-row { color: rgba(255,255,255,.92); font-size: .9rem; }
+  .trust-row span { display: inline-flex; align-items: center; gap: .35rem; }
+  
+  /* Ajuste para o logo Cemig */
+  .logo-cemig {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
+</style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <i class="bi bi-wifi"></i> GSM Bahia
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarProvedor" 
-                aria-controls="navbarProvedor" aria-expanded="false" aria-label="Menu" style="border-color: rgba(255,255,255,0.5);">
-            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarProvedor">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
-                <li class="nav-item"><a class="nav-link" href="#dados">Dados da Empresa</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<!-- Top bar -->
+<div class="top-bar">
+  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2 py-2">
+    <span><i class="bi bi-telephone-fill me-1"></i> Atendimento 24h</span>
+    <span class="d-none d-sm-inline">Agência Virtual • Cliente Cemig</span>
+  </div>
+</div>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-7">
-                <div class="hero-icon">
-                    <i class="bi bi-router"></i>
-                </div>
-                <h1>Internet de alta velocidade<br>com estabilidade e suporte real</h1>
-                <p class="lead mt-3">Conectando Lauro de Freitas e região com tecnologia de ponta desde 2011.</p>
-                <div class="d-flex flex-wrap gap-3 mt-4">
-                    <a href="#contato" class="btn btn-primary-custom"><i class="bi bi-telephone-fill"></i> Fale Conosco</a>
-                    <a href="#dados" class="btn btn-outline-custom"><i class="bi bi-building"></i> Nossa Empresa</a>
-                </div>
-            </div>
-            <div class="col-lg-5 text-center mt-4 mt-lg-0">
-                <div style="background: white; border-radius: 30px; padding: 1.5rem; box-shadow: 0 20px 35px rgba(0,0,0,0.1); display: inline-block;">
-                    <i class="bi bi-globe2" style="font-size: 8rem; color: #0a4da4; opacity: 0.9;"></i>
-                    <p class="fw-bold mt-2 mb-0" style="color: #0a4da4;">Fibra Óptica • Rádio • Suporte 24h</p>
-                </div>
-            </div>
-        </div>
+<!-- Header -->
+<header class="header-sticky">
+  <div class="container d-flex justify-content-between align-items-center py-3">
+    <div class="d-flex align-items-center gap-2">
+      <!-- LOGO CEMIG - Substitua 'logo-cemig.png' pelo nome da sua imagem -->
+      <img src="logo-cemig.png" alt="Cemig" class="logo-cemig">
     </div>
+    <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp d-none d-md-inline-flex" style="padding:.5rem 1rem; font-size:.9rem;">
+      <i class="bi bi-whatsapp"></i> Falar no WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="bg-gradient-hero text-white overflow-hidden">
+  <div class="container py-5 py-md-6">
+    <div class="row g-5 align-items-center py-4">
+      <div class="col-md-6">
+        <span class="chip">Atendimento oficial via WhatsApp</span>
+        <h1 class="fw-bold mt-3 display-5 lh-1">2ª Via de Fatura<br><span class="text-white-50">Cemig Energia</span></h1>
+        <p class="mt-3 fs-5 text-white-50">
+          Solicite a segunda via da sua conta de luz de forma rápida, prática e segura.
+          Receba em segundos diretamente no seu WhatsApp.
+        </p>
+        <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+          <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp btn-whatsapp-lg">
+            <i class="bi bi-whatsapp"></i> Solicitar 2ª Via Agora
+          </a>
+          <a href="#como-funciona" class="btn-outline-light-soft text-decoration-none">Como funciona</a>
+        </div>
+        <div class="trust-row d-flex flex-wrap gap-4 mt-4">
+          <span><i class="bi bi-shield-check"></i> 100% Seguro</span>
+          <span><i class="bi bi-clock"></i> Resposta imediata</span>
+          <span><i class="bi bi-lightning-charge"></i> Sem cadastro</span>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="col-md-6">
+        <div class="invoice-card bg-white text-dark p-4 p-md-5">
+          <div class="d-flex justify-content-between align-items-center pb-3 border-bottom">
+            <div>
+              <div class="text-muted small">Conta de Energia Elétrica</div>
+              <div class="fw-bold text-cemig-blue fs-5">CEMIG D</div>
+            </div>
+            <i class="bi bi-file-earmark-text text-cemig-green" style="font-size:2.2rem;"></i>
+          </div>
+          <div class="mt-3 d-flex flex-column gap-2">
+            <div class="d-flex justify-content-between small"><span class="text-muted">Titular</span><span class="fw-semibold">Cliente Cemig</span></div>
+            <div class="d-flex justify-content-between small"><span class="text-muted">Instalação</span><span class="fw-semibold" style="letter-spacing:.15em;">•••• ••••</span></div>
+            <div class="d-flex justify-content-between small align-items-center"><span class="text-muted">Status</span><span class="badge-soft"><span class="dot"></span> Pronta para envio</span></div>
+            <div class="highlight-box p-3 mt-3 text-center">
+              <div class="text-cemig-blue fw-semibold text-uppercase" style="font-size:.7rem; letter-spacing:.06em; opacity:.85;">2ª Via Disponível</div>
+              <div class="text-cemig-blue fw-bold mt-1">Solicite agora pelo WhatsApp</div>
+              <div class="text-muted mt-1" style="font-size:.8rem;">Atendimento rápido e sem cadastro</div>
+            </div>
+          </div>
+          <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp w-100 mt-4">
+            <i class="bi bi-whatsapp"></i> Receber Minha Fatura
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Vantagens / Ícones -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="section-title mb-5">Por que escolher a GSM Bahia?</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="info-card">
-                    <i class="bi bi-speedometer2"></i>
-                    <h5>Velocidade Real</h5>
-                    <p class="text-muted">Conexão estável e velocidades que entregam o contratado, sem oscilações.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="info-card">
-                    <i class="bi bi-shield-check"></i>
-                    <h5>Suporte Técnico</h5>
-                    <p class="text-muted">Equipe pronta para atender você com agilidade e resolver problemas rapidamente.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="info-card">
-                    <i class="bi bi-wifi"></i>
-                    <h5>Tecnologia de Ponta</h5>
-                    <p class="text-muted">Infraestrutura moderna com fibra óptica e equipamentos de alto desempenho.</p>
-                </div>
-            </div>
-        </div>
+<!-- Serviços -->
+<section class="container py-5 py-md-6">
+  <div class="text-center">
+    <h2 class="fw-bold text-cemig-blue display-6">Nossos Serviços</h2>
+    <p class="text-muted">Tudo o que você precisa, em um só lugar</p>
+  </div>
+  <div class="row g-4 mt-3">
+
+    <div class="col-md-4">
+      <div class="service-card bg-white p-4 h-100">
+        <span class="service-icon"><i class="bi bi-file-earmark-text"></i></span>
+        <h3 class="h5 fw-bold text-cemig-blue mt-3">2ª Via de Fatura</h3>
+        <p class="text-muted small">Receba sua conta atualizada com código de barras pronto para pagamento.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
+      </div>
     </div>
+
+    <div class="col-md-4">
+      <div class="service-card bg-white p-4 h-100">
+        <span class="service-icon"><i class="bi bi-download"></i></span>
+        <h3 class="h5 fw-bold text-cemig-blue mt-3">Histórico de Contas</h3>
+        <p class="text-muted small">Consulte faturas anteriores dos últimos 6 meses de forma fácil.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="service-card bg-white p-4 h-100">
+        <span class="service-icon"><i class="bi bi-credit-card-2-front"></i></span>
+        <h3 class="h5 fw-bold text-cemig-blue mt-3">Negociação de Débitos</h3>
+        <p class="text-muted small">Parcele faturas em atraso e regularize sua situação rapidamente.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<!-- Sobre e Dados da Empresa -->
-<section id="sobre" class="bg-light-grey py-5">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-                <h2 class="section-title">Sobre a GSM Bahia</h2>
-                <p style="font-size: 1.1rem; color: #2c3e50; margin-top: 1.5rem;">
-                    Somos a <strong>GSM Bahia Provedor de Internet LTDA</strong>, atuando no mercado desde 
-                    <span class="badge-cnpj">2011</span> com a missão de levar conexão de qualidade para 
-                    residências e empresas em Lauro de Freitas e região.
-                </p>
-                <p>Acreditamos que internet de qualidade transforma vidas, e por isso investimos constantemente 
-                em infraestrutura e capacitação da nossa equipe.</p>
-                <div class="mt-4">
-                    <span class="badge-cnpj me-2 mb-2"><i class="bi bi-check-circle"></i> Atendimento Local</span>
-                    <span class="badge-cnpj me-2 mb-2"><i class="bi bi-check-circle"></i> Planos Acessíveis</span>
-                    <span class="badge-cnpj me-2 mb-2"><i class="bi bi-check-circle"></i> Sem Fidelidade Abusiva</span>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="dados-empresa" id="dados">
-                    <h4 class="fw-bold mb-4" style="color: #0a4da4;"><i class="bi bi-journal-text me-2"></i>Dados Oficiais</h4>
-                    
-                    <div class="dados-item">
-                        <i class="bi bi-building"></i>
-                        <div><strong>Razão Social</strong> Gsm Bahia Provedor de Internet LTDA</div>
-                    </div>
-                    <div class="dados-item">
-                        <i class="bi bi-tag"></i>
-                        <div><strong>Nome Fantasia</strong> Gsm Bahia Provedor de Internet LTDA</div>
-                    </div>
-                    <div class="dados-item">
-                        <i class="bi bi-credit-card-2-front"></i>
-                        <div><strong>CNPJ</strong> 13.175.007/0001-96</div>
-                    </div>
-                    <div class="dados-item">
-                        <i class="bi bi-calendar-check"></i>
-                        <div><strong>Situação Cadastral</strong> Ativa desde 29/01/2011</div>
-                    </div>
-                    <div class="dados-item">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <div><strong>Endereço</strong> Avenida Queira Deus, 500 - Bairro Portão<br>Lauro de Freitas - BA, 42713-480</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Como funciona -->
+<section id="como-funciona" class="py-5 py-md-6" style="background:#f1f5f9;">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="fw-bold text-cemig-blue display-6">Como Funciona</h2>
+      <p class="text-muted">3 passos simples para receber sua 2ª via</p>
     </div>
+    <div class="row g-4 mt-3">
+      <div class="col-md-4">
+        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
+          <span class="step-circle">1</span>
+          <h3 class="h5 fw-bold text-cemig-blue mt-3">Clique no WhatsApp</h3>
+          <p class="text-muted small mb-0">Acesse nosso atendimento oficial pelo botão abaixo.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
+          <span class="step-circle">2</span>
+          <h3 class="h5 fw-bold text-cemig-blue mt-3">Informe seus dados</h3>
+          <p class="text-muted small mb-0">Envie o número da instalação ou CPF do titular.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
+          <span class="step-circle">3</span>
+          <h3 class="h5 fw-bold text-cemig-blue mt-3">Receba sua fatura</h3>
+          <p class="text-muted small mb-0">Sua segunda via chega em PDF, pronta para pagamento.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp btn-whatsapp-lg">
+        <i class="bi bi-whatsapp"></i> Iniciar Atendimento
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- Contato -->
-<section id="contato" class="py-5">
-    <div class="container">
-        <h2 class="section-title mb-5">Fale com a gente</h2>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="info-card text-start" style="text-align: left !important;">
-                    <i class="bi bi-telephone" style="font-size: 2.5rem;"></i>
-                    <h5>Telefone / WhatsApp</h5>
-                    <p class="fs-4 fw-bold" style="color: #0a4da4;">(71) 3405-0951</p>
-                    <p class="text-muted">Atendimento de segunda a sexta, das 8h às 18h.<br>Sábados das 8h às 12h.</p>
-                    <a href="tel:+557134050951" class="btn btn-primary-custom mt-2"><i class="bi bi-telephone-forward"></i> Ligar Agora</a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="info-card text-start" style="text-align: left !important;">
-                    <i class="bi bi-envelope" style="font-size: 2.5rem;"></i>
-                    <h5>E-mail</h5>
-                    <p class="fs-5">contato@gsmbahia.com.br</p>
-                    <p class="text-muted">Envie sua mensagem, retornaremos em breve.</p>
-                    <a href="mailto:contato@gsmbahia.com.br" class="btn btn-outline-custom mt-2"><i class="bi bi-envelope-at"></i> Enviar E-mail</a>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-12">
-                <div class="info-card text-start p-4" style="text-align: left !important;">
-                    <i class="bi bi-pin-map" style="font-size: 2.2rem;"></i>
-                    <h5>Visite-nos</h5>
-                    <p class="mb-0"><strong>Avenida Queira Deus, 500 - Bairro Portão</strong><br>Lauro de Freitas - Bahia | CEP: 42713-480</p>
-                    <p class="text-muted mt-2 mb-0"><i class="bi bi-info-circle"></i> Atendimento presencial com hora marcada para maior conforto.</p>
-                </div>
-            </div>
-        </div>
+<!-- CTA -->
+<section class="py-5 py-md-6">
+  <div class="container">
+    <div class="bg-gradient-hero text-white text-center p-4 p-md-5 rounded-4">
+      <i class="bi bi-whatsapp" style="font-size:2.75rem;"></i>
+      <h2 class="fw-bold mt-3 display-6">Precisa da sua 2ª via agora?</h2>
+      <p class="text-white-50 mb-4">Atendimento humanizado, rápido e disponível 24 horas por dia.</p>
+      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-white-pill text-decoration-none">
+        <i class="bi bi-whatsapp me-1"></i> Conversar no WhatsApp
+      </a>
     </div>
+  </div>
 </section>
 
 <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5 mb-4">
-                <h5><i class="bi bi-wifi me-2"></i>GSM Bahia</h5>
-                <p>Provedor de internet comprometido com qualidade e satisfação. Conectando você ao mundo desde 2011.</p>
-                <p class="small mt-3">
-                    <i class="bi bi-shield-lock"></i> CNPJ: 13.175.007/0001-96<br>
-                    <i class="bi bi-calendar3"></i> Cadastro: 29/01/2011
-                </p>
-            </div>
-            <div class="col-md-3 mb-4">
-                <h5>Links Rápidos</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#dados">Dados Empresariais</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 mb-4">
-                <h5>Contato</h5>
-                <p><i class="bi bi-telephone me-2"></i> (71) 3405-0951</p>
-                <p><i class="bi bi-geo-alt me-2"></i> Av. Queira Deus, 500 - Portão<br>Lauro de Freitas - BA</p>
-                <p><i class="bi bi-envelope me-2"></i> contato@gsmbahia.com.br</p>
-            </div>
-        </div>
-        <hr style="border-color: #3a5068;">
-        <div class="text-center small">
-            <p class="mb-0">&copy; 2025 GSM Bahia Provedor de Internet LTDA. Todos os direitos reservados.</p>
-            <p class="mt-1" style="color: #8899aa;">Tecnologia e confiança em cada conexão.</p>
-        </div>
-    </div>
+<footer class="border-top bg-white">
+  <div class="container py-4 text-center text-muted small">
+    <p class="mb-1">© <span id="year"></span> Atendimento Cemig — Segunda Via de Fatura</p>
+    <p class="mb-0">Este é um canal de atendimento. Para o site oficial acesse cemig.com.br</p>
+  </div>
 </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
