@@ -1,238 +1,338 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cemig - 2ª Via de Fatura de Energia | Emita pelo WhatsApp</title>
-<meta name="description" content="Solicite a 2ª via da sua fatura Cemig de forma rápida e segura pelo WhatsApp. Atendimento ágil para clientes residenciais e comerciais." />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-<style>
-  :root {
-    --cemig-green: #00A859;
-    --cemig-blue: #004A8F;
-    --whatsapp: #25D366;
-    --whatsapp-hover: #1ebe5a;
-    --accent: #E6F7EE;
-    --accent-fg: #1F6B4A;
-  }
-  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1f2937; }
-  .text-cemig-blue { color: var(--cemig-blue) !important; }
-  .text-cemig-green { color: var(--cemig-green) !important; }
-  .bg-cemig-blue { background-color: var(--cemig-blue) !important; }
-  .bg-cemig-green { background-color: var(--cemig-green) !important; }
-  .bg-gradient-hero { background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue)); }
-  .logo-mark {
-    width: 40px; height: 40px; border-radius: 10px;
-    background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue));
-    display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 1.25rem;
-  }
-  .btn-whatsapp {
-    background-color: var(--whatsapp); color: #fff; border: none; border-radius: 999px;
-    font-weight: 600; padding: .65rem 1.5rem; box-shadow: 0 8px 20px rgba(37,211,102,.35);
-    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
-    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  }
-  .btn-whatsapp:hover { background-color: var(--whatsapp-hover); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(37,211,102,.45); }
-  .btn-whatsapp-lg { padding: .9rem 2rem; font-size: 1.1rem; }
-  .btn-outline-light-soft { border: 2px solid rgba(255,255,255,.4); background: rgba(255,255,255,.1); color: #fff; border-radius: 999px; font-weight: 600; padding: .65rem 1.5rem; backdrop-filter: blur(6px); }
-  .btn-outline-light-soft:hover { background: rgba(255,255,255,.2); color: #fff; }
-  .btn-white-pill { background: #fff; color: var(--cemig-green); border-radius: 999px; font-weight: 700; padding: .9rem 2rem; }
-  .btn-white-pill:hover { background: rgba(255,255,255,.92); color: var(--cemig-green); }
-  .top-bar { background: var(--cemig-blue); color: #fff; font-size: .875rem; }
-  .header-sticky { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-bottom: 1px solid #e5e7eb; }
-  .badge-soft { background: var(--accent); color: var(--accent-fg); border-radius: 999px; padding: .25rem .65rem; font-weight: 600; font-size: .75rem; display: inline-flex; align-items: center; gap: .35rem; }
-  .badge-soft .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cemig-green); display: inline-block; }
-  .invoice-card { border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,.25); }
-  .highlight-box { border: 2px dashed rgba(0,168,89,.4); background: rgba(230,247,238,.5); border-radius: .9rem; }
-  .service-card { border-radius: 1rem; border: 1px solid #e5e7eb; transition: transform .25s ease, box-shadow .25s ease; }
-  .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -15px rgba(0,74,143,.25); }
-  .service-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--accent); color: var(--accent-fg); display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: background .25s ease, color .25s ease; }
-  .service-card:hover .service-icon { background: var(--cemig-green); color: #fff; }
-  .step-circle { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--cemig-green), var(--cemig-blue)); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700; }
-  .chip { background: rgba(255,255,255,.15); color: #fff; border-radius: 999px; padding: .3rem 1rem; font-size: .875rem; font-weight: 500; backdrop-filter: blur(6px); display: inline-block; }
-  .trust-row { color: rgba(255,255,255,.92); font-size: .9rem; }
-  .trust-row span { display: inline-flex; align-items: center; gap: .35rem; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Mundo dos Barbeiros • Cosméticos & Perfumaria</title>
+  <!-- Bootstrap 5 CSS + ícones próprios -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Favicon dinâmico (emoji de barbearia como ícone) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💈</text></svg>">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f8f5f2;
+      scroll-behavior: smooth;
+    }
+    .navbar-custom {
+      background: rgba(30, 30, 30, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid #c8a96e;
+    }
+    .logo-text {
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #f3e1c2, #c8a96e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+      color: #f0e6d3;
+      border-bottom: 4px solid #c8a96e;
+      padding: 4rem 0;
+    }
+    .icon-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(200, 169, 110, 0.15);
+      color: #c8a96e;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      transition: all 0.3s;
+    }
+    .icon-circle:hover {
+      background: #c8a96e;
+      color: #1a1a1a;
+      transform: translateY(-3px);
+    }
+    .card-cnae {
+      background: white;
+      border-left: 5px solid #c8a96e;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: 0.2s;
+    }
+    .card-cnae:hover {
+      box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+    }
+    .product-badge {
+      background-color: #2c2c2c;
+      color: #f0e6d3;
+      font-weight: 500;
+      padding: 0.35rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+    .footer-custom {
+      background: #1e1e1e;
+      color: #ccc;
+      border-top: 3px solid #c8a96e;
+    }
+    .btn-outline-gold {
+      border: 1.5px solid #c8a96e;
+      color: #c8a96e;
+      background: transparent;
+      font-weight: 600;
+    }
+    .btn-outline-gold:hover {
+      background: #c8a96e;
+      color: #1a1a1a;
+    }
+    .modal-content {
+      border-radius: 18px;
+      background: #fefcf8;
+    }
+    address {
+      font-style: normal;
+      line-height: 1.7;
+    }
+    .divider-gold {
+      height: 2px;
+      background: linear-gradient(to right, transparent, #c8a96e, transparent);
+      margin: 2rem 0;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Top bar -->
-<div class="top-bar">
-  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2 py-2">
-    <span><i class="bi bi-telephone-fill me-1"></i> Atendimento 24h</span>
-    <span class="d-none d-sm-inline">Agência Virtual • Cliente Cemig</span>
-  </div>
-</div>
-
-<!-- Header -->
-<header class="header-sticky">
-  <div class="container d-flex justify-content-between align-items-center py-3">
-    <div class="d-flex align-items-center gap-2">
-      <span class="logo-mark"><i class="bi bi-lightning-charge-fill"></i></span>
-      <div>
-        <div class="fw-bold text-cemig-blue lh-1" style="font-size:1.25rem;">CEMIG</div>
-        <div class="text-muted" style="font-size:.7rem;">Energia de Minas</div>
-      </div>
-    </div>
-    <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp d-none d-md-inline-flex" style="padding:.5rem 1rem; font-size:.9rem;">
-      <i class="bi bi-whatsapp"></i> Falar no WhatsApp
-    </a>
-  </div>
-</header>
-
-<!-- Hero -->
-<section class="bg-gradient-hero text-white overflow-hidden">
-  <div class="container py-5 py-md-6">
-    <div class="row g-5 align-items-center py-4">
-      <div class="col-md-6">
-        <span class="chip">Atendimento oficial via WhatsApp</span>
-        <h1 class="fw-bold mt-3 display-5 lh-1">2ª Via de Fatura<br><span class="text-white-50">Cemig Energia</span></h1>
-        <p class="mt-3 fs-5 text-white-50">
-          Solicite a segunda via da sua conta de luz de forma rápida, prática e segura.
-          Receba em segundos diretamente no seu WhatsApp.
-        </p>
-        <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
-          <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp btn-whatsapp-lg">
-            <i class="bi bi-whatsapp"></i> Solicitar 2ª Via Agora
-          </a>
-          <a href="#como-funciona" class="btn-outline-light-soft text-decoration-none">Como funciona</a>
-        </div>
-        <div class="trust-row d-flex flex-wrap gap-4 mt-4">
-          <span><i class="bi bi-shield-check"></i> 100% Seguro</span>
-          <span><i class="bi bi-clock"></i> Resposta imediata</span>
-          <span><i class="bi bi-lightning-charge"></i> Sem cadastro</span>
-        </div>
-      </div>
-
-      <!-- Card -->
-      <div class="col-md-6">
-        <div class="invoice-card bg-white text-dark p-4 p-md-5">
-          <div class="d-flex justify-content-between align-items-center pb-3 border-bottom">
-            <div>
-              <div class="text-muted small">Conta de Energia Elétrica</div>
-              <div class="fw-bold text-cemig-blue fs-5">CEMIG D</div>
-            </div>
-            <i class="bi bi-file-earmark-text text-cemig-green" style="font-size:2.2rem;"></i>
-          </div>
-          <div class="mt-3 d-flex flex-column gap-2">
-            <div class="d-flex justify-content-between small"><span class="text-muted">Titular</span><span class="fw-semibold">Cliente Cemig</span></div>
-            <div class="d-flex justify-content-between small"><span class="text-muted">Instalação</span><span class="fw-semibold" style="letter-spacing:.15em;">•••• ••••</span></div>
-            <div class="d-flex justify-content-between small align-items-center"><span class="text-muted">Status</span><span class="badge-soft"><span class="dot"></span> Pronta para envio</span></div>
-            <div class="highlight-box p-3 mt-3 text-center">
-              <div class="text-cemig-blue fw-semibold text-uppercase" style="font-size:.7rem; letter-spacing:.06em; opacity:.85;">2ª Via Disponível</div>
-              <div class="text-cemig-blue fw-bold mt-1">Solicite agora pelo WhatsApp</div>
-              <div class="text-muted mt-1" style="font-size:.8rem;">Atendimento rápido e sem cadastro</div>
-            </div>
-          </div>
-          <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp w-100 mt-4">
-            <i class="bi bi-whatsapp"></i> Receber Minha Fatura
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Serviços -->
-<section class="container py-5 py-md-6">
-  <div class="text-center">
-    <h2 class="fw-bold text-cemig-blue display-6">Nossos Serviços</h2>
-    <p class="text-muted">Tudo o que você precisa, em um só lugar</p>
-  </div>
-  <div class="row g-4 mt-3">
-
-    <div class="col-md-4">
-      <div class="service-card bg-white p-4 h-100">
-        <span class="service-icon"><i class="bi bi-file-earmark-text"></i></span>
-        <h3 class="h5 fw-bold text-cemig-blue mt-3">2ª Via de Fatura</h3>
-        <p class="text-muted small">Receba sua conta atualizada com código de barras pronto para pagamento.</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="service-card bg-white p-4 h-100">
-        <span class="service-icon"><i class="bi bi-download"></i></span>
-        <h3 class="h5 fw-bold text-cemig-blue mt-3">Histórico de Contas</h3>
-        <p class="text-muted small">Consulte faturas anteriores dos últimos 6 meses de forma fácil.</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="service-card bg-white p-4 h-100">
-        <span class="service-icon"><i class="bi bi-credit-card-2-front"></i></span>
-        <h3 class="h5 fw-bold text-cemig-blue mt-3">Negociação de Débitos</h3>
-        <p class="text-muted small">Parcele faturas em atraso e regularize sua situação rapidamente.</p>
-        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-cemig-green fw-semibold small text-decoration-none">Solicitar pelo WhatsApp →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Como funciona -->
-<section id="como-funciona" class="py-5 py-md-6" style="background:#f1f5f9;">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top py-2">
   <div class="container">
-    <div class="text-center">
-      <h2 class="fw-bold text-cemig-blue display-6">Como Funciona</h2>
-      <p class="text-muted">3 passos simples para receber sua 2ª via</p>
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <i class="bi bi-scissors me-2 fs-3" style="color: #c8a96e;"></i>
+      <span class="logo-text fs-4">Mundo dos Barbeiros</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Alternar navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-2">
+        <li class="nav-item"><a class="nav-link active" href="#inicio"><i class="bi bi-house-door me-1"></i>Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#atividade"><i class="bi bi-bag-check me-1"></i>CNAE</a></li>
+        <li class="nav-item"><a class="nav-link" href="#produtos"><i class="bi bi-box-seam me-1"></i>Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato"><i class="bi bi-telephone me-1"></i>Contato</a></li>
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-gold ms-1" data-bs-toggle="modal" data-bs-target="#termosModal" title="Termos de Uso e Privacidade">
+            <i class="bi bi-shield-lock"></i> Legal
+          </button>
+        </li>
+      </ul>
     </div>
-    <div class="row g-4 mt-3">
-      <div class="col-md-4">
-        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
-          <span class="step-circle">1</span>
-          <h3 class="h5 fw-bold text-cemig-blue mt-3">Clique no WhatsApp</h3>
-          <p class="text-muted small mb-0">Acesse nosso atendimento oficial pelo botão abaixo.</p>
+  </div>
+</nav>
+
+<!-- Hero / cabeçalho -->
+<section id="inicio" class="hero-section text-center">
+  <div class="container py-5">
+    <div class="mb-3">
+      <span class="badge bg-dark text-warning px-3 py-2 fs-6"><i class="bi bi-building"></i> CNPJ 46.240.496/0001-71</span>
+    </div>
+    <h1 class="display-4 fw-bold mb-2">Mundo dos Barbeiros</h1>
+    <p class="lead mb-1">Comércio de Produtos de Barbearia LTDA</p>
+    <p class="fs-5 fw-light">47.72-5-00 • Cosméticos, Perfumaria & Higiene Pessoal</p>
+    <hr class="w-25 mx-auto" style="border-color: #c8a96e; opacity: 0.8;">
+    <p class="mt-3"><i class="bi bi-geo-alt-fill me-1"></i>Rua Tabatinguera, 140 • Sé • São Paulo/SP • 01020-901</p>
+    <p><i class="bi bi-calendar-check me-1"></i>Data Situação Cadastral: 03/05/2022</p>
+  </div>
+</section>
+
+<!-- Seção CNAE e descritores -->
+<section id="atividade" class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="icon-circle"><i class="bi bi-file-earmark-text"></i></span>
+      <h2 class="fw-bold">Atividade Principal • 47.72-5-00</h2>
+      <p class="text-muted">Comércio varejista de cosméticos, produtos de perfumaria e de higiene pessoal</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card-cnae p-4 h-100">
+          <h5 class="fw-bold"><i class="bi bi-check2-circle me-2" style="color:#c8a96e;"></i>Esta atividade compreende</h5>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="bi bi-dot"></i> Cosméticos, produtos de perfumaria, toucador e higiene pessoal</li>
+            <li class="mb-2"><i class="bi bi-dot"></i> Comércio especializado em fraldas descartáveis e absorventes higiênicos</li>
+          </ul>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
-          <span class="step-circle">2</span>
-          <h3 class="h5 fw-bold text-cemig-blue mt-3">Informe seus dados</h3>
-          <p class="text-muted small mb-0">Envie o número da instalação ou CPF do titular.</p>
+      <div class="col-md-6">
+        <div class="card-cnae p-4 h-100">
+          <h5 class="fw-bold"><i class="bi bi-tags-fill me-2" style="color:#c8a96e;"></i>Descritores principais</h5>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="product-badge"><i class="bi bi-scissors"></i> Barbearia</span>
+            <span class="product-badge">Perfumes, essências</span>
+            <span class="product-badge">Cremes e loções</span>
+            <span class="product-badge">Esmaltes para unhas</span>
+            <span class="product-badge">Batons e blush</span>
+            <span class="product-badge">Fraldas descartáveis</span>
+            <span class="product-badge">Absorvente higiênico</span>
+            <span class="product-badge">Creme dental</span>
+            <span class="product-badge">Bronzeadores</span>
+            <span class="product-badge">Higiene para animais</span>
+            <span class="product-badge">Preservativos</span>
+            <span class="product-badge">Artigos de toucador</span>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
-          <span class="step-circle">3</span>
-          <h3 class="h5 fw-bold text-cemig-blue mt-3">Receba sua fatura</h3>
-          <p class="text-muted small mb-0">Sua segunda via chega em PDF, pronta para pagamento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de ícones e frases / produtos em destaque -->
+<section id="produtos" class="py-5" style="background: #f4efe7;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="icon-circle"><i class="bi bi-stars"></i></span>
+      <h2 class="fw-bold">Nossas especialidades</h2>
+      <p class="text-secondary">Tudo para barbearia, beleza e cuidados pessoais</p>
+    </div>
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+          <i class="bi bi-brush fs-1" style="color:#c8a96e;"></i>
+          <p class="fw-semibold mt-2 small">Bases & Pincéis</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+          <i class="bi bi-droplet fs-1" style="color:#c8a96e;"></i>
+          <p class="fw-semibold mt-2 small">Óleos & Essências</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+          <i class="bi bi-suit-heart fs-1" style="color:#c8a96e;"></i>
+          <p class="fw-semibold mt-2 small">Preservativos</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+          <i class="bi bi-sun fs-1" style="color:#c8a96e;"></i>
+          <p class="fw-semibold mt-2 small">Bronzeadores</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+          <i class="bi bi-flower1 fs-1" style="color:#c8a96e;"></i>
+          <p class="fw-semibold mt-2 small">Perfumaria</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
+          <i class="bi bi-puzzle fs-1" style="color:#c8a96e;"></i>
+          <p class="fw-semibold mt-2 small">Fraldas & Higiene</p>
         </div>
       </div>
     </div>
     <div class="text-center mt-5">
-      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn-whatsapp btn-whatsapp-lg">
-        <i class="bi bi-whatsapp"></i> Iniciar Atendimento
-      </a>
+      <p class="fst-italic fs-5 text-dark">“Do barbear clássico ao cuidado diário, temos tudo para você e sua família.”</p>
+      <p class="fw-light">Comércio varejista de produtos de beleza e higiene pessoal • também para uso veterinário.</p>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="py-5 py-md-6">
+<!-- Contato / localização -->
+<section id="contato" class="py-5 bg-dark text-light">
   <div class="container">
-    <div class="bg-gradient-hero text-white text-center p-4 p-md-5 rounded-4">
-      <i class="bi bi-whatsapp" style="font-size:2.75rem;"></i>
-      <h2 class="fw-bold mt-3 display-6">Precisa da sua 2ª via agora?</h2>
-      <p class="text-white-50 mb-4">Atendimento humanizado, rápido e disponível 24 horas por dia.</p>
-      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-white-pill text-decoration-none">
-        <i class="bi bi-whatsapp me-1"></i> Conversar no WhatsApp
-      </a>
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h3 class="fw-bold mb-3"><i class="bi bi-shop me-2"></i>Mundo dos Barbeiros</h3>
+        <address class="fs-5">
+          <strong>Razão Social:</strong> Mundo dos Barbeiros Comercio de Produtos de Barbearia LTDA<br>
+          <strong>Nome Fantasia:</strong> Mundo dos Barbeiros Comercio de Produtos de Barbearia LTDA<br>
+          <strong>CNPJ:</strong> 46.240.496/0001-71<br>
+          <strong>Endereço:</strong> Rua Tabatinguera, 140 • Bairro Sé<br>
+          São Paulo - SP • CEP 01020-901<br>
+          <strong><i class="bi bi-telephone-inbound me-1"></i></strong> (11) 5563-1961
+        </address>
+        <div class="mt-3">
+          <span class="badge bg-light text-dark p-2 fs-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Situação Cadastral ativa desde 03/05/2022</span>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="p-4 bg-secondary bg-opacity-25 rounded-4">
+          <i class="bi bi-geo-alt-fill display-3" style="color:#c8a96e;"></i>
+          <p class="mt-2">Atendimento especializado em barbearia e cosméticos.</p>
+          <p class="small">Também trabalhamos com artigos de toucador e higiene animal.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="border-top bg-white">
-  <div class="container py-4 text-center text-muted small">
-    <p class="mb-1">© <span id="year"></span> Atendimento Cemig — Segunda Via de Fatura</p>
-    <p class="mb-0">Este é um canal de atendimento. Para o site oficial acesse cemig.com.br</p>
+<footer class="footer-custom py-4 text-center">
+  <div class="container">
+    <p class="mb-1"><i class="bi bi-c-circle"></i> 2025 Mundo dos Barbeiros • CNPJ 46.240.496/0001-71</p>
+    <p class="small mb-2">47.72-5-00 | Cosméticos, perfumaria e higiene pessoal</p>
+    <div>
+      <button class="btn btn-sm btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#termosModal"><i class="bi bi-file-text"></i> Termos de Uso</button>
+      <button class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#privacidadeModal"><i class="bi bi-lock"></i> Política de Privacidade</button>
+    </div>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<!-- Modal Termos de Uso -->
+<div class="modal fade" id="termosModal" tabindex="-1" aria-labelledby="termosLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #2c2c2c; color: #f0e6d3;">
+        <h5 class="modal-title" id="termosLabel"><i class="bi bi-journal-text me-2"></i>Termos de Uso</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <h6 class="fw-bold">1. Aceitação dos Termos</h6>
+        <p>Ao acessar o site Mundo dos Barbeiros, você concorda com estes termos. Este site é mantido por Mundo dos Barbeiros Comercio de Produtos de Barbearia LTDA, CNPJ 46.240.496/0001-71.</p>
+        <h6 class="fw-bold">2. Uso do site</h6>
+        <p>O conteúdo destina-se a informar sobre produtos de barbearia, cosméticos, perfumaria e higiene pessoal (CNAE 47.72-5-00). Não realizamos vendas diretas online neste ambiente, mas apresentamos nosso portfólio.</p>
+        <h6 class="fw-bold">3. Propriedade Intelectual</h6>
+        <p>Marca, logotipo e descrições são propriedade da empresa. Ícones e framework Bootstrap são utilizados conforme suas licenças.</p>
+        <h6 class="fw-bold">4. Limitação de responsabilidade</h6>
+        <p>As informações de produtos são ilustrativas. Para compras e disponibilidade, entre em contato pelo telefone (11) 5563-1961.</p>
+        <p class="mt-3 text-muted"><i class="bi bi-geo-alt"></i> Rua Tabatinguera, 140 - Sé, São Paulo/SP.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendi</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Política de Privacidade -->
+<div class="modal fade" id="privacidadeModal" tabindex="-1" aria-labelledby="privacidadeLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #2c2c2c; color: #f0e6d3;">
+        <h5 class="modal-title" id="privacidadeLabel"><i class="bi bi-shield-check me-2"></i>Política de Privacidade</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <h6 class="fw-bold">1. Coleta de informações</h6>
+        <p>Não coletamos dados pessoais automaticamente. Nosso site é institucional e não possui formulários de cadastro. Podemos utilizar cookies mínimos para funcionamento (Bootstrap).</p>
+        <h6 class="fw-bold">2. Uso de informações</h6>
+        <p>Quaisquer contatos realizados via telefone ou e-mail serão tratados conforme a LGPD, apenas para finalidade comercial legítima relacionada a cosméticos e higiene pessoal.</p>
+        <h6 class="fw-bold">3. Compartilhamento</h6>
+        <p>Não compartilhamos dados com terceiros. Dados de contato são usados exclusivamente pela Mundo dos Barbeiros.</p>
+        <h6 class="fw-bold">4. Direitos do titular</h6>
+        <p>Você pode solicitar informações pelo telefone (11) 5563-1961 ou em nosso endereço na Rua Tabatinguera, 140 - Sé - SP.</p>
+        <p class="mt-3"><span class="badge bg-dark">CNPJ 46.240.496/0001-71</span> <span class="ms-2 text-muted">Atividade 47.72-5-00</span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script para fechar modais ao clicar em links internos (não necessário, mas mantido limpo) -->
 </body>
 </html>
