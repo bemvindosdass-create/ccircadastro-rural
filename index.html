@@ -1,338 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>Mundo dos Barbeiros • Cosméticos & Perfumaria</title>
-  <!-- Bootstrap 5 CSS + ícones próprios -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <!-- Favicon dinâmico (emoji de barbearia como ícone) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💈</text></svg>">
-  <style>
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background-color: #f8f5f2;
-      scroll-behavior: smooth;
-    }
-    .navbar-custom {
-      background: rgba(30, 30, 30, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 2px solid #c8a96e;
-    }
-    .logo-text {
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #f3e1c2, #c8a96e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-section {
-      background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
-      color: #f0e6d3;
-      border-bottom: 4px solid #c8a96e;
-      padding: 4rem 0;
-    }
-    .icon-circle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: rgba(200, 169, 110, 0.15);
-      color: #c8a96e;
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-      transition: all 0.3s;
-    }
-    .icon-circle:hover {
-      background: #c8a96e;
-      color: #1a1a1a;
-      transform: translateY(-3px);
-    }
-    .card-cnae {
-      background: white;
-      border-left: 5px solid #c8a96e;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      transition: 0.2s;
-    }
-    .card-cnae:hover {
-      box-shadow: 0 20px 30px rgba(0,0,0,0.08);
-    }
-    .product-badge {
-      background-color: #2c2c2c;
-      color: #f0e6d3;
-      font-weight: 500;
-      padding: 0.35rem 1.2rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-    }
-    .footer-custom {
-      background: #1e1e1e;
-      color: #ccc;
-      border-top: 3px solid #c8a96e;
-    }
-    .btn-outline-gold {
-      border: 1.5px solid #c8a96e;
-      color: #c8a96e;
-      background: transparent;
-      font-weight: 600;
-    }
-    .btn-outline-gold:hover {
-      background: #c8a96e;
-      color: #1a1a1a;
-    }
-    .modal-content {
-      border-radius: 18px;
-      background: #fefcf8;
-    }
-    address {
-      font-style: normal;
-      line-height: 1.7;
-    }
-    .divider-gold {
-      height: 2px;
-      background: linear-gradient(to right, transparent, #c8a96e, transparent);
-      margin: 2rem 0;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Segunda Via de Fatura - Energia Online</title>
+<meta name="description" content="Solicite sua segunda via de fatura de energia online pelo WhatsApp. Atendimento rápido e seguro." />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+<style>
+:root{--green-900:#064e3b;--green-800:#065f46;--green-700:#047857;--green-500:#10b981;--whats:#25d366;--whats-hover:#1ebe5b}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#334155;background:#fff}
+.text-success-emphasis{color:var(--green-800)!important}
+.logo-badge{width:36px;height:36px;border-radius:.5rem;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#34d399,#047857)}
+.logo-badge i{font-size:1.1rem;color:#fff}
+.nav-item-top{color:var(--green-800);text-decoration:none}
+.nav-item-top:hover{color:var(--green-500)}
+.btn-success-dark{background:var(--green-900);color:#fff;border:none}
+.btn-success-dark:hover{background:var(--green-800);color:#fff}
+.bg-dark-green{background:var(--green-900)!important}
+.divider-v{width:1px;height:20px;background:rgba(255,255,255,.2)}
+.btn-whatsapp{background:var(--whats);color:#fff;border:none}
+.btn-whatsapp:hover{background:var(--whats-hover);color:#fff}
+.hero-img{position:relative;height:280px;overflow:hidden;background:#1f2937}
+@media(min-width:768px){.hero-img{height:440px}}
+.hero-img img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(0,0,0,.2))}
+.service-cards-wrap{margin-top:-40px;position:relative;z-index:2}
+@media(min-width:768px){.service-cards-wrap{margin-top:-64px}}
+.service-card{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border-radius:.75rem;padding:1.25rem;min-height:140px;text-decoration:none;color:#1e293b;box-shadow:0 10px 25px rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.12)}
+.service-card i{font-size:1.75rem;color:var(--green-700);margin-bottom:1rem}
+.service-card span{font-size:.9rem;font-weight:600;line-height:1.3}
+.highlight-dark{background:linear-gradient(135deg,#1e293b,#0f172a)}
+.step-card{background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;padding:1.5rem;box-shadow:0 1px 2px rgba(0,0,0,.04);height:100%}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--green-500);color:#fff;font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+.step-card h3{font-size:1.1rem;font-weight:700;color:#0f172a;margin-top:1rem}
+.step-card p{font-size:.875rem;color:#64748b;margin-top:.5rem;margin-bottom:0}
+</style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top py-2">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <i class="bi bi-scissors me-2 fs-3" style="color: #c8a96e;"></i>
-      <span class="logo-text fs-4">Mundo dos Barbeiros</span>
+<header class="bg-white">
+  <div class="container d-flex align-items-center justify-content-between py-3">
+    <a href="/" class="d-flex align-items-center gap-2 text-decoration-none">
+      <span class="logo-badge"><i class="bi bi-lightning-charge-fill"></i></span>
+      <span class="fw-bold fs-4 text-success-emphasis">Agência Virtual</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Alternar navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarMain">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-2">
-        <li class="nav-item"><a class="nav-link active" href="#inicio"><i class="bi bi-house-door me-1"></i>Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="#atividade"><i class="bi bi-bag-check me-1"></i>CNAE</a></li>
-        <li class="nav-item"><a class="nav-link" href="#produtos"><i class="bi bi-box-seam me-1"></i>Produtos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contato"><i class="bi bi-telephone me-1"></i>Contato</a></li>
-        <li class="nav-item">
-          <button class="btn btn-sm btn-outline-gold ms-1" data-bs-toggle="modal" data-bs-target="#termosModal" title="Termos de Uso e Privacidade">
-            <i class="bi bi-shield-lock"></i> Legal
-          </button>
-        </li>
-      </ul>
+    <nav class="d-none d-lg-flex gap-4 small fw-semibold">
+      <a href="#" class="nav-item-top">Quem somos <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Serviços <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Sustentabilidade <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Inovação <i class="bi bi-chevron-down small"></i></a>
+      <a href="#" class="nav-item-top">Fale Conosco <i class="bi bi-chevron-down small"></i></a>
+    </nav>
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-search d-none d-md-block text-secondary"></i>
+      <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-success-dark d-none d-md-inline-flex align-items-center gap-2">
+        <i class="bi bi-box-arrow-in-right"></i> Área do cliente
+      </a>
     </div>
   </div>
-</nav>
+</header>
 
-<!-- Hero / cabeçalho -->
-<section id="inicio" class="hero-section text-center">
-  <div class="container py-5">
-    <div class="mb-3">
-      <span class="badge bg-dark text-warning px-3 py-2 fs-6"><i class="bi bi-building"></i> CNPJ 46.240.496/0001-71</span>
+<div class="bg-dark-green text-white">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center gap-4 py-2 small fw-medium overflow-auto">
+      <button class="btn btn-link text-white p-0 fw-bold text-decoration-none">SP / MS <i class="bi bi-chevron-down small"></i></button>
+      <span class="d-none d-sm-block divider-v"></span>
+      <a href="#" class="text-white text-decoration-none border-bottom border-2 border-white pb-1 fw-bold">Início</a>
+      <a href="#" class="text-white-50 text-decoration-none">Sua Casa</a>
+      <a href="#" class="text-white-50 text-decoration-none">Seu Negócio</a>
+      <a href="#" class="text-white-50 text-decoration-none">Poder Público</a>
     </div>
-    <h1 class="display-4 fw-bold mb-2">Mundo dos Barbeiros</h1>
-    <p class="lead mb-1">Comércio de Produtos de Barbearia LTDA</p>
-    <p class="fs-5 fw-light">47.72-5-00 • Cosméticos, Perfumaria & Higiene Pessoal</p>
-    <hr class="w-25 mx-auto" style="border-color: #c8a96e; opacity: 0.8;">
-    <p class="mt-3"><i class="bi bi-geo-alt-fill me-1"></i>Rua Tabatinguera, 140 • Sé • São Paulo/SP • 01020-901</p>
-    <p><i class="bi bi-calendar-check me-1"></i>Data Situação Cadastral: 03/05/2022</p>
+    <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-whatsapp d-none d-md-inline-flex align-items-center gap-2 my-2">
+      <i class="bi bi-whatsapp"></i> Serviços on-line
+    </a>
+  </div>
+</div>
+
+<section class="position-relative">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=1600&q=80" alt="Vista panorâmica da cidade" />
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container service-cards-wrap">
+    <div class="row g-3">
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-upc-scan"></i><span>Segunda Via<br>e Débito</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-lightbulb"></i><span>Falta de<br>Energia</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-file-earmark-text"></i><span>Canais de<br>Atendimento</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-credit-card"></i><span>Parcelamento<br>de Débitos</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-person"></i><span>Troca de<br>Nome da Conta</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-arrow-up-right"></i><span>Todos os<br>Serviços</span></a></div>
+      <div class="col-6 col-sm-3 col-lg"><a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="service-card"><i class="bi bi-wallet2"></i><span>Pagamentos</span></a></div>
+    </div>
   </div>
 </section>
 
-<!-- Seção CNAE e descritores -->
-<section id="atividade" class="py-5 bg-white">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="icon-circle"><i class="bi bi-file-earmark-text"></i></span>
-      <h2 class="fw-bold">Atividade Principal • 47.72-5-00</h2>
-      <p class="text-muted">Comércio varejista de cosméticos, produtos de perfumaria e de higiene pessoal</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card-cnae p-4 h-100">
-          <h5 class="fw-bold"><i class="bi bi-check2-circle me-2" style="color:#c8a96e;"></i>Esta atividade compreende</h5>
-          <ul class="list-unstyled mt-3">
-            <li class="mb-2"><i class="bi bi-dot"></i> Cosméticos, produtos de perfumaria, toucador e higiene pessoal</li>
-            <li class="mb-2"><i class="bi bi-dot"></i> Comércio especializado em fraldas descartáveis e absorventes higiênicos</li>
-          </ul>
-        </div>
+<section class="container mt-5">
+  <div class="row g-3">
+    <div class="col-md-8">
+      <div class="highlight-dark p-4 p-md-5 rounded-4 text-white h-100">
+        <h2 class="fw-bold display-6">Segunda via da fatura na palma da sua mão</h2>
+        <p class="mt-3 text-light" style="max-width:28rem">Solicite sua 2ª via de conta de luz pelo WhatsApp em poucos minutos. Receba o boleto atualizado direto no seu celular.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-whatsapp mt-3 d-inline-flex align-items-center gap-2 px-4 py-2 fw-bold"><i class="bi bi-whatsapp"></i> Solicitar pelo WhatsApp</a>
       </div>
-      <div class="col-md-6">
-        <div class="card-cnae p-4 h-100">
-          <h5 class="fw-bold"><i class="bi bi-tags-fill me-2" style="color:#c8a96e;"></i>Descritores principais</h5>
-          <div class="d-flex flex-wrap gap-2 mt-3">
-            <span class="product-badge"><i class="bi bi-scissors"></i> Barbearia</span>
-            <span class="product-badge">Perfumes, essências</span>
-            <span class="product-badge">Cremes e loções</span>
-            <span class="product-badge">Esmaltes para unhas</span>
-            <span class="product-badge">Batons e blush</span>
-            <span class="product-badge">Fraldas descartáveis</span>
-            <span class="product-badge">Absorvente higiênico</span>
-            <span class="product-badge">Creme dental</span>
-            <span class="product-badge">Bronzeadores</span>
-            <span class="product-badge">Higiene para animais</span>
-            <span class="product-badge">Preservativos</span>
-            <span class="product-badge">Artigos de toucador</span>
-          </div>
-        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="bg-dark-green p-4 p-md-5 rounded-4 text-white h-100">
+        <h3 class="fw-bold">Tarifa</h3>
+        <p class="mt-2 small text-white-50">Saiba como funciona a tarifa de energia e tire suas dúvidas com o nosso atendimento.</p>
+        <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="text-success fw-bold text-decoration-none mt-3 d-inline-block">Saiba mais →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Seção de ícones e frases / produtos em destaque -->
-<section id="produtos" class="py-5" style="background: #f4efe7;">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="icon-circle"><i class="bi bi-stars"></i></span>
-      <h2 class="fw-bold">Nossas especialidades</h2>
-      <p class="text-secondary">Tudo para barbearia, beleza e cuidados pessoais</p>
-    </div>
-    <div class="row g-4 text-center">
-      <div class="col-6 col-md-3 col-lg-2">
-        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-          <i class="bi bi-brush fs-1" style="color:#c8a96e;"></i>
-          <p class="fw-semibold mt-2 small">Bases & Pincéis</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-          <i class="bi bi-droplet fs-1" style="color:#c8a96e;"></i>
-          <p class="fw-semibold mt-2 small">Óleos & Essências</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-          <i class="bi bi-suit-heart fs-1" style="color:#c8a96e;"></i>
-          <p class="fw-semibold mt-2 small">Preservativos</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-          <i class="bi bi-sun fs-1" style="color:#c8a96e;"></i>
-          <p class="fw-semibold mt-2 small">Bronzeadores</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-          <i class="bi bi-flower1 fs-1" style="color:#c8a96e;"></i>
-          <p class="fw-semibold mt-2 small">Perfumaria</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <div class="p-3 bg-white rounded-4 shadow-sm h-100">
-          <i class="bi bi-puzzle fs-1" style="color:#c8a96e;"></i>
-          <p class="fw-semibold mt-2 small">Fraldas & Higiene</p>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-5">
-      <p class="fst-italic fs-5 text-dark">“Do barbear clássico ao cuidado diário, temos tudo para você e sua família.”</p>
-      <p class="fw-light">Comércio varejista de produtos de beleza e higiene pessoal • também para uso veterinário.</p>
-    </div>
+<section class="container mt-5 pt-4">
+  <h2 class="text-center fw-bold text-success-emphasis">Como pedir sua 2ª via</h2>
+  <div class="row g-3 mt-4">
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">1</div><h3>Clique no WhatsApp</h3><p>Toque em qualquer botão verde da página.</p></div></div>
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">2</div><h3>Informe seu CPF</h3><p>Ou número da instalação para localizarmos.</p></div></div>
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">3</div><h3>Receba o boleto</h3><p>Em PDF, com PIX e código de barras.</p></div></div>
+    <div class="col-md-3 col-sm-6"><div class="step-card"><div class="step-num">4</div><h3>Pague onde quiser</h3><p>Banco, app, lotérica ou PIX.</p></div></div>
+  </div>
+  <div class="text-center mt-5">
+    <a href="https://wa.me/message/QAJOFGIO6ILKN1" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg rounded-pill fw-bold px-4 py-3 d-inline-flex align-items-center gap-2 shadow"><i class="bi bi-whatsapp fs-4"></i> Falar no WhatsApp agora</a>
   </div>
 </section>
 
-<!-- Contato / localização -->
-<section id="contato" class="py-5 bg-dark text-light">
+<footer class="bg-dark-green text-white-50 text-center py-4 mt-5">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 mb-4 mb-lg-0">
-        <h3 class="fw-bold mb-3"><i class="bi bi-shop me-2"></i>Mundo dos Barbeiros</h3>
-        <address class="fs-5">
-          <strong>Razão Social:</strong> Mundo dos Barbeiros Comercio de Produtos de Barbearia LTDA<br>
-          <strong>Nome Fantasia:</strong> Mundo dos Barbeiros Comercio de Produtos de Barbearia LTDA<br>
-          <strong>CNPJ:</strong> 46.240.496/0001-71<br>
-          <strong>Endereço:</strong> Rua Tabatinguera, 140 • Bairro Sé<br>
-          São Paulo - SP • CEP 01020-901<br>
-          <strong><i class="bi bi-telephone-inbound me-1"></i></strong> (11) 5563-1961
-        </address>
-        <div class="mt-3">
-          <span class="badge bg-light text-dark p-2 fs-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Situação Cadastral ativa desde 03/05/2022</span>
-        </div>
-      </div>
-      <div class="col-lg-6 text-center">
-        <div class="p-4 bg-secondary bg-opacity-25 rounded-4">
-          <i class="bi bi-geo-alt-fill display-3" style="color:#c8a96e;"></i>
-          <p class="mt-2">Atendimento especializado em barbearia e cosméticos.</p>
-          <p class="small">Também trabalhamos com artigos de toucador e higiene animal.</p>
-        </div>
-      </div>
+    <div class="d-flex align-items-center justify-content-center gap-2">
+      <i class="bi bi-lightning-charge-fill text-success"></i>
+      <span class="fw-bold text-white">Agência Virtual</span>
     </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer-custom py-4 text-center">
-  <div class="container">
-    <p class="mb-1"><i class="bi bi-c-circle"></i> 2025 Mundo dos Barbeiros • CNPJ 46.240.496/0001-71</p>
-    <p class="small mb-2">47.72-5-00 | Cosméticos, perfumaria e higiene pessoal</p>
-    <div>
-      <button class="btn btn-sm btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#termosModal"><i class="bi bi-file-text"></i> Termos de Uso</button>
-      <button class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#privacidadeModal"><i class="bi bi-lock"></i> Política de Privacidade</button>
-    </div>
+    <p class="mt-2 mb-0 small">Atendimento via WhatsApp para segunda via de fatura de energia.</p>
   </div>
 </footer>
 
-<!-- Modal Termos de Uso -->
-<div class="modal fade" id="termosModal" tabindex="-1" aria-labelledby="termosLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header" style="background: #2c2c2c; color: #f0e6d3;">
-        <h5 class="modal-title" id="termosLabel"><i class="bi bi-journal-text me-2"></i>Termos de Uso</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-      </div>
-      <div class="modal-body">
-        <h6 class="fw-bold">1. Aceitação dos Termos</h6>
-        <p>Ao acessar o site Mundo dos Barbeiros, você concorda com estes termos. Este site é mantido por Mundo dos Barbeiros Comercio de Produtos de Barbearia LTDA, CNPJ 46.240.496/0001-71.</p>
-        <h6 class="fw-bold">2. Uso do site</h6>
-        <p>O conteúdo destina-se a informar sobre produtos de barbearia, cosméticos, perfumaria e higiene pessoal (CNAE 47.72-5-00). Não realizamos vendas diretas online neste ambiente, mas apresentamos nosso portfólio.</p>
-        <h6 class="fw-bold">3. Propriedade Intelectual</h6>
-        <p>Marca, logotipo e descrições são propriedade da empresa. Ícones e framework Bootstrap são utilizados conforme suas licenças.</p>
-        <h6 class="fw-bold">4. Limitação de responsabilidade</h6>
-        <p>As informações de produtos são ilustrativas. Para compras e disponibilidade, entre em contato pelo telefone (11) 5563-1961.</p>
-        <p class="mt-3 text-muted"><i class="bi bi-geo-alt"></i> Rua Tabatinguera, 140 - Sé, São Paulo/SP.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendi</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Política de Privacidade -->
-<div class="modal fade" id="privacidadeModal" tabindex="-1" aria-labelledby="privacidadeLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header" style="background: #2c2c2c; color: #f0e6d3;">
-        <h5 class="modal-title" id="privacidadeLabel"><i class="bi bi-shield-check me-2"></i>Política de Privacidade</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-      </div>
-      <div class="modal-body">
-        <h6 class="fw-bold">1. Coleta de informações</h6>
-        <p>Não coletamos dados pessoais automaticamente. Nosso site é institucional e não possui formulários de cadastro. Podemos utilizar cookies mínimos para funcionamento (Bootstrap).</p>
-        <h6 class="fw-bold">2. Uso de informações</h6>
-        <p>Quaisquer contatos realizados via telefone ou e-mail serão tratados conforme a LGPD, apenas para finalidade comercial legítima relacionada a cosméticos e higiene pessoal.</p>
-        <h6 class="fw-bold">3. Compartilhamento</h6>
-        <p>Não compartilhamos dados com terceiros. Dados de contato são usados exclusivamente pela Mundo dos Barbeiros.</p>
-        <h6 class="fw-bold">4. Direitos do titular</h6>
-        <p>Você pode solicitar informações pelo telefone (11) 5563-1961 ou em nosso endereço na Rua Tabatinguera, 140 - Sé - SP.</p>
-        <p class="mt-3"><span class="badge bg-dark">CNPJ 46.240.496/0001-71</span> <span class="ms-2 text-muted">Atividade 47.72-5-00</span></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fechar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Script para fechar modais ao clicar em links internos (não necessário, mas mantido limpo) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
