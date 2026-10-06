@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lanchonete Amanda Figueiroa | MEI Olinda - PE</title>
-    <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -15,7 +14,7 @@
         }
 
         body {
-            background-color: #fff9f2; /* tom quente de lanchonete */
+            background-color: #fff9f2;
             color: #2c2c2c;
             line-height: 1.5;
             display: flex;
@@ -23,16 +22,14 @@
             min-height: 100vh;
         }
 
-        /* container principal */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* topo / cabeçalho */
         .top-bar {
-            background-color: #b22222; /* vermelho lanchonete */
+            background-color: #b22222;
             color: white;
             padding: 12px 0;
             font-size: 0.9rem;
@@ -93,6 +90,7 @@
             display: flex;
             gap: 25px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .info-header .badge {
@@ -111,63 +109,89 @@
             color: #b22222;
         }
 
-        /* banner / destaque */
+        /* BANNER COM IMAGEM DE FUNDO */
         .hero {
-            background: linear-gradient(135deg, #fff3e6 0%, #ffe6d5 100%);
-            padding: 40px 0;
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
             margin: 20px 0 30px;
             border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(139,44,29,0.85) 0%, rgba(178,34,34,0.7) 100%);
+            z-index: 1;
         }
 
         .hero .container {
+            position: relative;
+            z-index: 2;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
+            gap: 30px;
         }
 
         .hero-text {
             flex: 1 1 300px;
+            color: white;
         }
 
         .hero-text h2 {
             font-size: 2.4rem;
-            color: #8b2c1d;
             line-height: 1.2;
             margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
         }
 
         .hero-text p {
             font-size: 1.2rem;
-            color: #4a2c1a;
             margin-bottom: 20px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
         }
 
         .hero-text .btn {
-            background: #b22222;
-            color: white;
-            padding: 12px 30px;
+            background: #f5c68b;
+            color: #5e2a1a;
+            padding: 14px 34px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 700;
             display: inline-block;
-            transition: background 0.2s;
-            box-shadow: 0 4px 8px rgba(178,34,34,0.2);
+            transition: all 0.2s;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.25);
         }
 
         .hero-text .btn:hover {
-            background: #8b1a1a;
+            background: #ffd9a8;
+            transform: translateY(-2px);
         }
 
         .hero-image {
-            flex: 1 1 200px;
+            flex: 0 1 380px;
             text-align: center;
-            font-size: 5rem;
-            color: #b22222;
-            opacity: 0.7;
         }
 
-        /* cards principais */
+        .hero-image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+            border: 5px solid rgba(255,255,255,0.9);
+            transition: transform 0.3s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.03);
+        }
+
         .section-title {
             font-size: 1.8rem;
             color: #3e2a1f;
@@ -245,7 +269,52 @@
             margin-top: 15px;
         }
 
-        /* avaliações / depoimentos (estilo site) */
+        /* GALERIA DE IMAGENS */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin: 30px 0 40px;
+        }
+
+        .galeria-item {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            height: 220px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: #f0e0d0;
+        }
+
+        .galeria-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .galeria-item .legenda {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px 15px 12px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
         .avaliacoes {
             background: #ffffffd9;
             border-radius: 24px;
@@ -295,7 +364,6 @@
             font-size: 0.95rem;
         }
 
-        /* rodapé completo (com localização, horário, políticas) */
         footer {
             background-color: #241a14;
             color: #e9dbd0;
@@ -388,7 +456,6 @@
             color: #a28d7e;
         }
 
-        /* utilidades */
         .text-center {
             text-align: center;
         }
@@ -397,11 +464,6 @@
             margin-top: 12px;
         }
 
-        .w-100 {
-            width: 100%;
-        }
-
-        /* responsivo */
         @media (max-width: 700px) {
             .header-main .container {
                 flex-direction: column;
@@ -421,12 +483,14 @@
             .hero-text h2 {
                 font-size: 1.8rem;
             }
+            .hero-image {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Barra superior com contato rápido -->
     <div class="top-bar">
         <div class="container">
             <div><i class="fas fa-store"></i> Lanchonete & Casa de Sucos</div>
@@ -438,7 +502,6 @@
         </div>
     </div>
 
-    <!-- Cabeçalho principal -->
     <header class="header-main">
         <div class="container">
             <div class="logo">
@@ -458,24 +521,68 @@
         </div>
     </header>
 
-    <!-- Hero / destaque -->
+    <!-- HERO COM IMAGEM -->
     <div class="hero">
         <div class="container">
             <div class="hero-text">
                 <h2>Lanchonetes, casas de chá, de sucos e similares</h2>
                 <p><i class="fas fa-utensils"></i> Sabor e qualidade no coração de Guadalupe, Olinda.</p>
-                <a href="#contato" class="btn">Peça já pelo WhatsApp</a>
+                <a href="https://wa.me/5581999557052" target="_blank" class="btn">Peça já pelo WhatsApp</a>
             </div>
             <div class="hero-image">
-                <i class="fas fa-mug-hot"></i> <i class="fas fa-hamburger"></i> <i class="fas fa-glass-whiskey"></i>
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" 
+                     alt="Hambúrguer artesanal da lanchonete">
             </div>
         </div>
     </div>
 
-    <!-- Conteúdo principal -->
     <div class="container">
 
-        <!-- Seção Sobre a empresa (dados oficiais) -->
+        <!-- GALERIA DE IMAGENS DE LANCHONETE -->
+        <h2 class="section-title"><i class="fas fa-images" style="color:#b22222; margin-right: 10px;"></i> Nossa cozinha em imagens</h2>
+        <div class="galeria">
+            <div class="galeria-item">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80" 
+                     alt="Hambúrguer suculento" loading="lazy">
+                <div class="legenda"><i class="fas fa-hamburger"></i> Hambúrguer Artesanal</div>
+            </div>
+            <div class="galeria-item">
+                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80" 
+                     alt="Batata frita crocante" loading="lazy">
+                <div class="legenda"><i class="fas fa-french-fries"></i> Batatas Crocantes</div>
+            </div>
+            <div class="galeria-item">
+                <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=600&q=80" 
+                     alt="Sucos naturais" loading="lazy">
+                <div class="legenda"><i class="fas fa-glass-whiskey"></i> Sucos Naturais</div>
+            </div>
+            <div class="galeria-item">
+                <img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?w=600&q=80" 
+                     alt="Açaí na tigela" loading="lazy">
+                <div class="legenda"><i class="fas fa-ice-cream"></i> Açaí na Tigela</div>
+            </div>
+            <div class="galeria-item">
+                <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80" 
+                     alt="Ambiente da lanchonete" loading="lazy">
+                <div class="legenda"><i class="fas fa-store"></i> Nosso Ambiente</div>
+            </div>
+            <div class="galeria-item">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" 
+                     alt="Porções variadas" loading="lazy">
+                <div class="legenda"><i class="fas fa-utensils"></i> Porções Variadas</div>
+            </div>
+            <div class="galeria-item">
+                <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" 
+                     alt="Sanduíche natural" loading="lazy">
+                <div class="legenda"><i class="fas fa-bread-slice"></i> Sanduíches</div>
+            </div>
+            <div class="galeria-item">
+                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" 
+                     alt="Milk shakes" loading="lazy">
+                <div class="legenda"><i class="fas fa-mug-hot"></i> Milk Shakes</div>
+            </div>
+        </div>
+
         <h2 class="section-title"><i class="fas fa-store-alt" style="color:#b22222; margin-right: 10px;"></i> Sobre a empresa</h2>
         <div class="grid-cards">
             <div class="card">
@@ -516,7 +623,6 @@
             </div>
         </div>
 
-        <!-- Atividade principal detalhada -->
         <h2 class="section-title"><i class="fas fa-coffee" style="color:#b22222; margin-right: 10px;"></i> Nossa especialidade</h2>
         <div class="grid-cards">
             <div class="card">
@@ -546,7 +652,6 @@
             </div>
         </div>
 
-        <!-- Depoimentos adicionais para preencher estilo -->
         <div class="avaliacoes">
             <h3><i class="fas fa-comment-dots"></i> O que dizem nossos clientes</h3>
             <div class="depoimentos-grid">
@@ -568,7 +673,6 @@
             </div>
         </div>
 
-        <!-- Sobre textual conforme pedido -->
         <div style="background: #f9f1e7; border-radius: 20px; padding: 30px; margin: 40px 0;">
             <h3 style="color: #8b2c1d; margin-bottom: 15px; font-size: 1.6rem;">Sobre</h3>
             <p style="font-size: 1.1rem;">A empresa <strong>69.450.404 Amanda Juliana de Figueiroa Lopes</strong> de CNPJ <strong>69.450.404/0001-83</strong>, foi fundada em <strong>02/10/2026</strong> na cidade <strong>Olinda</strong> no estado <strong>Pernambuco</strong>. Sua atividade principal, conforme a Receita Federal, é <strong>56.11-2-03 - Lanchonetes, casas de chá, de sucos e similares</strong>. Sua situação cadastral até o momento é <strong>Ativa</strong>.</p>
@@ -576,10 +680,8 @@
         </div>
     </div>
 
-    <!-- Rodapé completo (com localização, horário, políticas, termos, sobre) -->
     <footer id="contato">
         <div class="container">
-            <!-- Coluna 1: Endereço e contato -->
             <div class="footer-col">
                 <h4><i class="fas fa-map-pin"></i> Localização</h4>
                 <p><i class="fas fa-road"></i> Rua Armindo Moura, 472</p>
@@ -591,7 +693,6 @@
                 <p><i class="fab fa-whatsapp"></i> WhatsApp: (81) 99955-7052</p>
             </div>
 
-            <!-- Coluna 2: Horário de funcionamento -->
             <div class="footer-col">
                 <h4><i class="fas fa-clock"></i> Horário de atendimento</h4>
                 <div class="horario-atendimento">
@@ -604,7 +705,6 @@
                 <p><i class="fas fa-id-card"></i> <strong>CNPJ:</strong> 69.450.404/0001-83</p>
             </div>
 
-            <!-- Coluna 3: Links úteis / Sobre / Termos -->
             <div class="footer-col">
                 <h4><i class="fas fa-link"></i> Institucional</h4>
                 <a href="#"><i class="fas fa-info-circle"></i> Sobre nós</a>
@@ -616,7 +716,6 @@
                 <p><i class="fas fa-briefcase"></i> MEI - Microempreendedor Individual</p>
             </div>
 
-            <!-- Coluna 4: Correspondência + redes sociais (opcional) -->
             <div class="footer-col">
                 <h4><i class="fas fa-mail-bulk"></i> Correspondência</h4>
                 <p>69.450.404 Amanda Juliana de Figueiroa Lopes</p>
@@ -630,7 +729,6 @@
                 </div>
             </div>
 
-            <!-- Linha extra com links legais e políticas (reforço) -->
             <div class="footer-links-legais">
                 <a href="#"><i class="fas fa-file-alt"></i> Termo de Uso</a>
                 <a href="#"><i class="fas fa-lock"></i> Políticas de Privacidade</a>
@@ -644,7 +742,6 @@
         </div>
     </footer>
 
-    <!-- Pequeno script para rolagem suave (apenas melhoria) -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
