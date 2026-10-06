@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade | Lanchonete Amanda Figueiroa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #fff9f2; color: #2c2c2c; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .top-bar { background-color: #b22222; color: white; padding: 12px 0; font-size: 0.9rem; }
+        .top-bar .container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+        .top-bar a { color: white; text-decoration: none; margin-left: 20px; }
+        .top-bar a:hover { text-decoration: underline; }
+        .top-bar i { margin-right: 6px; }
+        .header-main { background: white; padding: 25px 0; border-bottom: 3px solid #f0c14b; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .header-main .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 15px; }
+        .logo h1 { font-size: 1.8rem; color: #b22222; letter-spacing: -0.5px; }
+        .logo span { font-weight: 300; color: #5e3a2b; font-size: 0.9rem; display: block; margin-top: 4px; }
+        .info-header { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .info-header .badge { background: #fef1e0; padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; color: #8b4513; display: flex; align-items: center; gap: 8px; }
+        .info-header .badge i { color: #b22222; }
+        .nav-menu { background: #2d1e14; padding: 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .nav-menu .container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .nav-menu a { color: #e9dbd0; padding: 16px 22px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border-bottom: 3px solid transparent; transition: all 0.2s; }
+        .nav-menu a:hover { background: #3d2a1d; color: #f5c68b; }
+        .nav-menu a.ativo { background: #b22222; color: white; border-bottom-color: #f5c68b; }
+        .page-hero { background: linear-gradient(135deg, #8b2c1d 0%, #b22222 100%); color: white; padding: 60px 0 40px; text-align: center; margin: 20px auto; border-radius: 16px; max-width: 1160px; }
+        .page-hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .page-hero p { font-size: 1.1rem; opacity: 0.95; }
+        .conteudo-interno { background: white; border-radius: 20px; padding: 45px 40px; margin: 30px auto; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid #f0e0d0; max-width: 1160px; }
+        .conteudo-interno h2 { color: #8b2c1d; font-size: 1.5rem; margin: 30px 0 15px; border-left: 5px solid #b22222; padding-left: 15px; }
+        .conteudo-interno h2:first-of-type { margin-top: 0; }
+        .conteudo-interno p { margin-bottom: 15px; color: #4e3e34; font-size: 1.03rem; text-align: justify; }
+        .conteudo-interno ul { margin: 15px 0 20px 25px; color: #4e3e34; }
+        .conteudo-interno ul li { margin-bottom: 8px; }
+        .conteudo-interno strong { color: #2d1e14; }
+        .destaque-box { background: #fef1e0; border-left: 5px solid #b22222; padding: 20px 25px; border-radius: 10px; margin: 25px 0; }
+        .data-atualizacao { text-align: right; font-style: italic; color: #7a6a5e; font-size: 0.9rem; margin-top: 30px; border-top: 1px solid #edd9c6; padding-top: 15px; }
+        footer { background-color: #241a14; color: #e9dbd0; padding: 48px 0 24px; margin-top: 60px; font-size: 0.95rem; }
+        footer .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: #f5c68b; font-size: 1.2rem; margin-bottom: 20px; border-bottom: 2px solid #b22222; padding-bottom: 8px; display: inline-block; }
+        .footer-col p, .footer-col a { color: #dacfc6; text-decoration: none; line-height: 1.7; display: block; margin-bottom: 8px; }
+        .footer-col a:hover { color: #f5c68b; }
+        .footer-col i { margin-right: 8px; color: #b22222; width: 18px; }
+        .horario-atendimento { background: #33271f; padding: 12px 16px; border-radius: 12px; margin-top: 10px; }
+        .horario-atendimento p { margin-bottom: 5px; display: flex; justify-content: space-between; }
+        .horario-atendimento span { color: #f5c68b; font-weight: 600; }
+        .footer-links-legais { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; padding-top: 25px; border-top: 1px solid #4a3a30; }
+        .footer-links-legais a { color: #dacfc6; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
+        .footer-links-legais a:hover { color: #f5c68b; text-decoration: underline; }
+        .copyright { grid-column: 1 / -1; text-align: center; margin-top: 25px; font-size: 0.85rem; color: #a28d7e; }
+        @media (max-width: 700px) {
+            .header-main .container { flex-direction: column; gap: 15px; text-align: center; }
+            .info-header { justify-content: center; }
+            .top-bar .container { flex-direction: column; gap: 10px; }
+            .top-bar a { margin: 0 10px; }
+            .nav-menu a { padding: 12px 14px; font-size: 0.85rem; }
+            .nav-menu a span { display: none; }
+            .page-hero h1 { font-size: 1.8rem; }
+            .conteudo-interno { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-store"></i> Lanchonete & Casa de Sucos</div>
+            <div>
+                <a href="tel:+5581999557052"><i class="fas fa-phone-alt"></i> (81) 99955-7052</a>
+                <a href="mailto:amanda32.figueiroa@gmail.com"><i class="fas fa-envelope"></i> E-mail</a>
+                <a href="https://wa.me/5581999557052" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header-main">
+        <div class="container">
+            <div class="logo">
+                <h1>Amanda Figueiroa <span>Lanchonete & Sucos</span></h1>
+            </div>
+            <div class="info-header">
+                <div class="badge"><i class="fas fa-check-circle"></i> MEI Ativa</div>
+                <div class="badge"><i class="fas fa-calendar-alt"></i> Desde 02/10/2026</div>
+                <div class="badge"><i class="fas fa-map-pin"></i> Olinda - PE</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <div class="container">
+            <a href="index.html"><i class="fas fa-home"></i><span> Início</span></a>
+            <a href="sobre.html"><i class="fas fa-info-circle"></i><span> Sobre Nós</span></a>
+            <a href="termos.html"><i class="fas fa-file-contract"></i><span> Termos de Uso</span></a>
+            <a href="privacidade.html" class="ativo"><i class="fas fa-shield-alt"></i><span> Privacidade</span></a>
+            <a href="cookies.html"><i class="fas fa-cookie-bite"></i><span> Cookies</span></a>
+            <a href="entregas.html"><i class="fas fa-truck"></i><span> Entregas</span></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-hero">
+            <h1><i class="fas fa-shield-alt"></i> Política de Privacidade</h1>
+            <p>Saiba como tratamos seus dados pessoais</p>
+        </div>
+
+        <div class="conteudo-interno">
+            <h2>1. Introdução</h2>
+            <p>A <strong>Lanchonete Amanda Figueiroa</strong> respeita a sua privacidade e está comprometida em proteger os dados pessoais dos usuários que visitam nosso site ou entram em contato conosco. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos suas informações, em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD – Lei nº 13.709/2018)</strong>.</p>
+
+            <h2>2. Controlador dos Dados</h2>
+            <p>O controlador dos dados pessoais coletados é:</p>
+            <ul>
+                <li><strong>Razão Social:</strong> 69.450.404 Amanda Juliana de Figueiroa Lopes</li>
+                <li><strong>CNPJ:</strong> 69.450.404/0001-83</li>
+                <li><strong>Endereço:</strong> Rua Armindo Moura, 472 – Guadalupe – Olinda/PE – CEP 53240-600</li>
+                <li><strong>E-mail:</strong> amanda32.figueiroa@gmail.com</li>
+                <li><strong>Telefone/WhatsApp:</strong> (81) 99955-7052</li>
+            </ul>
+
+            <h2>3. Dados Coletados</h2>
+            <p>Podemos coletar os seguintes dados pessoais, sempre com o consentimento do titular ou com base em outra hipótese legal prevista na LGPD:</p>
+            <ul>
+                <li><strong>Dados de contato:</strong> nome, e-mail, telefone/WhatsApp, quando o usuário entra em contato conosco;</li>
+                <li><strong>Dados de navegação:</strong> endereço IP, tipo de navegador, páginas visitadas, tempo de permanência e cookies;</li>
+                <li><strong>Dados fornecidos voluntariamente:</strong> informações enviadas por meio de mensagens, formulários ou pedidos.</li>
+            </ul>
+
+            <h2>4. Finalidade do Tratamento</h2>
+            <p>Os dados coletados são utilizados para as seguintes finalidades:</p>
+            <ul>
+                <li>Responder a solicitações, dúvidas, orçamentos e pedidos;</li>
+                <li>Enviar informações sobre produtos, promoções e novidades (mediante consentimento);</li>
+                <li>Melhorar a experiência de navegação no site;</li>
+                <li>Cumprir obrigações legais e regulatórias;</li>
+                <li>Prevenir fraudes e garantir a segurança do site.</li>
+            </ul>
+
+            <h2>5. Base Legal</h2>
+            <p>O tratamento de dados pessoais é realizado com base nas seguintes hipóteses legais previstas na LGPD:</p>
+            <ul>
+                <li>Consentimento do titular;</li>
+                <li>Execução de contrato ou procedimentos preliminares;</li>
+                <li>Cumprimento de obrigação legal ou regulatória;</li>
+                <li>Legítimo interesse da empresa;</li>
+                <li>Exercício regular de direitos.</li>
+            </ul>
+
+            <h2>6. Compartilhamento de Dados</h2>
+            <p>Não vendemos, alugamos ou compartilhamos seus dados pessoais com terceiros para fins comerciais. Podemos compartilhar informações apenas com:</p>
+            <ul>
+                <li>Prestadores de serviços essenciais à operação (hospedagem, ferramentas de comunicação), sempre sob contrato de confidencialidade;</li>
+                <li>Autoridades públicas, quando exigido por lei ou ordem judicial.</li>
+            </ul>
+
+            <h2>7. Armazenamento e Segurança</h2>
+            <p>Adotamos medidas técnicas e administrativas razoáveis para proteger seus dados contra acessos não autorizados, perda, alteração ou destruição. Os dados são armazenados pelo tempo necessário ao cumprimento das finalidades descritas ou por exigência legal.</p>
+
+            <h2>8. Direitos do Titular</h2>
+            <p>Nos termos da LGPD, o titular dos dados pode, a qualquer momento, solicitar:</p>
+            <ul>
+                <li>Confirmação da existência de tratamento;</li>
+                <li>Acesso aos dados;</li>
+                <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+                <li>Anonimização, bloqueio ou eliminação de dados desnecessários;</li>
+                <li>Portabilidade dos dados;</li>
+                <li>Eliminação dos dados tratados com consentimento;</li>
+                <li>Informação sobre compartilhamento de dados;</li>
+                <li>Revogação do consentimento.</li>
+            </ul>
+            <p>Para exercer seus direitos, entre em contato pelo e-mail <strong>amanda32.figueiroa@gmail.com</strong>.</p>
+
+            <h2>9. Cookies</h2>
+            <p>Nosso site pode utilizar cookies para melhorar a experiência de navegação. Para mais detalhes, consulte nossa <a href="cookies.html" style="color:#b22222; font-weight:600;">Política de Cookies</a>.</p>
+
+            <h2>10. Alterações desta Política</h2>
+            <p>Esta Política de Privacidade pode ser atualizada periodicamente. Recomendamos que o usuário a revise com frequência. A data da última atualização será sempre indicada ao final do documento.</p>
+
+            <h2>11. Contato</h2>
+            <p>Em caso de dúvidas sobre esta Política ou sobre o tratamento de seus dados, entre em contato conosco pelo e-mail <strong>amanda32.figueiroa@gmail.com</strong> ou pelo telefone/WhatsApp <strong>(81) 99955-7052</strong>.</p>
+
+            <div class="destaque-box">
+                <p><i class="fas fa-lock" style="color:#b22222;"></i> Sua privacidade é importante para nós. Trabalhamos para garantir que seus dados estejam sempre seguros e tratados com responsabilidade.</p>
+            </div>
+
+            <p class="data-atualizacao">Última atualização: 06 de outubro de 2026</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <h4><i class="fas fa-map-pin"></i> Localização</h4>
+                <p><i class="fas fa-road"></i> Rua Armindo Moura, 472</p>
+                <p><i class="fas fa-location-dot"></i> Guadalupe</p>
+                <p><i class="fas fa-city"></i> Olinda - PE</p>
+                <p><i class="fas fa-mail-bulk"></i> CEP: 53240-600</p>
+                <p style="margin-top:10px;"><i class="fas fa-envelope"></i> amanda32.figueiroa@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> (81) 99955-7052</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: (81) 99955-7052</p>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-clock"></i> Horário</h4>
+                <div class="horario-atendimento">
+                    <p>Seg a Sex <span>08:00 – 20:00</span></p>
+                    <p>Sábado <span>08:00 – 22:00</span></p>
+                    <p>Domingo <span>10:00 – 18:00</span></p>
+                </div>
+                <p style="margin-top:15px;"><i class="fas fa-calendar-alt"></i> <strong>Abertura:</strong> 02/10/2026</p>
+                <p><i class="fas fa-id-card"></i> <strong>CNPJ:</strong> 69.450.404/0001-83</p>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-link"></i> Institucional</h4>
+                <a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre nós</a>
+                <a href="termos.html"><i class="fas fa-file-contract"></i> Termos de uso</a>
+                <a href="privacidade.html"><i class="fas fa-shield-alt"></i> Política de privacidade</a>
+                <a href="cookies.html"><i class="fas fa-cookie-bite"></i> Política de cookies</a>
+                <a href="entregas.html"><i class="fas fa-truck"></i> Entregas e devoluções</a>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-mail-bulk"></i> Correspondência</h4>
+                <p>69.450.404 Amanda Juliana de Figueiroa Lopes</p>
+                <p>Rua Armindo Moura 472</p>
+                <p>Guadalupe - Olinda PE</p>
+                <p>CEP 53240-600</p>
+            </div>
+            <div class="footer-links-legais">
+                <a href="termos.html"><i class="fas fa-file-alt"></i> Termo de Uso</a>
+                <a href="privacidade.html"><i class="fas fa-lock"></i> Política de Privacidade</a>
+                <a href="sobre.html"><i class="fas fa-user-shield"></i> Sobre</a>
+                <a href="cookies.html"><i class="fas fa-cookie-bite"></i> Cookies</a>
+                <a href="entregas.html"><i class="fas fa-truck"></i> Entregas</a>
+            </div>
+            <div class="copyright">&copy; 2026 Lanchonete Amanda Figueiroa - CNPJ 69.450.404/0001-83. Todos os direitos reservados.</div>
+        </div>
+    </footer>
+</body>
+</html>
