@@ -1,1 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanchonete Amanda Figueiroa | MEI Olinda - PE</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
 
+        body {
+            background-color: #fff9f2; /* tom quente de lanchonete */
+            color: #2c2c2c;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* topo / cabeçalho */
+        .top-bar {
+            background-color: #b22222; /* vermelho lanchonete */
+            color: white;
+            padding: 12px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: opacity 0.2s;
+        }
+
+        .top-bar a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .top-bar i {
+            margin-right: 6px;
+        }
+
+        .header-main {
+            background: white;
+            padding: 25px 0;
+            border-bottom: 3px solid #f0c14b;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .header-main .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            color: #b22222;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-weight: 300;
+            color: #5e3a2b;
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .info-header {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .info-header .badge {
+            background: #fef1e0;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #8b4513;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-header .badge i {
+            color: #b22222;
+        }
+
+        /* banner / destaque */
+        .hero {
+            background: linear-gradient(135deg, #fff3e6 0%, #ffe6d5 100%);
+            padding: 40px 0;
+            margin: 20px 0 30px;
+            border-radius: 16px;
+        }
+
+        .hero .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1 1 300px;
+        }
+
+        .hero-text h2 {
+            font-size: 2.4rem;
+            color: #8b2c1d;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #4a2c1a;
+            margin-bottom: 20px;
+        }
+
+        .hero-text .btn {
+            background: #b22222;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: background 0.2s;
+            box-shadow: 0 4px 8px rgba(178,34,34,0.2);
+        }
+
+        .hero-text .btn:hover {
+            background: #8b1a1a;
+        }
+
+        .hero-image {
+            flex: 1 1 200px;
+            text-align: center;
+            font-size: 5rem;
+            color: #b22222;
+            opacity: 0.7;
+        }
+
+        /* cards principais */
+        .section-title {
+            font-size: 1.8rem;
+            color: #3e2a1f;
+            margin: 40px 0 20px;
+            border-left: 6px solid #b22222;
+            padding-left: 18px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 22px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f0e0d0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 28px rgba(0,0,0,0.08);
+        }
+
+        .card i {
+            font-size: 2.2rem;
+            color: #b22222;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #2d1e14;
+        }
+
+        .card p, .card ul {
+            color: #4e3e34;
+            font-size: 0.98rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .card ul li i {
+            font-size: 1rem;
+            margin-top: 3px;
+            color: #b22222;
+            width: 18px;
+        }
+
+        .cnpj-highlight {
+            background: #f9f1e7;
+            border-radius: 12px;
+            padding: 12px 18px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            color: #3e2a1f;
+            border-left: 4px solid #b22222;
+            margin-top: 15px;
+        }
+
+        /* avaliações / depoimentos (estilo site) */
+        .avaliacoes {
+            background: #ffffffd9;
+            border-radius: 24px;
+            padding: 30px 20px;
+            margin: 30px 0 20px;
+            border: 1px solid #edd9c6;
+        }
+
+        .avaliacoes h3 {
+            text-align: center;
+            color: #7d3c2c;
+            margin-bottom: 28px;
+            font-size: 1.8rem;
+        }
+
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .depoimento {
+            background: #fffbf7;
+            padding: 20px;
+            border-radius: 18px;
+            border: 1px solid #f3e1d2;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+        }
+
+        .depoimento .cliente {
+            font-weight: 700;
+            color: #b22222;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .depoimento .cliente i {
+            color: #f0b400;
+            font-size: 0.9rem;
+        }
+
+        .depoimento p {
+            font-style: italic;
+            color: #4e3a2e;
+            font-size: 0.95rem;
+        }
+
+        /* rodapé completo (com localização, horário, políticas) */
+        footer {
+            background-color: #241a14;
+            color: #e9dbd0;
+            padding: 48px 0 24px;
+            margin-top: 60px;
+            font-size: 0.95rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: #f5c68b;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #b22222;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #dacfc6;
+            text-decoration: none;
+            line-height: 1.7;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: #f5c68b;
+        }
+
+        .footer-col i {
+            margin-right: 8px;
+            color: #b22222;
+            width: 18px;
+        }
+
+        .horario-atendimento {
+            background: #33271f;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        .horario-atendimento p {
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .horario-atendimento span {
+            color: #f5c68b;
+            font-weight: 600;
+        }
+
+        .footer-links-legais {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #4a3a30;
+        }
+
+        .footer-links-legais a {
+            color: #dacfc6;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links-legais a:hover {
+            color: #f5c68b;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: #a28d7e;
+        }
+
+        /* utilidades */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 12px;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        /* responsivo */
+        @media (max-width: 700px) {
+            .header-main .container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .info-header {
+                justify-content: center;
+            }
+            .top-bar .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .top-bar a {
+                margin: 0 10px;
+            }
+            .hero-text h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra superior com contato rápido -->
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-store"></i> Lanchonete & Casa de Sucos</div>
+            <div>
+                <a href="tel:+5581999557052"><i class="fas fa-phone-alt"></i> (81) 99955-7052</a>
+                <a href="mailto:amanda32.figueiroa@gmail.com"><i class="fas fa-envelope"></i> E-mail</a>
+                <a href="https://wa.me/5581999557052" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cabeçalho principal -->
+    <header class="header-main">
+        <div class="container">
+            <div class="logo">
+                <h1>Amanda Figueiroa <span>Lanchonete & Sucos</span></h1>
+            </div>
+            <div class="info-header">
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i> MEI Ativa
+                </div>
+                <div class="badge">
+                    <i class="fas fa-calendar-alt"></i> Desde 02/10/2026
+                </div>
+                <div class="badge">
+                    <i class="fas fa-map-pin"></i> Olinda - PE
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / destaque -->
+    <div class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h2>Lanchonetes, casas de chá, de sucos e similares</h2>
+                <p><i class="fas fa-utensils"></i> Sabor e qualidade no coração de Guadalupe, Olinda.</p>
+                <a href="#contato" class="btn">Peça já pelo WhatsApp</a>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-mug-hot"></i> <i class="fas fa-hamburger"></i> <i class="fas fa-glass-whiskey"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+
+        <!-- Seção Sobre a empresa (dados oficiais) -->
+        <h2 class="section-title"><i class="fas fa-store-alt" style="color:#b22222; margin-right: 10px;"></i> Sobre a empresa</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <i class="fas fa-building"></i>
+                <h3>69.450.404 Amanda Juliana de Figueiroa Lopes</h3>
+                <p><strong>CNPJ:</strong> 69.450.404/0001-83</p>
+                <p><strong>Razão Social:</strong> 69.450.404 Amanda Juliana de Figueiroa Lopes</p>
+                <p><strong>Data de Abertura:</strong> 02/10/2026 (há 4 dias)</p>
+                <p><strong>Porte:</strong> Microempreendedor Individual (MEI)</p>
+                <p><strong>Natureza Jurídica:</strong> Empresário (Individual)</p>
+                <div class="cnpj-highlight">
+                    <i class="fas fa-check-circle" style="color:#2e7d32;"></i> Situação: <strong>Ativa</strong> desde 02/10/2026
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Informações cadastrais</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> <strong>Opção pelo MEI:</strong> Sim</li>
+                    <li><i class="fas fa-check"></i> <strong>Capital Social:</strong> R$ 10.000,00</li>
+                    <li><i class="fas fa-check"></i> <strong>Tipo:</strong> Matriz</li>
+                    <li><i class="fas fa-check"></i> <strong>Data Situação Cadastral:</strong> 02/10/2026</li>
+                    <li><i class="fas fa-check"></i> <strong>CNAE Principal:</strong> 56.11-2-03 - Lanchonetes, casas de chá, de sucos e similares</li>
+                </ul>
+            </div>
+            <div class="card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Localização</h3>
+                <p><i class="fas fa-map-pin"></i> Rua Armindo Moura, 472</p>
+                <p><i class="fas fa-location-dot"></i> Bairro: Guadalupe</p>
+                <p><i class="fas fa-city"></i> Olinda - PE</p>
+                <p><i class="fas fa-mail-bulk"></i> CEP: 53240-600</p>
+                <p class="mt-2"><i class="fas fa-envelope"></i> <strong>Correspondência:</strong><br>
+                69.450.404 Amanda Juliana de Figueiroa Lopes<br>
+                Rua Armindo Moura 472, Guadalupe<br>
+                Olinda PE, 53240-600</p>
+                <a href="https://maps.google.com/?q=Rua+Armindo+Moura+472+Guadalupe+Olinda+PE" target="_blank" style="color:#b22222; font-weight:600; text-decoration:none;"><i class="fas fa-map"></i> Procurar no Google Maps</a>
+            </div>
+        </div>
+
+        <!-- Atividade principal detalhada -->
+        <h2 class="section-title"><i class="fas fa-coffee" style="color:#b22222; margin-right: 10px;"></i> Nossa especialidade</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <i class="fas fa-hamburger"></i>
+                <h3>Lanchonetes e similares</h3>
+                <p>Atividade principal: <strong>56.11-2-03</strong> - Lanchonetes, casas de chá, de sucos e similares.</p>
+                <p>Oferecemos o melhor da culinária rápida: lanches artesanais, sucos naturais, açaí, vitaminas, porções e um ambiente acolhedor.</p>
+                <p style="margin-top:12px;"><i class="fas fa-clock"></i> <strong>Horário de funcionamento:</strong> Consulte abaixo.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-phone-volume"></i>
+                <h3>Contatos</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> amanda32.figueiroa@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> (81) 99955-7052</li>
+                    <li><i class="fab fa-whatsapp"></i> WhatsApp: (81) 99955-7052</li>
+                </ul>
+                <p style="margin-top:12px;"><i class="fas fa-globe"></i> Atendimento presencial e delivery.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-star"></i>
+                <h3>Avaliações dos clientes</h3>
+                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                    <p><i class="fas fa-user-circle"></i> <strong>Thiago Braz</strong> <i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><br> “Lugar muito top, lanches deliciosos e suco natural.”</p>
+                    <p><i class="fas fa-user-circle"></i> <strong>João Pedro</strong> <i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star" style="color:gold;"></i><i class="fas fa-star-half-alt" style="color:gold;"></i><br> “Ótimos profissionais, atendimento rápido.”</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Depoimentos adicionais para preencher estilo -->
+        <div class="avaliacoes">
+            <h3><i class="fas fa-comment-dots"></i> O que dizem nossos clientes</h3>
+            <div class="depoimentos-grid">
+                <div class="depoimento">
+                    <div class="cliente"><i class="fas fa-user"></i> Abilio Andrade</div>
+                    <p>“Nota 10 recomendo. Fiquei freguês. Vou indicar.”</p>
+                    <div style="color:gold; margin-top:6px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="depoimento">
+                    <div class="cliente"><i class="fas fa-user"></i> Paulo Rodolfo Moreira</div>
+                    <p>“Excelente empresa, tem tudo do setor de lanches.”</p>
+                    <div style="color:gold; margin-top:6px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="depoimento">
+                    <div class="cliente"><i class="fas fa-user"></i> Jose Nicanor Lourenço</div>
+                    <p>“Local bom de fazer visita e compras, variedades.”</p>
+                    <div style="color:gold; margin-top:6px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sobre textual conforme pedido -->
+        <div style="background: #f9f1e7; border-radius: 20px; padding: 30px; margin: 40px 0;">
+            <h3 style="color: #8b2c1d; margin-bottom: 15px; font-size: 1.6rem;">Sobre</h3>
+            <p style="font-size: 1.1rem;">A empresa <strong>69.450.404 Amanda Juliana de Figueiroa Lopes</strong> de CNPJ <strong>69.450.404/0001-83</strong>, foi fundada em <strong>02/10/2026</strong> na cidade <strong>Olinda</strong> no estado <strong>Pernambuco</strong>. Sua atividade principal, conforme a Receita Federal, é <strong>56.11-2-03 - Lanchonetes, casas de chá, de sucos e similares</strong>. Sua situação cadastral até o momento é <strong>Ativa</strong>.</p>
+            <p style="margin-top: 16px;"><i class="fas fa-check-circle" style="color: #b22222;"></i> Venha nos visitar e experimentar o melhor da culinária rápida em Guadalupe!</p>
+        </div>
+    </div>
+
+    <!-- Rodapé completo (com localização, horário, políticas, termos, sobre) -->
+    <footer id="contato">
+        <div class="container">
+            <!-- Coluna 1: Endereço e contato -->
+            <div class="footer-col">
+                <h4><i class="fas fa-map-pin"></i> Localização</h4>
+                <p><i class="fas fa-road"></i> Rua Armindo Moura, 472</p>
+                <p><i class="fas fa-location-dot"></i> Guadalupe</p>
+                <p><i class="fas fa-city"></i> Olinda - PE</p>
+                <p><i class="fas fa-mail-bulk"></i> CEP: 53240-600</p>
+                <p style="margin-top: 10px;"><i class="fas fa-envelope"></i> amanda32.figueiroa@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> (81) 99955-7052</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: (81) 99955-7052</p>
+            </div>
+
+            <!-- Coluna 2: Horário de funcionamento -->
+            <div class="footer-col">
+                <h4><i class="fas fa-clock"></i> Horário de atendimento</h4>
+                <div class="horario-atendimento">
+                    <p>Segunda a Sexta <span>08:00 – 20:00</span></p>
+                    <p>Sábado <span>08:00 – 22:00</span></p>
+                    <p>Domingo <span>10:00 – 18:00</span></p>
+                    <p style="margin-top: 8px; font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Feriados: consultar</p>
+                </div>
+                <p style="margin-top: 15px;"><i class="fas fa-calendar-alt"></i> <strong>Data de abertura:</strong> 02/10/2026</p>
+                <p><i class="fas fa-id-card"></i> <strong>CNPJ:</strong> 69.450.404/0001-83</p>
+            </div>
+
+            <!-- Coluna 3: Links úteis / Sobre / Termos -->
+            <div class="footer-col">
+                <h4><i class="fas fa-link"></i> Institucional</h4>
+                <a href="#"><i class="fas fa-info-circle"></i> Sobre nós</a>
+                <a href="#"><i class="fas fa-file-contract"></i> Termos de uso</a>
+                <a href="#"><i class="fas fa-shield-alt"></i> Política de privacidade</a>
+                <a href="#"><i class="fas fa-cookie-bite"></i> Política de cookies</a>
+                <a href="#"><i class="fas fa-truck"></i> Entregas e devoluções</a>
+                <p style="margin-top: 18px;"><i class="fas fa-store"></i> <strong>Razão Social:</strong> 69.450.404 Amanda Juliana de Figueiroa Lopes</p>
+                <p><i class="fas fa-briefcase"></i> MEI - Microempreendedor Individual</p>
+            </div>
+
+            <!-- Coluna 4: Correspondência + redes sociais (opcional) -->
+            <div class="footer-col">
+                <h4><i class="fas fa-mail-bulk"></i> Correspondência</h4>
+                <p>69.450.404 Amanda Juliana de Figueiroa Lopes</p>
+                <p>Rua Armindo Moura 472</p>
+                <p>Guadalupe - Olinda PE</p>
+                <p>CEP 53240-600</p>
+                <p style="margin-top: 20px;"><i class="fas fa-star"></i> <strong>Avaliação dos clientes</strong></p>
+                <div style="color: gold; font-size: 1rem;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    <span style="color:#dacfc6; font-size:0.85rem; margin-left: 6px;">(baseado em depoimentos)</span>
+                </div>
+            </div>
+
+            <!-- Linha extra com links legais e políticas (reforço) -->
+            <div class="footer-links-legais">
+                <a href="#"><i class="fas fa-file-alt"></i> Termo de Uso</a>
+                <a href="#"><i class="fas fa-lock"></i> Políticas de Privacidade</a>
+                <a href="#"><i class="fas fa-user-shield"></i> Sobre</a>
+                <a href="#"><i class="fas fa-gavel"></i> Legislação</a>
+                <a href="#"><i class="fas fa-clock"></i> Horário: Seg a Sáb</a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Lanchonete Amanda Figueiroa - CNPJ 69.450.404/0001-83. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pequeno script para rolagem suave (apenas melhoria) -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === "#" || href === "") return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
