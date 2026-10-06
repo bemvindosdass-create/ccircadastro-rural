@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entregas e Devoluções | Lanchonete Amanda Figueiroa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #fff9f2; color: #2c2c2c; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .top-bar { background-color: #b22222; color: white; padding: 12px 0; font-size: 0.9rem; }
+        .top-bar .container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+        .top-bar a { color: white; text-decoration: none; margin-left: 20px; }
+        .top-bar a:hover { text-decoration: underline; }
+        .top-bar i { margin-right: 6px; }
+        .header-main { background: white; padding: 25px 0; border-bottom: 3px solid #f0c14b; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .header-main .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 15px; }
+        .logo h1 { font-size: 1.8rem; color: #b22222; letter-spacing: -0.5px; }
+        .logo span { font-weight: 300; color: #5e3a2b; font-size: 0.9rem; display: block; margin-top: 4px; }
+        .info-header { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .info-header .badge { background: #fef1e0; padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; color: #8b4513; display: flex; align-items: center; gap: 8px; }
+        .info-header .badge i { color: #b22222; }
+        .nav-menu { background: #2d1e14; padding: 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .nav-menu .container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .nav-menu a { color: #e9dbd0; padding: 16px 22px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border-bottom: 3px solid transparent; transition: all 0.2s; }
+        .nav-menu a:hover { background: #3d2a1d; color: #f5c68b; }
+        .nav-menu a.ativo { background: #b22222; color: white; border-bottom-color: #f5c68b; }
+        .page-hero { background: linear-gradient(135deg, #8b2c1d 0%, #b22222 100%); color: white; padding: 60px 0 40px; text-align: center; margin: 20px auto; border-radius: 16px; max-width: 1160px; }
+        .page-hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .page-hero p { font-size: 1.1rem; opacity: 0.95; }
+        .conteudo-interno { background: white; border-radius: 20px; padding: 45px 40px; margin: 30px auto; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid #f0e0d0; max-width: 1160px; }
+        .conteudo-interno h2 { color: #8b2c1d; font-size: 1.5rem; margin: 30px 0 15px; border-left: 5px solid #b22222; padding-left: 15px; }
+        .conteudo-interno h2:first-of-type { margin-top: 0; }
+        .conteudo-interno p { margin-bottom: 15px; color: #4e3e34; font-size: 1.03rem; text-align: justify; }
+        .conteudo-interno ul { margin: 15px 0 20px 25px; color: #4e3e34; }
+        .conteudo-interno ul li { margin-bottom: 8px; }
+        .conteudo-interno strong { color: #2d1e14; }
+        .cards-entrega { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin: 25px 0; }
+        .card-entrega { background: #f9f1e7; border-radius: 14px; padding: 25px 20px; border: 1px solid #edd9c6; text-align: center; transition: transform 0.2s; }
+        .card-entrega:hover { transform: translateY(-4px); }
+        .card-entrega i { font-size: 2rem; color: #b22222; margin-bottom: 12px; }
+        .card-entrega h3 { color: #5e2a1a; font-size: 1.1rem; margin-bottom: 8px; }
+        .card-entrega p { font-size: 0.95rem; margin: 0; }
+        .destaque-box { background: #fef1e0; border-left: 5px solid #b22222; padding: 20px 25px; border-radius: 10px; margin: 25px 0; }
+        .data-atualizacao { text-align: right; font-style: italic; color: #7a6a5e; font-size: 0.9rem; margin-top: 30px; border-top: 1px solid #edd9c6; padding-top: 15px; }
+        footer { background-color: #241a14; color: #e9dbd0; padding: 48px 0 24px; margin-top: 60px; font-size: 0.95rem; }
+        footer .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: #f5c68b; font-size: 1.2rem; margin-bottom: 20px; border-bottom: 2px solid #b22222; padding-bottom: 8px; display: inline-block; }
+        .footer-col p, .footer-col a { color: #dacfc6; text-decoration: none; line-height: 1.7; display: block; margin-bottom: 8px; }
+        .footer-col a:hover { color: #f5c68b; }
+        .footer-col i { margin-right: 8px; color: #b22222; width: 18px; }
+        .horario-atendimento { background: #33271f; padding: 12px 16px; border-radius: 12px; margin-top: 10px; }
+        .horario-atendimento p { margin-bottom: 5px; display: flex; justify-content: space-between; }
+        .horario-atendimento span { color: #f5c68b; font-weight: 600; }
+        .footer-links-legais { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; padding-top: 25px; border-top: 1px solid #4a3a30; }
+        .footer-links-legais a { color: #dacfc6; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
+        .footer-links-legais a:hover { color: #f5c68b; text-decoration: underline; }
+        .copyright { grid-column: 1 / -1; text-align: center; margin-top: 25px; font-size: 0.85rem; color: #a28d7e; }
+        @media (max-width: 700px) {
+            .header-main .container { flex-direction: column; gap: 15px; text-align: center; }
+            .info-header { justify-content: center; }
+            .top-bar .container { flex-direction: column; gap: 10px; }
+            .top-bar a { margin: 0 10px; }
+            .nav-menu a { padding: 12px 14px; font-size: 0.85rem; }
+            .nav-menu a span { display: none; }
+            .page-hero h1 { font-size: 1.8rem; }
+            .conteudo-interno { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-store"></i> Lanchonete & Casa de Sucos</div>
+            <div>
+                <a href="tel:+5581999557052"><i class="fas fa-phone-alt"></i> (81) 99955-7052</a>
+                <a href="mailto:amanda32.figueiroa@gmail.com"><i class="fas fa-envelope"></i> E-mail</a>
+                <a href="https://wa.me/5581999557052" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header-main">
+        <div class="container">
+            <div class="logo">
+                <h1>Amanda Figueiroa <span>Lanchonete & Sucos</span></h1>
+            </div>
+            <div class="info-header">
+                <div class="badge"><i class="fas fa-check-circle"></i> MEI Ativa</div>
+                <div class="badge"><i class="fas fa-calendar-alt"></i> Desde 02/10/2026</div>
+                <div class="badge"><i class="fas fa-map-pin"></i> Olinda - PE</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <div class="container">
+            <a href="index.html"><i class="fas fa-home"></i><span> Início</span></a>
+            <a href="sobre.html"><i class="fas fa-info-circle"></i><span> Sobre Nós</span></a>
+            <a href="termos.html"><i class="fas fa-file-contract"></i><span> Termos de Uso</span></a>
+            <a href="privacidade.html"><i class="fas fa-shield-alt"></i><span> Privacidade</span></a>
+            <a href="cookies.html"><i class="fas fa-cookie-bite"></i><span> Cookies</span></a>
+            <a href="entregas.html" class="ativo"><i class="fas fa-truck"></i><span> Entregas</span></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-hero">
+            <h1><i class="fas fa-truck"></i> Entregas e Devoluções</h1>
+            <p>Informações sobre delivery, prazos e política de devolução</p>
+        </div>
+
+        <div class="conteudo-interno">
+            <h2>1. Entrega em Domicílio (Delivery)</h2>
+            <p>A <strong>Lanchonete Amanda Figueiroa</strong> realiza entregas em domicílio em Olinda e região, mediante pedido por telefone ou WhatsApp. Trabalhamos com motoboys parceiros e entregadores próprios, para que seu pedido chegue o mais rápido possível.</p>
+
+            <div class="cards-entrega">
+                <div class="card-entrega">
+                    <i class="fas fa-clock"></i>
+                    <h3>Tempo médio</h3>
+                    <p>30 a 50 minutos, variando conforme a demanda e a distância.</p>
+                </div>
+                <div class="card-entrega">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Área de entrega</h3>
+                    <p>Olinda e bairros próximos. Consulte pelo WhatsApp.</p>
+                </div>
+                <div class="card-entrega">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Taxa de entrega</h3>
+                    <p>Calculada conforme a distância. Informada no momento do pedido.</p>
+                </div>
+            </div>
+
+            <h2>2. Como Fazer seu Pedido</h2>
+            <p>Os pedidos podem ser feitos das seguintes formas:</p>
+            <ul>
+                <li><i class="fab fa-whatsapp" style="color:#b22222; margin-right:8px;"></i> WhatsApp: (81) 99955-7052</li>
+                <li><i class="fas fa-phone-alt" style="color:#b22222; margin-right:8px;"></i> Telefone: (81) 99955-7052</li>
+                <li><i class="fas fa-store" style="color:#b22222; margin-right:8px;"></i> Presencialmente, na Rua Armindo Moura, 472 – Guadalupe, Olinda/PE</li>
+            </ul>
+
+            <h2>3. Formas de Pagamento</h2>
+            <p>Aceitamos as seguintes formas de pagamento:</p>
+            <ul>
+                <li>Dinheiro (com ou sem troco, informar no pedido);</li>
+                <li>PIX;</li>
+                <li>Cartões de débito e crédito (na entrega, quando disponível);</li>
+                <li>Vale-refeição, quando aplicável.</li>
+            </ul>
+
+            <h2>4. Política de Devolução e Reclamações</h2>
+            <p>Nosso compromisso é com a sua satisfação. Caso seu pedido apresente algum problema, siga as orientações abaixo:</p>
+            <ul>
+                <li><strong>Produto errado:</strong> entre em contato imediatamente pelo WhatsApp informando o ocorrido. Faremos a troca sem custo;</li>
+                <li><strong>Produto com defeito ou má qualidade:</strong> tire fotos e envie pelo WhatsApp em até 30 minutos após o recebimento. Analisaremos o caso e providenciaremos a substituição ou reembolso;</li>
+                <li><strong>Pedido não entregue:</strong> entre em contato para verificar o status. Caso não seja possível entregar, o valor pago será devolvido integralmente;</li>
+                <li><strong>Desistência da compra:</strong> conforme o Código de Defesa do Consumidor (Art. 49), o cliente pode desistir da compra em até 7 dias após o recebimento, desde que o produto esteja intacto. Em se tratando de alimentos, a desistência deve ocorrer antes do preparo.</li>
+            </ul>
+
+            <h2>5. Cancelamento de Pedidos</h2>
+            <p>O cancelamento pode ser solicitado antes do início do preparo do pedido. Após o preparo, não será possível cancelar, salvo em caso de defeito ou erro por parte da lanchonete.</p>
+
+            <h2>6. Retirada no Local</h2>
+            <p>O cliente também pode retirar o pedido diretamente na lanchonete, sem custo adicional. Nesse caso, o pedido deve ser feito previamente por telefone ou WhatsApp e retirado no endereço:</p>
+            <p><i class="fas fa-map-pin" style="color:#b22222;"></i> Rua Armindo Moura, 472 – Guadalupe – Olinda/PE – CEP 53240-600</p>
+
+            <h2>7. Atendimento ao Cliente</h2>
+            <p>Em caso de dúvidas, sugestões ou reclamações, entre em contato:</p>
+            <ul>
+                <li><i class="fas fa-phone-alt" style="color:#b22222; margin-right:8px;"></i> Telefone/WhatsApp: (81) 99955-7052</li>
+                <li><i class="fas fa-envelope" style="color:#b22222; margin-right:8px;"></i> E-mail: amanda32.figueiroa@gmail.com</li>
+            </ul>
+            <p>Nosso horário de atendimento é de segunda a sábado, das 08h às 22h, e domingo das 10h às 18h.</p>
+
+            <div class="destaque-box">
+                <p><i class="fas fa-handshake" style="color:#b22222;"></i> Trabalhamos com respeito, transparência e compromisso com você. Seu pedido é preparado com carinho e cuidado!</p>
+            </div>
+
+            <p class="data-atualizacao">Última atualização: 06 de outubro de 2026</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <h4><i class="fas fa-map-pin"></i> Localização</h4>
+                <p><i class="fas fa-road"></i> Rua Armindo Moura, 472</p>
+                <p><i class="fas fa-location-dot"></i> Guadalupe</p>
+                <p><i class="fas fa-city"></i> Olinda - PE</p>
+                <p><i class="fas fa-mail-bulk"></i> CEP: 53240-600</p>
+                <p style="margin-top:10px;"><i class="fas fa-envelope"></i> amanda32.figueiroa@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> (81) 99955-7052</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: (81) 99955-7052</p>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-clock"></i> Horário</h4>
+                <div class="horario-atendimento">
+                    <p>Seg a Sex <span>08:00 – 20:00</span></p>
+                    <p>Sábado <span>08:00 – 22:00</span></p>
+                    <p>Domingo <span>10:00 – 18:00</span></p>
+                </div>
+                <p style="margin-top:15px;"><i class="fas fa-calendar-alt"></i> <strong>Abertura:</strong> 02/10/2026</p>
+                <p><i class="fas fa-id-card"></i> <strong>CNPJ:</strong> 69.450.404/0001-83</p>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-link"></i> Institucional</h4>
+                <a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre nós</a>
+                <a href="termos.html"><i class="fas fa-file-contract"></i> Termos de uso</a>
+                <a href="privacidade.html"><i class="fas fa-shield-alt"></i> Política de privacidade</a>
+                <a href="cookies.html"><i class="fas fa-cookie-bite"></i> Política de cookies</a>
+                <a href="entregas.html"><i class="fas fa-truck"></i> Entregas e devoluções</a>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-mail-bulk"></i> Correspondência</h4>
+                <p>69.450.404 Amanda Juliana de Figueiroa Lopes</p>
+                <p>Rua Armindo Moura 472</p>
+                <p>Guadalupe - Olinda PE</p>
+                <p>CEP 53240-600</p>
+            </div>
+            <div class="footer-links-legais">
+                <a href="termos.html"><i class="fas fa-file-alt"></i> Termo de Uso</a>
+                <a href="privacidade.html"><i class="fas fa-lock"></i> Política de Privacidade</a>
+                <a href="sobre.html"><i class="fas fa-user-shield"></i> Sobre</a>
+                <a href="cookies.html"><i class="fas fa-cookie-bite"></i> Cookies</a>
+                <a href="entregas.html"><i class="fas fa-truck"></i> Entregas</a>
+            </div>
+            <div class="copyright">&copy; 2026 Lanchonete Amanda Figueiroa - CNPJ 69.450.404/0001-83. Todos os direitos reservados.</div>
+        </div>
+    </footer>
+</body>
+</html>
